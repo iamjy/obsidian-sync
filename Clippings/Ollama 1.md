@@ -1,12 +1,12 @@
 ---
-title: "Ollama"
-source: "https://ollama.com/search"
-author:
-published:
+title: Ollama
+source: https://ollama.com/search
+author: 
+published: 
 created: 2025-02-02
-description: "Get up and running with large language models."
+description: Get up and running with large language models.
 tags:
-  - "clippings"
+  - clippings
 ---
 - [
 

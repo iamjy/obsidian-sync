@@ -69,16 +69,16 @@
     },
     {
       "role": "assistant",
-      "content": "아래는 `딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md`에 `@GMP.md`의 properties 블록을 추가한 내용입니다. 기존 YAML 메타데이터 위에 `properties` 블록을 삽입하였으며, 기존 내용은 모두 유지됩니다.\n\n<smtcmp_block filename=\"딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md\" language=\"markdown\">\n```markdown\n---\nproperties:\n  category: 인증\n  name: GMP\n  scope: 의료기기\n  related: ['MFDS', 'KISA']\n---\n\n---\ntitle: GMP 인증\nsource: https://waylonwalker.com/how-to-kill-ollama-server/\nauthor:\n  - \"[[@_louis]]\"\npublished: \ncreated: 2025-02-25\ndescription: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\ntags:\n  - gmp\n---\n\n<!-- ... 기존 내용 계속 ... -->\n</smtcmp_block>\n\n간단 설명: `@GMP.md`의 properties 부분을 복사해 최상단에 배치했습니다.",
-      "id": "9a5f3c04-2731-47e5-89ea-60449a962b60",
+      "content": "<smtcmp_block filename=\"딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md\" language=\"markdown\">\n---\nproperties:\n  category: 인증\n  name: GMP\n  scope: 의료기기\n  related:\n    - MFDS\n    - KISA\ntitle: GMP 인증\nsource: https://waylonwalker.com/how-to-kill-ollama-server/\nauthor:\n  - \"[[@_louis]]\"\npublished: \ncreated: 2025-02-25\ndescription: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\ntags:\n  - gmp\n---\n<!-- existing content remains the same -->\n</smtcmp_block>\n\nI added the `properties` section to the top of the file, matching the format you provided. The rest of the content remains unchanged.",
+      "id": "3703151a-9f10-4ef9-85e8-9423b15a4367",
       "metadata": {
         "usage": {
-          "prompt_tokens": 1644,
-          "completion_tokens": 277,
-          "total_tokens": 1921,
+          "prompt_tokens": 1683,
+          "completion_tokens": 205,
+          "total_tokens": 1888,
           "cost": 0,
           "prompt_tokens_details": {
-            "cached_tokens": 1536
+            "cached_tokens": 0
           },
           "completion_tokens_details": {
             "reasoning_tokens": 0
@@ -87,13 +87,13 @@
         "model": {
           "providerId": "openrouter",
           "providerType": "openrouter",
-          "id": "quasar-alpha",
-          "model": "openrouter/quasar-alpha"
+          "id": "meta-llama-4-maverick",
+          "model": "meta-llama/llama-4-maverick:free"
         }
       }
     }
   ],
   "createdAt": 1744078863509,
-  "updatedAt": 1744079486275,
+  "updatedAt": 1744081131434,
   "schemaVersion": 1
 }

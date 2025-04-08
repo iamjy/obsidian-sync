@@ -163,9 +163,81 @@
           "model": "meta-llama/llama-4-maverick:free"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 이 내용을 요약해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n 이 내용을 요약해줘\n\n"
+        }
+      ],
+      "id": "34d5ac9c-3891-412a-940a-9026df6e36a2",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "의료기기 GMP 인증의 사이버 보안 요건은 MFDS 등 규제기관 지침을 따르며, KISA는 직접 등급을 정하지 않고 보안 지원 역할을 한다.",
+      "id": "6780c853-09d0-4665-a875-1fc6038b6cfd",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 2026,
+          "completion_tokens": 45,
+          "total_tokens": 2071,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerId": "openrouter",
+          "providerType": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
     }
   ],
   "createdAt": 1744078863509,
-  "updatedAt": 1744081189612,
+  "updatedAt": 1744081279054,
   "schemaVersion": 1
 }

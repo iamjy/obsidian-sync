@@ -1,3 +1,4 @@
+```
 #!/usr/bin/env python3
 
 """
@@ -2401,3 +2402,4 @@ logger.info("Camera App starting...")
 exit_code = main()
 
 sys.exit(exit_code)
+```

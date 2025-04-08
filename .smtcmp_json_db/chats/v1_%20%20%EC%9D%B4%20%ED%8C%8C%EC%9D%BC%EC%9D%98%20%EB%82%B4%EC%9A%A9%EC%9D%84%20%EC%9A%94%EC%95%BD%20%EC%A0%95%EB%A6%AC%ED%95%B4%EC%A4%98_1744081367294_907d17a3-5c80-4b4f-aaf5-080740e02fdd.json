@@ -1,0 +1,81 @@
+{
+  "id": "907d17a3-5c80-4b4f-aaf5-080740e02fdd",
+  "title": "  이 파일의 내용을 요약 정리해줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "  이 파일의 내용을 요약 정리해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n  이 파일의 내용을 요약 정리해줘\n\n"
+        }
+      ],
+      "id": "3dd37d88-93de-4d23-bde2-2a90b56dfc9f",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0 1.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "이 문서는 GStreamer `splitmuxsink`를 사용할 때 발생하는 약 10초의 타임스탬프 지연 문제 원인과 해결책을 다룹니다.\n\n- **원인:**\n  - `splitmuxsink`의 파일 분할은 즉시 일어나지 않으며, 키프레임 대기 및 파일 전환 등의 지연이 누적 (~10초)\n  - 내부 분할 시점과 사용자 타임스탬프 조정 영상 시점(두 개의 독립된 시스템)이 동기화되지 않아 발생\n- **문제 현상:**\n  - 새 파일 생성 후 약 10초간 이전 세그먼트 타임스탬프가 유지됨\n- **해결책:**\n  - 첫 파일은 그대로 유지\n  - 두 번째 파일부터 타임스탬프를 `10초 앞당긴` 값으로 보정\n- **결론:**\n  - 비동기 설계, 버퍼링, 키프레임 대기 등으로 인한 타임스탬프 차이를 소프트웨어 보정으로 해결",
+      "id": "a13548c8-64ed-4ecd-a426-1048da0ab212",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 1395,
+          "completion_tokens": 239,
+          "total_tokens": 1634,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerId": "openrouter",
+          "providerType": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744081361986,
+  "updatedAt": 1744081367294,
+  "schemaVersion": 1
+}

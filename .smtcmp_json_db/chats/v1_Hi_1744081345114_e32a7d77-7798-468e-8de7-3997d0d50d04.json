@@ -389,7 +389,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "2025-02-02.md"
+          "file": null
         }
       ]
     },
@@ -401,6 +401,6 @@
     }
   ],
   "createdAt": 1738431812700,
-  "updatedAt": 1738435681013,
+  "updatedAt": 1744081345114,
   "schemaVersion": 1
 }

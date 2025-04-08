@@ -1,3 +1,13 @@
+---
+title: 
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
 
 `on_format_location()`에서 **현재 시간을 직접 사용하면 GStreamer 내부 전환 시점보다 늦은 시간으로 저장**되어 **최대 약 10초 오차 발생**하는 것이 맞습니다.
 

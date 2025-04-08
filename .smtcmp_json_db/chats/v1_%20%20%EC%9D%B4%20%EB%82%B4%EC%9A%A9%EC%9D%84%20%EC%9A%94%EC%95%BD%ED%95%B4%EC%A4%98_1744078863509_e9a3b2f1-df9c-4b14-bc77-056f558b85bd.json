@@ -1,0 +1,62 @@
+{
+  "id": "e9a3b2f1-df9c-4b14-bc77-056f558b85bd",
+  "title": "  이 내용을 요약해줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "  이 내용을 요약해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n  이 내용을 요약해줘\n\n"
+        }
+      ],
+      "id": "81dce5da-031b-4bf9-8039-3ba8946f65ae",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "id": "2834f8f6-a48e-4615-b0fc-36caaca3c022",
+      "metadata": {}
+    }
+  ],
+  "createdAt": 1744078863509,
+  "updatedAt": 1744078863509,
+  "schemaVersion": 1
+}

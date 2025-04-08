@@ -10,11 +10,25 @@
             {
               "children": [
                 {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@GMP.md",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "GMP.md",
+                  "mentionable": {
+                    "type": "file",
+                    "file": "딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md"
+                  }
+                },
+                {
                   "detail": 0,
                   "format": 0,
                   "mode": "normal",
                   "style": "",
-                  "text": "  이 내용을 요약해줘",
+                  "text": " 여기 properties 양식에 맞춰 ",
                   "type": "text",
                   "version": 1
                 }
@@ -46,6 +60,10 @@
         {
           "type": "current-file",
           "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0.md"
+        },
+        {
+          "type": "file",
+          "file": "딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md"
         }
       ]
     },
@@ -76,6 +94,6 @@
     }
   ],
   "createdAt": 1744078863509,
-  "updatedAt": 1744079257660,
+  "updatedAt": 1744079349990,
   "schemaVersion": 1
 }

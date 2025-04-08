@@ -1,8 +1,10 @@
 
-```python t
+```python title:test.py
+print("...")
 ```
 
-```python title:foo
+
+```python title:foo.py
 
 #!/usr/bin/env python3
 

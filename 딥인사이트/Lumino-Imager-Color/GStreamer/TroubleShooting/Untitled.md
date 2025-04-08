@@ -1,6 +1,8 @@
 
+```python t
+```
 
-```python title:main.py
+```python title:foo
 
 #!/usr/bin/env python3
 

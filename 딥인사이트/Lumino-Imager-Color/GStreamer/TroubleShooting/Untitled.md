@@ -1,10 +1,6 @@
 
-```python title:test.py
-print("...")
-```
 
-
-```python title:foo.py
+```python title:foo
 
 #!/usr/bin/env python3
 
@@ -21,7 +17,6 @@ Lumino-Imager-Color 카메라 애플리케이션
   
 
 # 라즈베리파이 GPIO 관련 오류 방지를 위해 mock_gpio 모듈 먼저 임포트
-
 import sys
 
 import os

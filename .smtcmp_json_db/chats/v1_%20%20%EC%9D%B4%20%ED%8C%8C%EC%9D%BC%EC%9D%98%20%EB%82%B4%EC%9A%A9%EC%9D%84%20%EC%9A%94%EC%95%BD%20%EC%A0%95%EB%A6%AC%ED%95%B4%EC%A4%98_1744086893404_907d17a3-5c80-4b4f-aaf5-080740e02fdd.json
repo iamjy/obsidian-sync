@@ -145,9 +145,81 @@
           "model": "openrouter/quasar-alpha"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "on_format_location 콜백함수에서 data.now 함수로 현재 시간을 읽어와 파일명으로 지정하는 것으로 되어 있어서, 10초 늦게 기록될 수 밖에 없는데 해결 방법을 알려줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\non_format_location 콜백함수에서 data.now 함수로 현재 시간을 읽어와 파일명으로 지정하는 것으로 되어 있어서, 10초 늦게 기록될 수 밖에 없는데 해결 방법을 알려줘\n\n"
+        }
+      ],
+      "id": "d07385f9-24c9-4767-8ecc-9871f3dd381b",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "`on_format_location()`에서 **현재 시간을 직접 사용하면 GStreamer 내부 전환 시점보다 늦은 시간으로 저장**되어 **최대 약 10초 오차 발생**하는 것이 맞습니다.\n\n### 해결방안\n콜백에서 \"**현재 시스템 시간**\" 대신,  \n**현재 스트림의 `\"마지막 처리된 버퍼의 PTS (Presentation Timestamp)\"** 를 사용하면 됩니다.\n\n### 방법 요약\n- 전역 또는 클래스 내 변수에 `\"가장 최근 버퍼 pts\"` 저장\n  - `handoff`, `pad probe` 등에서 `buffer.pts` 읽어 업데이트\n- `on_format_location()` 호출 시, 그 값을 기반으로 파일명 생성  \n  (예: `base_time + 누적분` 계산 가능)\n  \n### 간단한 가이드\n1. 클래스에 `self.last_buffer_pts` 변수 추가\n2. `handoff` 콜백 내 혹은 적절한 패드 프로브 내에서:\n```python\nbuffer = ... # 현재 Gst.Buffer\nif buffer and buffer.pts != Gst.CLOCK_TIME_NONE:\n    self.last_buffer_pts = buffer.pts\n```\n3. `on_format_location()`에서:\n```python\nfrom datetime import datetime, timedelta\n\ntimestamp_sec = self.last_buffer_pts / Gst.SECOND\nts_datetime = datetime.fromtimestamp(timestamp_sec)\n\nnew_filename = f\"video_{ts_datetime.strftime('%Y-%m-%d_%H-%M-%S')}.mp4\"\nreturn new_filename\n```\n\n이렇게 하면 **실제 영상 캡처 시점**의 시간이 `파일명`으로 정확히 반영되어  \n10초 시간차 문제를 해결할 수 있습니다.",
+      "id": "54778be5-4d48-429a-b764-e330b85436b3",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 12628,
+          "completion_tokens": 352,
+          "total_tokens": 12980,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerId": "openrouter",
+          "providerType": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
     }
   ],
   "createdAt": 1744081361986,
-  "updatedAt": 1744086067421,
+  "updatedAt": 1744086893404,
   "schemaVersion": 1
 }

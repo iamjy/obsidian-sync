@@ -1,11 +1,4 @@
 ---
-properties:
-  category: 인증
-  name: GMP
-  scope: 의료기기
-  related:
-    - MFDS
-    - KISA
 title: 
 source: 
 author: 

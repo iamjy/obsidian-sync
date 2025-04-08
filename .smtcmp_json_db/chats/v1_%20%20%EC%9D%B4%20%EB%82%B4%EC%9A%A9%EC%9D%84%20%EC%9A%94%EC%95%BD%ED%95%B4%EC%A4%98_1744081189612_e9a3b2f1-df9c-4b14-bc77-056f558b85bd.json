@@ -91,9 +91,81 @@
           "model": "meta-llama/llama-4-maverick:free"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 내용을 요약해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n 내용을 요약해줘\n\n"
+        }
+      ],
+      "id": "2aa08dc8-9fd5-4bc3-8f88-5b06bfb9f012",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "## GMP 인증 요약\n\nGMP 인증 시 사이버 보안 요건은 의료기기의 특성과 위험도에 따라 식품의약품안전처(MFDS) 등의 가이드라인에 따름. KISA는 일반적인 사이버 보안 인증 및 정보보호 지원 역할을 담당. 의료기기 GMP 인증 관련 사이버 보안 등급은 해당 규제 당국의 지침에 의해 결정됨.",
+      "id": "f7d054c4-3451-404f-8688-b5eb4d4f4fb9",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 1902,
+          "completion_tokens": 78,
+          "total_tokens": 1980,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerId": "openrouter",
+          "providerType": "openrouter",
+          "id": "meta-llama-4-maverick",
+          "model": "meta-llama/llama-4-maverick:free"
+        }
+      }
     }
   ],
   "createdAt": 1744078863509,
-  "updatedAt": 1744081131434,
+  "updatedAt": 1744081189612,
   "schemaVersion": 1
 }

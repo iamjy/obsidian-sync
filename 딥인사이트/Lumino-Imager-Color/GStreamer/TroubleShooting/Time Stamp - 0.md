@@ -8,7 +8,11 @@ properties:
     - KISA
 title: 
 source: 
-author:
+author: 
+published: 
+created: 
+description: 
+tags:
 ---
 
 ---

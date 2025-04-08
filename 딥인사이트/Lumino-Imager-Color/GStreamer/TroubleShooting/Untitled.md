@@ -1,5 +1,7 @@
-
 ```
+{python icon title:foo} print("This is inline code")
+```
+
 #!/usr/bin/env python3
 
 """

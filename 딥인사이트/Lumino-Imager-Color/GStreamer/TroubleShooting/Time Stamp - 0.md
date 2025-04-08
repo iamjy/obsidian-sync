@@ -1,3 +1,27 @@
+---
+properties:
+  category: 인증
+  name: GMP
+  scope: 의료기기
+  related:
+    - MFDS
+    - KISA
+title: 
+source: 
+author:
+---
+
+---
+title: GMP 인증
+source: https://waylonwalker.com/how-to-kill-ollama-server/
+author:
+  - "[[@_louis]]"
+published: 
+created: 2025-02-25
+description: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t
+tags:
+  - gmp
+---
 
 10초 오차가 발생하는 근본적인 원인을 분석하기 위해 파일 분할 과정과 타임스탬프 관리 코드를 자세히 살펴보겠습니다.
 

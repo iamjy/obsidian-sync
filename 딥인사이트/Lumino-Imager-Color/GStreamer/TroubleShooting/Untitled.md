@@ -8,13 +8,13 @@
 
 Lumino-Imager-Color 카메라 애플리케이션
 
-  
+
 
 비디오 캡처와 녹화를 위한 메인 애플리케이션입니다.
 
 """
 
-  
+
 
 # 라즈베리파이 GPIO 관련 오류 방지를 위해 mock_gpio 모듈 먼저 임포트
 
@@ -440,6 +440,12 @@ self.last_pts_time = {} # PTS 값에 따른 시간 문자열 캐시
 # 초기화 메서드 호출 - 제거함 (start 메서드에서 호출됨)
 
 # self._initialize_pipeline()
+
+  
+
+# 파일 세그먼트 카운트
+
+self.segment_count = 0
 
   
 
@@ -1236,6 +1242,26 @@ str: 새 파일 경로
 """
 
 from datetime import datetime
+
+  
+
+# 파일 세그먼트 카운트 증가
+
+self.segment_count += 1
+
+logger.info(f"파일 세그먼트 카운트: {self.segment_count}")
+
+  
+
+# 두 번째 이상의 파일 세그먼트가 생성될 때 PTS 값 조정
+
+if self.segment_count > 1:
+
+self.last_buffer_pts = self.last_buffer_pts - 10 * Gst.SECOND
+
+logger.info(f"마지막 버퍼의 PTS 조정: {self.last_buffer_pts}")
+
+  
 
 # PTS 기반 시간 문자열 사용 (없으면 현재 시간 사용)
 
@@ -2147,63 +2173,55 @@ logger.info(f"PTS 기반 시간 문자열 생성: PTS={pts_seconds}초, 시간={
 
   
 
-# # 새 세그먼트 이벤트 생성
+# # base_time 갱신 - 스마트 오차 보정
 
-# #segment = Gst.Segment()
-
-# #segment.init(Gst.Format.TIME)
-
-# #segment.start = 0
-
-# #segment.stop = Gst.CLOCK_TIME_NONE
-
-# #segment.time = self.base_time
-
-# #segment.position = 0
-
-# #segment.base = self.base_time
-
-# #segment.offset = self.base_time
-
-# # 세그먼트 이벤트 전송
-
-# #segment_event = Gst.Event.new_segment(segment)
-
-# #result = pad.push_event(segment_event)
-
-# #logger.info(f"새 세그먼트 이벤트 전송 결과: {result}")
-
-  
-
-# # base_time 갱신 - 10초 오차 보정
-
-# # 첫 세그먼트(current_segment=1)에서는 보정 없이, 그 이후부터 10초 보정
+# # 첫 세그먼트에서는 보정 없이 설정
 
 # if self.current_segment == 1:
 
 # self.base_time = pts
 
+# logger.info(f"첫 번째 세그먼트 전환: base_time={pts/Gst.SECOND:.2f}초")
+
 # else:
 
-# # 두 번째 파일부터는 10초 오차 보정
+# # 두 번째 이후 파일에서는 자동 오차 보정
 
-# self.base_time = pts - 10 * Gst.SECOND
+# # 예상 시간 = 이전 base_time + 60초
 
-# logger.info(f"두 번째 이후 파일: 10초 오차 보정 적용")
+# expected_base_time = self.base_time + 60 * Gst.SECOND
 
-## 현재 세그먼트 내의 상대적 타임스탬프 계산
+# # 오차 계산 (실제 - 예상)
 
-##logger.info(f"time_in_segment: {time_in_segment}, base_time: {self.base_time/Gst.SECOND:.3f}")
+# offset = pts - expected_base_time
+
+# offset_ms = offset / Gst.MSECOND # 밀리초 단위로 변환
+
+# # 오차가 있을 경우에만 로그 출력 및 보정
+
+# if abs(offset_ms) > 100: # 100ms 이상 차이가 있을 경우만 보정
+
+# logger.info(f"파일 전환 오차 감지: {offset_ms:.0f}ms, 자동 보정 적용")
+
+# self.base_time = pts - offset # 오차만큼 보정
+
+# else:
+
+# # 오차가 적으면 정확히 60초 후로 설정
+
+# self.base_time = expected_base_time
+
+# logger.info(f"정확한 파일 전환: base_time={self.base_time/Gst.SECOND:.2f}초")
+
+# 현재 세그먼트 내의 상대적 타임스탬프 계산
 
 #adjusted_pts = pts - self.base_time
 
 #buffer.pts = adjusted_pts
 
-##logger.info(f"Buffer timestamp - PTS: {buffer.pts/Gst.SECOND:.3f}초, DTS: {buffer.dts/Gst.SECOND:.3f}초")
+# 디버깅 (10초마다 로깅)
 
-## 디버깅 (100초마다 로깅)
-
-#if adjusted_pts % (100 * Gst.SECOND) < 100 * 1000000:
+#if int(adjusted_pts / Gst.SECOND) % 10 == 0 and adjusted_pts % Gst.SECOND < 100 * Gst.MSECOND:
 
 # logger.info(f"타임스탬프 조정: 원본={pts/Gst.SECOND:.2f}초, 조정={adjusted_pts/Gst.SECOND:.2f}초, 세그먼트={self.current_segment}")
 

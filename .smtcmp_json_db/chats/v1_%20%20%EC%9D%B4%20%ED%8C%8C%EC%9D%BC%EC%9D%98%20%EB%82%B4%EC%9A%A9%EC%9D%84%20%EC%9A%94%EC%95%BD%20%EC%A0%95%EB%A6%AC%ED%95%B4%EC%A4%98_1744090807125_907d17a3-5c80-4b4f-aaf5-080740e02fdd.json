@@ -45,7 +45,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0 1.md"
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 1.md"
         }
       ]
     },
@@ -217,9 +217,81 @@
           "model": "openrouter/quasar-alpha"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 인코더 입력에 패드 프로브 설치하는 방법은?",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n 인코더 입력에 패드 프로브 설치하는 방법은?\n\n"
+        }
+      ],
+      "id": "36f1871d-a7b9-4d18-82c4-fc560d0eb357",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "인코더(`x264enc` 등)의 입력 패드(sink pad)에 프로브를 설치하려면 다음과 같이 진행하세요.\n\n### 방법\n1. **인코더 sink pad 참조 획득**\n2. **`add_probe()` 호출해 원하는 타입 및 콜백 등록**\n\n### 코드 예시\n```python\nencoder_sink_pad = self.encoder.get_static_pad(\"sink\")\nif encoder_sink_pad:\n    probe_id = encoder_sink_pad.add_probe(\n        Gst.PadProbeType.BUFFER,     # 혹은 원하는 타입\n        self.<probe_callback>,       # 콜백 함수 지정\n        user_data=None               # 필요시 사용자 데이터\n    )\n```\n\n### 기본 프로브 콜백 예제\n```python\ndef probe_callback(self, pad, info, user_data):\n    buffer = info.get_buffer()\n    if buffer:\n        # 버퍼 정보 활용 가능 (예: pts 저장)\n        pass\n    return Gst.PadProbeReturn.OK    # 그대로 통과\n```\n\n### 핵심 포인트\n- `sink` 또는 `src` 패드 모두 가능 (대개 인코더 입력 감시 용도면 `sink`)\n- 타입은 `BUFFER`, `EVENT_*` 등 필요에 맞게 선택\n- `remove_probe(probe_id)`로 해제 가능",
+      "id": "aaae79ff-d24f-4e4c-9c44-b9bb8ad44ec4",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 13010,
+          "completion_tokens": 275,
+          "total_tokens": 13285,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerType": "openrouter",
+          "providerId": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
     }
   ],
   "createdAt": 1744081361986,
-  "updatedAt": 1744089720846,
+  "updatedAt": 1744090807125,
   "schemaVersion": 1
 }

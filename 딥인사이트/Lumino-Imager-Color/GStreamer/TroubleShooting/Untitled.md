@@ -17,6 +17,7 @@ Lumino-Imager-Color 카메라 애플리케이션
   
 
 # 라즈베리파이 GPIO 관련 오류 방지를 위해 mock_gpio 모듈 먼저 임포트
+
 import sys
 
 import os
@@ -430,6 +431,12 @@ self.base_time = 0 # 현재 세그먼트 시작 기준 시간
 
 self.segment_start_time = 0 # 세그먼트 시작 시간
 
+# 마지막 버퍼의 PTS 추적 변수
+
+self.last_buffer_pts = 0 # 마지막으로 처리된 버퍼의 PTS
+
+self.last_pts_time = {} # PTS 값에 따른 시간 문자열 캐시
+
 # 초기화 메서드 호출 - 제거함 (start 메서드에서 호출됨)
 
 # self._initialize_pipeline()
@@ -826,27 +833,27 @@ return False
 
 # 인코더 출력에 패드 프로브 설치
 
-#encoder_src_pad = self.encoder.get_static_pad("src")
+encoder_src_pad = self.encoder.get_static_pad("src")
 
-#if encoder_src_pad:
+if encoder_src_pad:
 
-# probe_id = encoder_src_pad.add_probe(
+probe_id = encoder_src_pad.add_probe(
 
-# Gst.PadProbeType.BUFFER,
+Gst.PadProbeType.BUFFER,
 
-# self.timestamp_probe_callback,
+self.timestamp_probe_callback,
 
-# None
+None
 
-# )
+)
 
-# logger.info(f"타임스탬프 관리 프로브 설정 완료: ID={probe_id}")
+logger.info(f"타임스탬프 관리 프로브 설정 완료: ID={probe_id}")
 
-#else:
+else:
 
-# logger.error("인코더 출력 패드를 찾을 수 없음")
+logger.error("인코더 출력 패드를 찾을 수 없음")
 
-# return False
+return False
 
 return True
 
@@ -1210,13 +1217,67 @@ logger.info("MainLoop thread exited")
 
 def on_format_location(self, splitmux, fragment_id):
 
+"""
+
+새 파일 경로를 반환하는 콜백 함수
+
+PTS 기반 시간을 사용하여 정확한 녹화 시작 시간을 파일명에 반영
+
+Args:
+
+splitmux: splitmuxsink 요소
+
+fragment_id: 현재 파일 조각 ID
+
+Returns:
+
+str: 새 파일 경로
+
+"""
+
 from datetime import datetime
+
+# PTS 기반 시간 문자열 사용 (없으면 현재 시간 사용)
+
+if self.last_buffer_pts > 0:
+
+pts_seconds = int(self.last_buffer_pts / Gst.SECOND)
+
+# 캐시된 시간 문자열이 있는지 확인
+
+if pts_seconds in self.last_pts_time:
+
+timestamp = self.last_pts_time[pts_seconds]
+
+logger.info(f"PTS 기반 시간 사용: {timestamp} (PTS: {pts_seconds}초)")
+
+else:
+
+# 캐시에 없으면 현재 시간 조정하여 생성
+
+from datetime import timedelta
+
+current_time = datetime.now()
+
+stream_start_time = current_time - timedelta(seconds=pts_seconds)
+
+pts_time = stream_start_time + timedelta(seconds=pts_seconds)
+
+timestamp = pts_time.strftime("%Y-%m-%d_%H-%M-%S")
+
+logger.info(f"PTS 기반 시간 생성: {timestamp} (PTS: {pts_seconds}초)")
+
+else:
+
+# PTS 정보가 없으면 현재 시간 사용 (폴백)
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
+logger.info(f"현재 시간 사용 (PTS 정보 없음): {timestamp}")
+
 new_filename = f"video_{timestamp}.mp4"
 
-logger.info(f"[splitmuxsink]...: {new_filename}")
+logger.info(f"[splitmuxsink] 새 파일 생성: {new_filename} (fragment_id: {fragment_id})")
 
 return new_filename
 
@@ -2034,79 +2095,117 @@ duration = buffer.duration
 
 if pts != Gst.CLOCK_TIME_NONE:
 
-# 새 파일 세그먼트가 시작되었는지 확인
+# 마지막 버퍼의 PTS 저장 (파일명 생성용)
 
-time_in_segment = pts - self.base_time
+self.last_buffer_pts = pts
 
-if time_in_segment >= 60 * Gst.SECOND: # 1분(60초) 초과
+# 현재 PTS에 해당하는 시간 문자열 생성 및 캐싱
 
-# 새 세그먼트 시작
+# PTS가 초 단위로 변경될 때만 새로 계산 (최적화)
 
-self.current_segment += 1
+pts_seconds = int(pts / Gst.SECOND)
 
-logger.info(f"새 파일 세그먼트 시작: {self.current_segment}, 타임스탬프 초기화")
+if pts_seconds not in self.last_pts_time:
+
+# 시스템 시간에서 PTS 차이만큼 조정한 시간 계산
+
+from datetime import datetime, timedelta
+
+# GStreamer 시작 시점의 시스템 시간 추정 (현재 시간 - 경과한 PTS)
+
+current_time = datetime.now()
+
+stream_start_time = current_time - timedelta(seconds=pts_seconds)
+
+# PTS에 해당하는 시간 문자열 생성
+
+pts_time = stream_start_time + timedelta(seconds=pts_seconds)
+
+time_str = pts_time.strftime("%Y-%m-%d_%H-%M-%S")
+
+# 캐시에 저장
+
+self.last_pts_time[pts_seconds] = time_str
+
+# 주기적으로 로그 출력
+
+if pts_seconds % 10 == 0:
+
+logger.info(f"PTS 기반 시간 문자열 생성: PTS={pts_seconds}초, 시간={time_str}")
+
+## 새 파일 세그먼트가 시작되었는지 확인
+
+#time_in_segment = pts - self.base_time
+
+#if time_in_segment >= 60 * Gst.SECOND: # 1분(60초) 초과
+
+# # 새 세그먼트 시작
+
+# self.current_segment += 1
+
+# logger.info(f"새 파일 세그먼트 시작: {self.current_segment}, 타임스탬프 초기화")
 
   
 
-# 새 세그먼트 이벤트 생성
+# # 새 세그먼트 이벤트 생성
 
-#segment = Gst.Segment()
+# #segment = Gst.Segment()
 
-#segment.init(Gst.Format.TIME)
+# #segment.init(Gst.Format.TIME)
 
-#segment.start = 0
+# #segment.start = 0
 
-#segment.stop = Gst.CLOCK_TIME_NONE
+# #segment.stop = Gst.CLOCK_TIME_NONE
 
-#segment.time = self.base_time
+# #segment.time = self.base_time
 
-#segment.position = 0
+# #segment.position = 0
 
-#segment.base = self.base_time
+# #segment.base = self.base_time
 
-#segment.offset = self.base_time
+# #segment.offset = self.base_time
 
-# 세그먼트 이벤트 전송
+# # 세그먼트 이벤트 전송
 
-#segment_event = Gst.Event.new_segment(segment)
+# #segment_event = Gst.Event.new_segment(segment)
 
-#result = pad.push_event(segment_event)
+# #result = pad.push_event(segment_event)
 
-#logger.info(f"새 세그먼트 이벤트 전송 결과: {result}")
+# #logger.info(f"새 세그먼트 이벤트 전송 결과: {result}")
 
   
 
-# base_time 갱신 - 10초 오차 보정
+# # base_time 갱신 - 10초 오차 보정
 
-# 첫 세그먼트(current_segment=1)에서는 보정 없이, 그 이후부터 10초 보정
+# # 첫 세그먼트(current_segment=1)에서는 보정 없이, 그 이후부터 10초 보정
 
-if self.current_segment == 1:
+# if self.current_segment == 1:
 
-self.base_time = pts
+# self.base_time = pts
 
-else:
+# else:
 
-# 두 번째 파일부터는 10초 오차 보정
+# # 두 번째 파일부터는 10초 오차 보정
 
-self.base_time = pts - 10 * Gst.SECOND
+# self.base_time = pts - 10 * Gst.SECOND
 
-logger.info(f"두 번째 이후 파일: 10초 오차 보정 적용")
+# logger.info(f"두 번째 이후 파일: 10초 오차 보정 적용")
 
-# 현재 세그먼트 내의 상대적 타임스탬프 계산
+## 현재 세그먼트 내의 상대적 타임스탬프 계산
 
-#logger.info(f"time_in_segment: {time_in_segment}, base_time: {self.base_time/Gst.SECOND:.3f}")
+##logger.info(f"time_in_segment: {time_in_segment}, base_time: {self.base_time/Gst.SECOND:.3f}")
 
-adjusted_pts = pts - self.base_time
+#adjusted_pts = pts - self.base_time
 
-buffer.pts = adjusted_pts
+#buffer.pts = adjusted_pts
 
-#logger.info(f"Buffer timestamp - PTS: {buffer.pts/Gst.SECOND:.3f}초, DTS: {buffer.dts/Gst.SECOND:.3f}초")
+##logger.info(f"Buffer timestamp - PTS: {buffer.pts/Gst.SECOND:.3f}초, DTS: {buffer.dts/Gst.SECOND:.3f}초")
 
-# 디버깅 (100초마다 로깅)
+## 디버깅 (100초마다 로깅)
 
-if adjusted_pts % (100 * Gst.SECOND) < 100 * 1000000:
+#if adjusted_pts % (100 * Gst.SECOND) < 100 * 1000000:
 
-logger.info(f"타임스탬프 조정: 원본={pts/Gst.SECOND:.2f}초, 조정={adjusted_pts/Gst.SECOND:.2f}초, 세그먼트={self.current_segment}")
+# logger.info(f"타임스탬프 조정: 원본={pts/Gst.SECOND:.2f}초, 조정={adjusted_pts/Gst.SECOND:.2f}초, 세그먼트={self.current_segment}")
 
   
 

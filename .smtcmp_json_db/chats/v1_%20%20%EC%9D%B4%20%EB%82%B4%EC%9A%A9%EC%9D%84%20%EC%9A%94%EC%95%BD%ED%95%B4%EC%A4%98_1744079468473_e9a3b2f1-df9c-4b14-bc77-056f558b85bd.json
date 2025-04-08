@@ -1,0 +1,231 @@
+{
+  "id": "e9a3b2f1-df9c-4b14-bc77-056f558b85bd",
+  "title": "  이 내용을 요약해줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@GMP.md",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "GMP.md",
+                  "mentionable": {
+                    "type": "file",
+                    "file": "딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 여기 properties 양식에 맞춰 내용을 상단에 추가해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "## Potentially Relevant Snippets from the current vault\n```딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md\n2|---\n3|properties:\n4|  category: 품질관리\n5|  department: 인증\n6|  topic: GMP\n7|  related:\n8|    - 의료기기\n9|    - 사이버보안\n10|    - MFDS\n11|---\n12|<!-- ... 기존 YAML frontmatter ... -->\n13|---\n14|title: GMP 인증\n15|source: https://waylonwalker.com/how-to-kill-ollama-server/\n16|author:\n17|  - \"[[@_louis]]\"\n18|published: \n19|created: 2025-02-25\n20|description: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\n21|tags:\n22|  - gmp\n23|---\n24|<!-- ... 이하 내용 유지 ... -->\n```\n```딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md\n1|---\n2|title: GMP 인증\n3|source: https://waylonwalker.com/how-to-kill-ollama-server/\n4|author:\n5|  - \"[[@_louis]]\"\n6|published: \n7|created: 2025-02-25\n8|description: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\n9|tags:\n10|  - gmp\n11|---\n12|\n13|# GMP 인증\n14|의료기기 GMP 인증 시 요구되는 사이버 보안 요건은 의료기기의 특성과 위험도에 따라 식품의약품안전처(MFDS) 등 관련 보건당국에서 정한 가이드라인에 따르게 됩니다. KISA는 일반적인 사이버 보안 인증 및 정보보호 지원 역할을 담당하지만, 의료기기 GMP 인증과 관련한 사이버 보안 등급(분류)은 KISA에서 직접 정하는 것이 아니라 해당 의료기기 규제 당국의 지침에 의해 결정됩니다.\n```\n```딥인사이트/내부회의/Lumino-Imager-Color/20250211.md\n1|### 프로젝트 관리자의 윤리 및 전문직 행동 강령 중심 가치\n2|\t- 책임\n3|\t- 존중\n4|\t- 공정성\n5|\t- 정직\n6|\n7|\n8|### PMO ( Project Management Office ) 유형\n9|\t- 지원형\n10|\t- 통제형\n11|\t\t- 프로젝트 관리 프레임워크, 방법론, 템플릿 사용, 양식과 도구 등을 통해 프로젝트를 지원하고 프로젝트 관리 절차 준수를 요구\n12|\t- 지시형\n13|\n14|\n15|### 프로젝트 관리의 업무 원칙\n16|\t- 협력적 프로젝트 팀 환경 형성\n17|\t- 이해관계자와의 효과적 관계 형성\n18|\t- 가치 중심\n19|\t- 상황에 따른 조정\n20|\t- 프로세스 및 품질 체계 구축\n21|\t- 복잡성 탐색\n22|\t- 위험 대응 및 최적화\n23|\t- 계획한 향후 상태 달성을 위한 변화\n```\n```딥인사이트/내부회의/Lumino-Imager-Color/20250211.md\n78|#### 팀 빌딩 활동\n79|\t1. 형성기: 리더의 인도와 지시에 의존하는 단계\n80|\t2. 혼돈기: 의사결정이 잘 받아 들여지지 않으며 리더와 팀원, 또는 팀원간에도 갈등이 발생하는 단계\n81|\t3. 규범기: 팀원간의 합의와 컨센서스가 형성되면서 리더의 지원에 잘 반응하는 단계\n82|\t4. 성취기: 팀이 전략적으로 깨어 있어서 해야 할 일과 이유를 잘 알고 있고 비전을 공유하는 단계\n83|\t5. 휴지기: 임무가 성공적으로 완수되고 목적이 이루어져서 팀원들이 새로운 작업으로 이동하는 단계\n84|\n85|| 구분     | 형성기       | 혼돈기    | ==규범기==        | 성취기       | 휴지기       |\n86|| :----- | :-------- | :----- | :------------- | :-------- | :-------- |\n87|| 주요 내용  | 서로에 대한 인식 | 갈등 처리  | ==협력 구축==      | 생산성 향상    | 프로젝트 해산   |\n88|| 리더십    | 지시        | 지도     | ==참여==         | 위임        |           |\n89|| 필요한 방향 | 팀 방향성 정립  | 역할 명료화 | ==업무 및 역할 몰입== | 수행관리 및 평가 | 작업완료 및 해산 |\n90|#### 프로젝트 관리 계획 수립\n91|\t- 게획 수립의 목적\n92|\t- 계획 수립의 구성 요소\n93|#### 범위 관리 계획\n94|\t- 프로젝트 범위 기술서\n95|#### WBS ( Work Breakdown Structure )\n96|\t- ...\n97|#### 일정 관리 계획\n98|\t- 액티비티 정의\n99|\t- 액티비티 순서배열\n100|\t- 일정 개발\n101|\t- 프로젝트 스케줄 네트워크 다이어그램\n```\n```딥인사이트/내부회의/Lumino-Imager-Color/20250211.md\n15|### 프로젝트 관리의 업무 원칙\n16|\t- 협력적 프로젝트 팀 환경 형성\n17|\t- 이해관계자와의 효과적 관계 형성\n18|\t- 가치 중심\n19|\t- 상황에 따른 조정\n20|\t- 프로세스 및 품질 체계 구축\n21|\t- 복잡성 탐색\n22|\t- 위험 대응 및 최적화\n23|\t- 계획한 향후 상태 달성을 위한 변화\n24|\n25|\n26|### 프로젝트 라이프 사이클\n27|\t- 프로젝트의 여러 단계를 통합적으로 지징하는 용어\n28|\t- 프로젝트를 수행하는 조직은 하나의 프로젝트를 다시 여러개의 단계로 구분하여 관리\n29|\t- 프로젝트 단계 (Project Phase)는 프로젝트를 구성하는 단위이며, 중요한 산출물이 완료되는 시점을 기준으로 한다.\n30|#### 예측형 개발 방식\n31|\t- 프로젝트 초기에 명확한 요구사항 정의와 범위 및 품질 수준에 대한 목표 정의가 되어 예측 가능해야 한다.\n32|\t- 이 방식의 성패는 명확한 요구사항의 도출, 세밀한 계획 수립과 정확한 실행이며 착수, 계획, 실행, 통제의 프로젝트 관리 프로세스가 적용 가능해야 한다.\n33|#### 적응형 개발 방식\n34|\t- 프로젝트 요구사항과 범위와 품질 기준의 변동성이 크고 만들고자 하는 프로젝트 목적물의 불확실성이 높은 프로젝트 수행 시 적합한 방식\n35|\t- 프로젝트 변경과 추가되는 요구사항을 융통성 있게 관리하며, 변화하는 프로젝트 환경요소에 민첩하게 적용하며 수행하는 방식\n36|\t- 이 방식의 성패는 명확한 버전을 기반으로 한 수평적 조직문화와 프로젝트 참여자들의 자발적이고 능동적인 협업이 가능한가 여부에 달려있다.\n37|#### 혼합형 개발 방식\n38|\t- 전체 프로젝트 진행은 예측형 방식, 모듈 개발은 적응형 방식\n39|\t- IT 개발에서 단계별 수행 및 고객과의 의사소통은 예측형 방식인 폭포수 모델 개발 방법론을 사용하면서 개발 단계 부분만 적응형 방식\n```\n```딥인사이트/내부회의/Lumino-Imager-Color/20250211.md\n42|### 프로젝트 이해관계자 관리\n43|\t1. 이해관계자를 식별하기 위해서 관련 정보를 수집한다. 이해관계자 식별 단계는 잠재적인 이해관계자가 누구인지 파악하지 위해서 브레인스토밍 등을 통해서 이해관계자 정보를 수집하는 것이다.\n44|\t2. 식별한 이해관계자를 분류하여, 각각 접근 방식을 다르게 추진한다. 이해관계자를 식별한 후에는 여러분의 프로젝트에 영향을 미치는 사람이나 조직을 나열한 후, 이들을 분석하고 카테고리를 구성해야 한다.\n45|\t3. 분류된 이해관계자들이 어떤 식으로 반응하는지에 대한 정보를 파악하고 프로젝트에 긍정적인 효과를 낼 수 있도록 노력한다.\n46|\n47|| 프로세스 그룹 | 프로세스           | 설명                                          |\n48|| ------- | -------------- | ------------------------------------------- |\n49|| 착수      | 1. 이해관계자 식별    | 프로젝트에 관여하는 다양한 이해관계자들에 대해 미리 파악하는 프로세스      |\n50|| 계획      | 2. 이해관계자 분석    | 프로젝트 이해관계자들의 정보와 그들의 요구사항을 파악하여 의사소통 계획을 수립 |\n51|| 실행      | 3. 이해관계자 참여 관리 | 이해관계자들의 요구사항을 만족시킬 수 있도록 의사소통을 관리           |\n52|| 감시 및 통제 | 4. 이해관계자 모니터링  | 성과 정보를 수집하여 배포                              |\n```\n```딥인사이트/내부회의/Lumino-Imager-Color/20250211.md\n55|### 프로젝트 팀 관리\n56|\t - 개인적 역량\n57|\t\t - 할당된 업무를 수행할 수 있는 지식과 기술을 가지고 있어야 한다.\n58|\t\t - 역량이 높은 사람은 할당된 작업에 대한 정의와 어떻게 해야 하는지에 대해 이해하는 시간이 비교적 짧고, 예상되는 결과에 대해 프로젝트 매니저는 높은 확신을 가질 수 있기에 리뷰와 검사하는 빈도를 줄일 수 있음은 자명하다.\n59|\t\t - 반면, 그렇지 못한 사람에 대해서는 리뷰와 조언을 통해 제대로 업무를 수행할 수 있도록 도와주어야 한다.\n60|\t - 조직적 역량\n61|\t\t - 팀원들 간의 개인적인 차이를 조율\n62|\t\t - 개인간의 의사소통을 활성화\n63|\t\t - 기술과 경험을 함께 공유있는 환경을 제공\n64|#### 인적 자원 관리 계획\n65|\t- 프로젝트의 성격과 역할, 목적을 분석하여 필요한 인적 자원들에 대한 계획을 세우는 것\n66|\t- 팀원을 어떻게 확보할 것인가?\n67|\t- 팀원들이 따라야 하는 규정은 무엇인가?\n68|\t- 역할과 책임은 무엇인가?\n69|#### 프로젝트 팀 확보\n70|\t- 팀 구성원 대상자들에 대한 인터뷰 진행 후, 팀원 선정\n71|\t- 착수 회의를 개최하여, 역할과 책임을 명확하게 하고, 관리 프로세스를 설명, 의사소통 계획을 세우는 일들을 수행한다.\n72|#### 프로젝트 팀 개발\n73|\t- 프로젝트를 성공으로 이끌기 위하여, 필요한 개인 역량의 향상과 전체 생산성의 향상을 이루고자 하는 것\n74|\t- 이러한 활동은 프로젝트 수행 기간 중, 지속적으로 이루어져야 바람직한 결과를 얻을 수 있다.\n75|#### 프로젝트 팀 관리\n76|\t- 저마다 다양한 개성을 가진 팀원들에 대한, 역량과 책임을 철저하게 고려한 계획부터 출발하여, 이들을 적임에 배치하고, 부족하거나 필요한 역량을 채울 수 있도록 교육의 기회를 제공하며, 올바른 동기부여를 통하여 예상하고 계획했던 성과를 달성하도록 한다.\n77|\t- 팀원들 간에 서로의 신뢰를 바탕으로 결속함으로써, 상호간 협력할 수 있는 프로젝트의 수행 환경을 조성하고, 여러 갈등들을 효과적으로 통제할 수 있어야 한다.\n```\n```Excalidraw/Drawing 2025-02-02 16.38.46.excalidraw.md\n27|yCcJYU0AMZkCoRAmIrAYIQBAFAnqk3EqSPiBN0ComZEg5BoDsAiDplaHs+guTszgWiIm2IjgQDQb9RSmCMhQLEuTPBEhZLyTpqg9BZCsHQXZHzXkmlWZ/xIRgrBODdJiglEQnhzCMj8NMmpfmnDGGkOyOQ/QAAlIWNkRY6mEUwuRWDOji1gC5LixCNFQHkZBTgUBIL+TZARCiBjZFGJYaYjkhAjApX0SIzRGQrpYF3sAkqEBgjMnpqUNxdixEz13\n28|\n29|vvQ+IQT6qyCYY+Ro5SQXwPlfP0ESZG8IyEkigV0jYSHJqA5g2BoTsg/C8DYcRQZ/0KcU/AdRuAZ12NoFqPAziVNKEYNgBhf5SnoAQAcqYHzqNsfIpRutVHoHyUQokJBHHOIlPo6ZxAuQIDgL8KZpASAAFk2DhQSbgTQwQNp3m6qURZNDwzvCekiQ6pBlB4gABQtN2NQXgmYXlPJeThfYABKJkCiEDKA9PSWYdzcCPOjACXgEL3nQrBNoH5EBBncM\n30|\n31|MeIhA2ioCFiGlPFkit/k+g2YsbppQsj7MOX2UgA5VTYGQuSyl7wOD+VBGHd4wgoBHiZRSl+O0iF2AAFYIHmMwDkDK4DbN2Qyg5T9jlEPxBixgV1On4CJUlGYvJ0jzEdlSoQkIDA5NVUFGJWdLxwiOVtE5fdITNA1fKxVOdX5gF2iyNk4QEpxhAHGIAA=\n32|```\n33|%%\n```\n```Clippings/Ollama 1.md\n1360|## reader-lm\n1361|\n1362|A series of models that convert HTML content to Markdown content, which is useful for content conversion tasks.\n1363|\n1364|0.5b 1.5b\n1365|\n1366|28.3K  Pulls 33  Tags Updated  4 months ago\n1367|\n1368|](https://ollama.com/library/reader-lm)\n1369|- [\n1370|\n1371|## duckdb-nsql\n1372|\n1373|7B parameter text-to-SQL model made by MotherDuck and Numbers Station.\n1374|\n1375|7b\n1376|\n1377|28.2K  Pulls 17  Tags Updated  12 months ago\n1378|\n1379|](https://ollama.com/library/duckdb-nsql)\n1380|- [\n1381|\n1382|## marco-o1\n1383|\n1384|An open large reasoning model for real-world solutions by the Alibaba International Digital Commerce Group (AIDC-AI).\n1385|\n1386|7b\n1387|\n1388|27.7K  Pulls 5  Tags Updated  8 weeks ago\n1389|\n1390|](https://ollama.com/library/marco-o1)\n1391|- [\n1392|\n1393|## solar-pro\n1394|\n1395|Solar Pro Preview: an advanced large language model (LLM) with 22 billion parameters designed to fit into a single GPU\n1396|\n1397|22b\n1398|\n1399|27.2K  Pulls 18  Tags Updated  4 months ago\n1400|\n1401|](https://ollama.com/library/solar-pro)\n1402|- [\n```\n```Clippings/Ollama.md\n1360|## reader-lm\n1361|\n1362|A series of models that convert HTML content to Markdown content, which is useful for content conversion tasks.\n1363|\n1364|0.5b 1.5b\n1365|\n1366|28.3K  Pulls 33  Tags Updated  4 months ago\n1367|\n1368|](https://ollama.com/library/reader-lm)\n1369|- [\n1370|\n1371|## duckdb-nsql\n1372|\n1373|7B parameter text-to-SQL model made by MotherDuck and Numbers Station.\n1374|\n1375|7b\n1376|\n1377|28.2K  Pulls 17  Tags Updated  12 months ago\n1378|\n1379|](https://ollama.com/library/duckdb-nsql)\n1380|- [\n1381|\n1382|## marco-o1\n1383|\n1384|An open large reasoning model for real-world solutions by the Alibaba International Digital Commerce Group (AIDC-AI).\n1385|\n1386|7b\n1387|\n1388|27.7K  Pulls 5  Tags Updated  8 weeks ago\n1389|\n1390|](https://ollama.com/library/marco-o1)\n1391|- [\n1392|\n1393|## solar-pro\n1394|\n1395|Solar Pro Preview: an advanced large language model (LLM) with 22 billion parameters designed to fit into a single GPU\n1396|\n1397|22b\n1398|\n1399|27.2K  Pulls 18  Tags Updated  4 months ago\n1400|\n1401|](https://ollama.com/library/solar-pro)\n1402|- [\n```\n\n\n\n@GMP.md 여기 properties 양식에 맞춰 내용을 상단에 추가해줘\n\n"
+        }
+      ],
+      "id": "81dce5da-031b-4bf9-8039-3ba8946f65ae",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Time Stamp - 0.md"
+        },
+        {
+          "type": "file",
+          "file": "딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md"
+        }
+      ],
+      "similaritySearchResults": [
+        {
+          "id": 15,
+          "path": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md",
+          "mtime": 1744079401195,
+          "content": "---\nproperties:\n  category: 품질관리\n  department: 인증\n  topic: GMP\n  related:\n    - 의료기기\n    - 사이버보안\n    - MFDS\n---\n<!-- ... 기존 YAML frontmatter ... -->\n---\ntitle: GMP 인증\nsource: https://waylonwalker.com/how-to-kill-ollama-server/\nauthor:\n  - \"[[@_louis]]\"\npublished: \ncreated: 2025-02-25\ndescription: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\ntags:\n  - gmp\n---\n<!-- ... 이하 내용 유지 ... -->",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 24,
+            "startLine": 2
+          },
+          "similarity": 0.5619009392568415
+        },
+        {
+          "id": 16,
+          "path": "딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md",
+          "mtime": 1744000605255,
+          "content": "---\ntitle: GMP 인증\nsource: https://waylonwalker.com/how-to-kill-ollama-server/\nauthor:\n  - \"[[@_louis]]\"\npublished: \ncreated: 2025-02-25\ndescription: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\ntags:\n  - gmp\n---\n\n# GMP 인증\n의료기기 GMP 인증 시 요구되는 사이버 보안 요건은 의료기기의 특성과 위험도에 따라 식품의약품안전처(MFDS) 등 관련 보건당국에서 정한 가이드라인에 따르게 됩니다. KISA는 일반적인 사이버 보안 인증 및 정보보호 지원 역할을 담당하지만, 의료기기 GMP 인증과 관련한 사이버 보안 등급(분류)은 KISA에서 직접 정하는 것이 아니라 해당 의료기기 규제 당국의 지침에 의해 결정됩니다.",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 14,
+            "startLine": 1
+          },
+          "similarity": 0.4000344634293105
+        },
+        {
+          "id": 1,
+          "path": "딥인사이트/내부회의/Lumino-Imager-Color/20250211.md",
+          "mtime": 1744000605255,
+          "content": "### 프로젝트 관리자의 윤리 및 전문직 행동 강령 중심 가치\n\t- 책임\n\t- 존중\n\t- 공정성\n\t- 정직\n\n\n### PMO ( Project Management Office ) 유형\n\t- 지원형\n\t- 통제형\n\t\t- 프로젝트 관리 프레임워크, 방법론, 템플릿 사용, 양식과 도구 등을 통해 프로젝트를 지원하고 프로젝트 관리 절차 준수를 요구\n\t- 지시형\n\n\n### 프로젝트 관리의 업무 원칙\n\t- 협력적 프로젝트 팀 환경 형성\n\t- 이해관계자와의 효과적 관계 형성\n\t- 가치 중심\n\t- 상황에 따른 조정\n\t- 프로세스 및 품질 체계 구축\n\t- 복잡성 탐색\n\t- 위험 대응 및 최적화\n\t- 계획한 향후 상태 달성을 위한 변화",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 23,
+            "startLine": 1
+          },
+          "similarity": 0.33637357896510345
+        },
+        {
+          "id": 5,
+          "path": "딥인사이트/내부회의/Lumino-Imager-Color/20250211.md",
+          "mtime": 1744000605255,
+          "content": "#### 팀 빌딩 활동\n\t1. 형성기: 리더의 인도와 지시에 의존하는 단계\n\t2. 혼돈기: 의사결정이 잘 받아 들여지지 않으며 리더와 팀원, 또는 팀원간에도 갈등이 발생하는 단계\n\t3. 규범기: 팀원간의 합의와 컨센서스가 형성되면서 리더의 지원에 잘 반응하는 단계\n\t4. 성취기: 팀이 전략적으로 깨어 있어서 해야 할 일과 이유를 잘 알고 있고 비전을 공유하는 단계\n\t5. 휴지기: 임무가 성공적으로 완수되고 목적이 이루어져서 팀원들이 새로운 작업으로 이동하는 단계\n\n| 구분     | 형성기       | 혼돈기    | ==규범기==        | 성취기       | 휴지기       |\n| :----- | :-------- | :----- | :------------- | :-------- | :-------- |\n| 주요 내용  | 서로에 대한 인식 | 갈등 처리  | ==협력 구축==      | 생산성 향상    | 프로젝트 해산   |\n| 리더십    | 지시        | 지도     | ==참여==         | 위임        |           |\n| 필요한 방향 | 팀 방향성 정립  | 역할 명료화 | ==업무 및 역할 몰입== | 수행관리 및 평가 | 작업완료 및 해산 |\n#### 프로젝트 관리 계획 수립\n\t- 게획 수립의 목적\n\t- 계획 수립의 구성 요소\n#### 범위 관리 계획\n\t- 프로젝트 범위 기술서\n#### WBS ( Work Breakdown Structure )\n\t- ...\n#### 일정 관리 계획\n\t- 액티비티 정의\n\t- 액티비티 순서배열\n\t- 일정 개발\n\t- 프로젝트 스케줄 네트워크 다이어그램",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 101,
+            "startLine": 78
+          },
+          "similarity": 0.3080678515879798
+        },
+        {
+          "id": 2,
+          "path": "딥인사이트/내부회의/Lumino-Imager-Color/20250211.md",
+          "mtime": 1744000605255,
+          "content": "### 프로젝트 관리의 업무 원칙\n\t- 협력적 프로젝트 팀 환경 형성\n\t- 이해관계자와의 효과적 관계 형성\n\t- 가치 중심\n\t- 상황에 따른 조정\n\t- 프로세스 및 품질 체계 구축\n\t- 복잡성 탐색\n\t- 위험 대응 및 최적화\n\t- 계획한 향후 상태 달성을 위한 변화\n\n\n### 프로젝트 라이프 사이클\n\t- 프로젝트의 여러 단계를 통합적으로 지징하는 용어\n\t- 프로젝트를 수행하는 조직은 하나의 프로젝트를 다시 여러개의 단계로 구분하여 관리\n\t- 프로젝트 단계 (Project Phase)는 프로젝트를 구성하는 단위이며, 중요한 산출물이 완료되는 시점을 기준으로 한다.\n#### 예측형 개발 방식\n\t- 프로젝트 초기에 명확한 요구사항 정의와 범위 및 품질 수준에 대한 목표 정의가 되어 예측 가능해야 한다.\n\t- 이 방식의 성패는 명확한 요구사항의 도출, 세밀한 계획 수립과 정확한 실행이며 착수, 계획, 실행, 통제의 프로젝트 관리 프로세스가 적용 가능해야 한다.\n#### 적응형 개발 방식\n\t- 프로젝트 요구사항과 범위와 품질 기준의 변동성이 크고 만들고자 하는 프로젝트 목적물의 불확실성이 높은 프로젝트 수행 시 적합한 방식\n\t- 프로젝트 변경과 추가되는 요구사항을 융통성 있게 관리하며, 변화하는 프로젝트 환경요소에 민첩하게 적용하며 수행하는 방식\n\t- 이 방식의 성패는 명확한 버전을 기반으로 한 수평적 조직문화와 프로젝트 참여자들의 자발적이고 능동적인 협업이 가능한가 여부에 달려있다.\n#### 혼합형 개발 방식\n\t- 전체 프로젝트 진행은 예측형 방식, 모듈 개발은 적응형 방식\n\t- IT 개발에서 단계별 수행 및 고객과의 의사소통은 예측형 방식인 폭포수 모델 개발 방법론을 사용하면서 개발 단계 부분만 적응형 방식",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 39,
+            "startLine": 15
+          },
+          "similarity": 0.29161522657818295
+        },
+        {
+          "id": 3,
+          "path": "딥인사이트/내부회의/Lumino-Imager-Color/20250211.md",
+          "mtime": 1744000605255,
+          "content": "### 프로젝트 이해관계자 관리\n\t1. 이해관계자를 식별하기 위해서 관련 정보를 수집한다. 이해관계자 식별 단계는 잠재적인 이해관계자가 누구인지 파악하지 위해서 브레인스토밍 등을 통해서 이해관계자 정보를 수집하는 것이다.\n\t2. 식별한 이해관계자를 분류하여, 각각 접근 방식을 다르게 추진한다. 이해관계자를 식별한 후에는 여러분의 프로젝트에 영향을 미치는 사람이나 조직을 나열한 후, 이들을 분석하고 카테고리를 구성해야 한다.\n\t3. 분류된 이해관계자들이 어떤 식으로 반응하는지에 대한 정보를 파악하고 프로젝트에 긍정적인 효과를 낼 수 있도록 노력한다.\n\n| 프로세스 그룹 | 프로세스           | 설명                                          |\n| ------- | -------------- | ------------------------------------------- |\n| 착수      | 1. 이해관계자 식별    | 프로젝트에 관여하는 다양한 이해관계자들에 대해 미리 파악하는 프로세스      |\n| 계획      | 2. 이해관계자 분석    | 프로젝트 이해관계자들의 정보와 그들의 요구사항을 파악하여 의사소통 계획을 수립 |\n| 실행      | 3. 이해관계자 참여 관리 | 이해관계자들의 요구사항을 만족시킬 수 있도록 의사소통을 관리           |\n| 감시 및 통제 | 4. 이해관계자 모니터링  | 성과 정보를 수집하여 배포                              |",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 52,
+            "startLine": 42
+          },
+          "similarity": 0.29035623615253914
+        },
+        {
+          "id": 4,
+          "path": "딥인사이트/내부회의/Lumino-Imager-Color/20250211.md",
+          "mtime": 1744000605255,
+          "content": "### 프로젝트 팀 관리\n\t - 개인적 역량\n\t\t - 할당된 업무를 수행할 수 있는 지식과 기술을 가지고 있어야 한다.\n\t\t - 역량이 높은 사람은 할당된 작업에 대한 정의와 어떻게 해야 하는지에 대해 이해하는 시간이 비교적 짧고, 예상되는 결과에 대해 프로젝트 매니저는 높은 확신을 가질 수 있기에 리뷰와 검사하는 빈도를 줄일 수 있음은 자명하다.\n\t\t - 반면, 그렇지 못한 사람에 대해서는 리뷰와 조언을 통해 제대로 업무를 수행할 수 있도록 도와주어야 한다.\n\t - 조직적 역량\n\t\t - 팀원들 간의 개인적인 차이를 조율\n\t\t - 개인간의 의사소통을 활성화\n\t\t - 기술과 경험을 함께 공유있는 환경을 제공\n#### 인적 자원 관리 계획\n\t- 프로젝트의 성격과 역할, 목적을 분석하여 필요한 인적 자원들에 대한 계획을 세우는 것\n\t- 팀원을 어떻게 확보할 것인가?\n\t- 팀원들이 따라야 하는 규정은 무엇인가?\n\t- 역할과 책임은 무엇인가?\n#### 프로젝트 팀 확보\n\t- 팀 구성원 대상자들에 대한 인터뷰 진행 후, 팀원 선정\n\t- 착수 회의를 개최하여, 역할과 책임을 명확하게 하고, 관리 프로세스를 설명, 의사소통 계획을 세우는 일들을 수행한다.\n#### 프로젝트 팀 개발\n\t- 프로젝트를 성공으로 이끌기 위하여, 필요한 개인 역량의 향상과 전체 생산성의 향상을 이루고자 하는 것\n\t- 이러한 활동은 프로젝트 수행 기간 중, 지속적으로 이루어져야 바람직한 결과를 얻을 수 있다.\n#### 프로젝트 팀 관리\n\t- 저마다 다양한 개성을 가진 팀원들에 대한, 역량과 책임을 철저하게 고려한 계획부터 출발하여, 이들을 적임에 배치하고, 부족하거나 필요한 역량을 채울 수 있도록 교육의 기회를 제공하며, 올바른 동기부여를 통하여 예상하고 계획했던 성과를 달성하도록 한다.\n\t- 팀원들 간에 서로의 신뢰를 바탕으로 결속함으로써, 상호간 협력할 수 있는 프로젝트의 수행 환경을 조성하고, 여러 갈등들을 효과적으로 통제할 수 있어야 한다.",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 77,
+            "startLine": 55
+          },
+          "similarity": 0.28033250482799876
+        },
+        {
+          "id": 20,
+          "path": "Excalidraw/Drawing 2025-02-02 16.38.46.excalidraw.md",
+          "mtime": 1744000605255,
+          "content": "yCcJYU0AMZkCoRAmIrAYIQBAFAnqk3EqSPiBN0ComZEg5BoDsAiDplaHs+guTszgWiIm2IjgQDQb9RSmCMhQLEuTPBEhZLyTpqg9BZCsHQXZHzXkmlWZ/xIRgrBODdJiglEQnhzCMj8NMmpfmnDGGkOyOQ/QAAlIWNkRY6mEUwuRWDOji1gC5LixCNFQHkZBTgUBIL+TZARCiBjZFGJYaYjkhAjApX0SIzRGQrpYF3sAkqEBgjMnpqUNxdixEz13\n\nvvQ+IQT6qyCYY+Ro5SQXwPlfP0ESZG8IyEkigV0jYSHJqA5g2BoTsg/C8DYcRQZ/0KcU/AdRuAZ12NoFqPAziVNKEYNgBhf5SnoAQAcqYHzqNsfIpRutVHoHyUQokJBHHOIlPo6ZxAuQIDgL8KZpASAAFk2DhQSbgTQwQNp3m6qURZNDwzvCekiQ6pBlB4gABQtN2NQXgmYXlPJeThfYABKJkCiEDKA9PSWYdzcCPOjACXgEL3nQrBNoH5EBBncM\n\nMeIhA2ioCFiGlPFkit/k+g2YsbppQsj7MOX2UgA5VTYGQuSyl7wOD+VBGHd4wgoBHiZRSl+O0iF2AAFYIHmMwDkDK4DbN2Qyg5T9jlEPxBixgV1On4CJUlGYvJ0jzEdlSoQkIDA5NVUFGJWdLxwiOVtE5fdITNA1fKxVOdX5gF2iyNk4QEpxhAHGIAA=\n```\n%%",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 33,
+            "startLine": 27
+          },
+          "similarity": 0.27754742223159345
+        },
+        {
+          "id": 96,
+          "path": "Clippings/Ollama 1.md",
+          "mtime": 1744000605254,
+          "content": "## reader-lm\n\nA series of models that convert HTML content to Markdown content, which is useful for content conversion tasks.\n\n0.5b 1.5b\n\n28.3K  Pulls 33  Tags Updated  4 months ago\n\n](https://ollama.com/library/reader-lm)\n- [\n\n## duckdb-nsql\n\n7B parameter text-to-SQL model made by MotherDuck and Numbers Station.\n\n7b\n\n28.2K  Pulls 17  Tags Updated  12 months ago\n\n](https://ollama.com/library/duckdb-nsql)\n- [\n\n## marco-o1\n\nAn open large reasoning model for real-world solutions by the Alibaba International Digital Commerce Group (AIDC-AI).\n\n7b\n\n27.7K  Pulls 5  Tags Updated  8 weeks ago\n\n](https://ollama.com/library/marco-o1)\n- [\n\n## solar-pro\n\nSolar Pro Preview: an advanced large language model (LLM) with 22 billion parameters designed to fit into a single GPU\n\n22b\n\n27.2K  Pulls 18  Tags Updated  4 months ago\n\n](https://ollama.com/library/solar-pro)\n- [",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 1402,
+            "startLine": 1360
+          },
+          "similarity": 0.2698348169239325
+        },
+        {
+          "id": 55,
+          "path": "Clippings/Ollama.md",
+          "mtime": 1744000605254,
+          "content": "## reader-lm\n\nA series of models that convert HTML content to Markdown content, which is useful for content conversion tasks.\n\n0.5b 1.5b\n\n28.3K  Pulls 33  Tags Updated  4 months ago\n\n](https://ollama.com/library/reader-lm)\n- [\n\n## duckdb-nsql\n\n7B parameter text-to-SQL model made by MotherDuck and Numbers Station.\n\n7b\n\n28.2K  Pulls 17  Tags Updated  12 months ago\n\n](https://ollama.com/library/duckdb-nsql)\n- [\n\n## marco-o1\n\nAn open large reasoning model for real-world solutions by the Alibaba International Digital Commerce Group (AIDC-AI).\n\n7b\n\n27.7K  Pulls 5  Tags Updated  8 weeks ago\n\n](https://ollama.com/library/marco-o1)\n- [\n\n## solar-pro\n\nSolar Pro Preview: an advanced large language model (LLM) with 22 billion parameters designed to fit into a single GPU\n\n22b\n\n27.2K  Pulls 18  Tags Updated  4 months ago\n\n](https://ollama.com/library/solar-pro)\n- [",
+          "model": "openai/text-embedding-3-small",
+          "dimension": 1536,
+          "metadata": {
+            "endLine": 1402,
+            "startLine": 1360
+          },
+          "similarity": 0.2697952039260214
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "<smtcmp_block filename=\"딥인사이트/Lumino-Imager-Color/품질관리/인증/GMP.md\" language=\"markdown\">\n---\nproperties:\n  category: 품질관리\n  department: 인증\n  topic: GMP\n  related:\n    - 의료기기\n    - 사이버보안\n    - MFDS\n---\n\ntitle: GMP 인증\nsource: https://waylonwalker.com/how-to-kill-ollama-server/\nauthor:\n  - \"[[@_louis]]\"\npublished: \ncreated: 2025-02-25\ndescription: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t\ntags:\n  - gmp\n---\n\n# GMP 인증\n의료기기 GMP 인증 시 요구되는 사이버 보안 요건은 의료기기의 특성과 위험도에 따라 식품의약품안전처(MFDS) 등 관련 보건당국에서 정한 가이드라인에 따르게 됩니다. KISA는 일반적인 사이버 보안 인증 및 정보보호 지원 역할을 담당하지만, 의료기기 GMP 인증과 관련한 사이버 보안 등급(분류)은 KISA에서 직접 정하는 것이 아니라 해당 의료기기 규제 당국의 지침에 의해 결정됩니다.\n</smtcmp_block>",
+      "id": "3127b055-3ef5-4be2-8334-7dc02ea029e6",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 5440,
+          "completion_tokens": 300,
+          "total_tokens": 5740,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerId": "openrouter",
+          "providerType": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744078863509,
+  "updatedAt": 1744079468473,
+  "schemaVersion": 1
+}

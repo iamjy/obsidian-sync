@@ -1,64 +1,34 @@
 
-10초 오차가 발생하는 근본적인 원인을 분석하기 위해 파일 분할 과정과 타임스탬프 관리 코드를 자세히 살펴보겠습니다.
+`on_format_location()`에서 **현재 시간을 직접 사용하면 GStreamer 내부 전환 시점보다 늦은 시간으로 저장**되어 **최대 약 10초 오차 발생**하는 것이 맞습니다.
 
-Search files...
-이제 타임스탬프 관리에 대한 코드를 더 자세히 검토하겠습니다:
+### 해결방안
+콜백에서 "**현재 시스템 시간**" 대신,  
+**현재 스트림의 `"마지막 처리된 버퍼의 PTS (Presentation Timestamp)"** 를 사용하면 됩니다.
 
-Read file: lumino-medison/ICG-Color/apps/apps-camera/main.py
-
-Read file: lumino-medison/ICG-Color/apps/apps-camera/main.py
-코드 분석을 통해 10초 오차가 발생하는 근본적인 원인을 파악했습니다:
-
-### 10초 오차의 근본 원인
-
-1. **GStreamer splitmuxsink의 동작 방식**:
-   - `splitmuxsink`는 `max-size-time` 속성(60초)에 도달하면 파일 분할을 시작합니다
-   - 그러나 파일 분할은 즉시 일어나지 않고 키프레임 요청 → 키프레임 생성 → 파일 전환 과정이 필요합니다
-
-2. **두 개의 독립적인 타임스탬프 관리 시스템**:
-   - **시스템 A**: `splitmuxsink`가 파일을 물리적으로 분할하는 시점 (GStreamer 내부에서 관리)
-   - **시스템 B**: `timestamp_probe_callback`에서 사용자가 구현한 타임스탬프 조정 로직
-   - 이 두 시스템이 완벽하게 동기화되지 않아 문제 발생
-
-3. **지연 요소들**:
-   - 실제 파일 분할 결정 후 키프레임을 기다리는 지연 (~1-2초)
-   - 키프레임이 생성된 후 파일을 닫고 새 파일을 여는 과정의 지연 (~1-2초)
-   - 녹화 경로에 존재하는 버퍼와 큐에 의한 지연 (~5-7초)
-   - 이러한 지연들이 누적되어 약 10초의 차이 발생
-
-4. **로그에서 확인할 수 있는 현상**:
-   ```
-   # 파일 분할이 시작될 때 (내부적으로 결정됨)
-   [splitmuxsink]...: video_2023-05-10_15-30-00.mp4
-   
-   # 실제로 파일이 열림
-   새 파일 시작: fragment-id=1, 패드 프로브에서 타임스탬프 조정됨
-   
-   # 약 10초 후에 타임스탬프 콜백이 이를 감지
-   새 파일 세그먼트 시작: 1, 타임스탬프 초기화
-   ```
-
-5. **정확한 문제 포인트**:
-   - **첫 번째 파일**에서는 문제가 없습니다. 녹화가 시작되면 `base_time`이 설정되고 타임스탬프가 정상적으로 조정됩니다.
-   - **두 번째 파일**에서 문제가 발생합니다. `splitmuxsink`가 파일을 분할하여 새 파일이 생성되지만, 실제로 `timestamp_probe_callback`에서 `base_time`을 업데이트하는 것은 약 10초 후입니다. 이 10초 동안 첫 번째 파일의 타임스탬프가 이어지게 됩니다.
-
-### 해결책 원리
-
-지금까지 적용된 해결책은 이러한 지연을 보정하는 방식입니다:
-
+### 방법 요약
+- 전역 또는 클래스 내 변수에 `"가장 최근 버퍼 pts"` 저장
+  - `handoff`, `pad probe` 등에서 `buffer.pts` 읽어 업데이트
+- `on_format_location()` 호출 시, 그 값을 기반으로 파일명 생성  
+  (예: `base_time + 누적분` 계산 가능)
+  
+### 간단한 가이드
+1. 클래스에 `self.last_buffer_pts` 변수 추가
+2. `handoff` 콜백 내 혹은 적절한 패드 프로브 내에서:
 ```python
-# 첫 세그먼트(current_segment=1)에서는 보정 없이
-if self.current_segment == 1:
-    self.base_time = pts
-else:
-    # 두 번째 파일부터는 10초 오차 보정
-    self.base_time = pts - 10 * Gst.SECOND
+buffer = ... # 현재 Gst.Buffer
+if buffer and buffer.pts != Gst.CLOCK_TIME_NONE:
+    self.last_buffer_pts = buffer.pts
+```
+3. `on_format_location()`에서:
+```python
+from datetime import datetime, timedelta
+
+timestamp_sec = self.last_buffer_pts / Gst.SECOND
+ts_datetime = datetime.fromtimestamp(timestamp_sec)
+
+new_filename = f"video_{ts_datetime.strftime('%Y-%m-%d_%H-%M-%S')}.mp4"
+return new_filename
 ```
 
-이 수정은 두 번째 파일부터 발생하는 10초 지연을 보정하여 타임스탬프를 '이전에 왔어야 했던' 시간으로 되돌립니다. 
-
-이 방식은 두 개의 독립적인 시스템(GStreamer의 내부 분할 메커니즘과 사용자 구현 타임스탬프 조정 로직) 사이의 시간 차이를 수동으로 보정해주는 것입니다.
-
-### 결론
-
-10초 오차는 실시간 미디어 처리 파이프라인에서 흔히 발생하는 버퍼링, 키프레임 요청 대기, 파일 I/O 지연 등의 결과입니다. 이는 GStreamer의 비동기 멀티스레드 설계로 인한 불가피한 현상이며, 현재 적용된 해결책은 이 타이밍 차이를 적절히 보정하는 효과적인 방법입니다.
+이렇게 하면 **실제 영상 캡처 시점**의 시간이 `파일명`으로 정확히 반영되어  
+10초 시간차 문제를 해결할 수 있습니다.

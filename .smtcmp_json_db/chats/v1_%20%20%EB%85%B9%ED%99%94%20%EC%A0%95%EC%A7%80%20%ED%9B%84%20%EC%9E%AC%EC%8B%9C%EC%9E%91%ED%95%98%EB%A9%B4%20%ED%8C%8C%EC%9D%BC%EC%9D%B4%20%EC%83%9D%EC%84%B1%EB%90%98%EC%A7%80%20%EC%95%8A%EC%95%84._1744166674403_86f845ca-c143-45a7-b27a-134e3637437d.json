@@ -145,9 +145,81 @@
           "model": "openrouter/quasar-alpha"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "녹화 중지 후 재시작할 때 on_format_location 콜백 함수가 호촐되지 않는 문제를 해결해.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n녹화 중지 후 재시작할 때 on_format_location 콜백 함수가 호촐되지 않는 문제를 해결해.\n\n"
+        }
+      ],
+      "id": "ee012bb4-6a66-484d-b738-6860266214b4",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "`splitmuxsink`는 처음에 `muxer`와 파일을 생성하고 연결해 두기 때문에, 녹화를 정지했다가 같은 `splitmuxsink`로 재시작하면 새 fragment나 새 location 콜백이 호출되지 않습니다.\n\n해결 방법: \n\n- 녹화 중지 시 splitmuxsink에 EOS를 보내 정상 종료.\n- 녹화 중지 후 기존 splitmuxsink를 제거, 새 splitmuxsink 및 관련 요소를 생성.\n- 새 splitmuxsink에 `on_format_location` 콜백을 다시 연결.\n- 새 splitmuxsink를 pipeline에 추가 후 녹화 재시작.\n\n즉, 녹화 재개하려면 *splitmuxsink를 recreate* 해야 `on_format_location()`이 호출됩니다.\n\n간단 수정안:\n<smtcmp_block filename=\"딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md\" language=\"markdown\">\n### `stop_recording()` 마지막 부분에 추가\n```python\n# 기존 splitmuxsink 연결 해제 및 삭제\ntry:\n    self.pipeline.remove(self.splitmuxsink)\nexcept:\n    pass\nself.splitmuxsink = None\n```\n\n### `start_recording()` 내, 기존 splitmuxsink 검사 후 새 splitmuxsink 생성 코드 — 기존 메서드 내 \n```python\n# splitmuxsink가 없거나 비활성화 상태면 새로 생성\nif not self.splitmuxsink:\n    self.splitmuxsink = self.gst.create_element(\"splitmuxsink\", \"sink\")\n    self.muxer = self.gst.create_element(\"mp4mux\", \"muxer\")\n    self.splitmuxsink.set_property(\"muxer\", self.muxer)\n    self.splitmuxsink.connect(\"format-location\", self.on_format_location)\n    # 기타 splitmuxsink 옵션 재설정 (max-size-time 등)\n    # pipeline 재연결: parser.link(splitmuxsink)\n    self.pipeline.add(self.splitmuxsink)\n    self.parser.link(self.splitmuxsink)\n```\n</smtcmp_block>\n\n이렇게 하면, 녹화 재시작 때 `splitmuxsink`가 새로 생성되어 호출됩니다.",
+      "id": "42e2887f-6f8e-4b68-b9cd-8d0450ab099d",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 13219,
+          "completion_tokens": 454,
+          "total_tokens": 13673,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 13056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerType": "openrouter",
+          "providerId": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
     }
   ],
   "createdAt": 1744165929476,
-  "updatedAt": 1744165987343,
+  "updatedAt": 1744166674403,
   "schemaVersion": 1
 }

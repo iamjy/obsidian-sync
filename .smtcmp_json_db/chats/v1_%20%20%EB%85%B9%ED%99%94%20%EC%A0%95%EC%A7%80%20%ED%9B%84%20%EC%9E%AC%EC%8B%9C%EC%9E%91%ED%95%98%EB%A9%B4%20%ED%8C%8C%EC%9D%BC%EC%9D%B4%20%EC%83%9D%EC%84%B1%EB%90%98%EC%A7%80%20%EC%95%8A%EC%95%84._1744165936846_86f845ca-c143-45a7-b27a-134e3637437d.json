@@ -1,0 +1,81 @@
+{
+  "id": "86f845ca-c143-45a7-b27a-134e3637437d",
+  "title": "  녹화 정지 후 재시작하면 파일이 생성되지 않아.",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "  녹화 정지 후 재시작하면 파일이 생성되지 않아.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n  녹화 정지 후 재시작하면 파일이 생성되지 않아.\n\n"
+        }
+      ],
+      "id": "919ee50f-f781-413a-9872-07eae8a67d18",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "녹화 정지 후 다시 시작할 때, `splitmuxsink`에 파일명을 다시 지정하지 않으면 새 파일이 만들어지지 않을 수 있습니다. `start_recording()` 내에 `location` 속성을 명시적으로 업데이트해보세요.\n\n다음 위치에 코드를 추가하세요.\n\n<smtcmp_block filename=\"딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled.md\" language=\"markdown\">\n### `start_recording()` 내부\n```python\ntry:\n    logger.info(\"녹화 시작: tee와 녹화 경로를 연결합니다.\")\n    # === 이 부분 추가 ===\n    from datetime import datetime\n    timestamp = datetime.now().strftime(\"%Y-%m-%d_%H-%M-%S\")\n    output_pattern = f\"video_{timestamp}_%03d.mp4\"\n    self.splitmuxsink.set_property(\"location\", output_pattern)\n    logger.info(f\"녹화 파일명 업데이트 : {output_pattern}\")\n    # ====================\n```\n</smtcmp_block>\n\n이렇게 하면 녹화를 멈췄다가 재시작할 경우에도 새 파일이 생성됩니다.",
+      "id": "23f56b49-b9aa-41bb-9360-358e993aa099",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 12673,
+          "completion_tokens": 245,
+          "total_tokens": 12918,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerType": "openrouter",
+          "providerId": "openrouter",
+          "id": "quasar-alpha",
+          "model": "openrouter/quasar-alpha"
+        }
+      }
+    }
+  ],
+  "createdAt": 1744165929476,
+  "updatedAt": 1744165936846,
+  "schemaVersion": 1
+}

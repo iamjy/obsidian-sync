@@ -339,65 +339,31 @@
     },
     {
       "role": "assistant",
-      "content": "",
-      "id": "36bf55f4-a859-4578-bff2-a90d89b03df6",
-      "metadata": {}
-    },
-    {
-      "role": "user",
-      "content": {
-        "root": {
-          "children": [
-            {
-              "children": [
-                {
-                  "detail": 0,
-                  "format": 0,
-                  "mode": "normal",
-                  "style": "",
-                  "text": "hi",
-                  "type": "text",
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "format": "",
-              "indent": 0,
-              "type": "paragraph",
-              "version": 1,
-              "textFormat": 0,
-              "textStyle": ""
-            }
-          ],
-          "direction": "ltr",
-          "format": "",
-          "indent": 0,
-          "type": "root",
-          "version": 1
+      "content": "## Hi! How can I assist you with your Obsidian markdown files today?",
+      "id": "cab6ef90-b9d8-4e05-a2f0-1e5d805590d5",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 2502,
+          "completion_tokens": 17,
+          "total_tokens": 2519,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerType": "openrouter",
+          "providerId": "openrouter",
+          "id": "meta-llama-4-maverick",
+          "model": "meta-llama/llama-4-maverick:free"
         }
-      },
-      "promptContent": [
-        {
-          "type": "text",
-          "text": "\n\nhi\n\n"
-        }
-      ],
-      "id": "019f14ac-dd89-4bb5-8a6b-05f115a9491f",
-      "mentionables": [
-        {
-          "type": "current-file",
-          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled 5.md"
-        }
-      ]
-    },
-    {
-      "role": "assistant",
-      "content": "",
-      "id": "3063a134-31fd-478f-8eba-0ee6e41367b1",
-      "metadata": {}
+      }
     }
   ],
   "createdAt": 1744165929476,
-  "updatedAt": 1744349886270,
+  "updatedAt": 1744350761052,
   "schemaVersion": 1
 }

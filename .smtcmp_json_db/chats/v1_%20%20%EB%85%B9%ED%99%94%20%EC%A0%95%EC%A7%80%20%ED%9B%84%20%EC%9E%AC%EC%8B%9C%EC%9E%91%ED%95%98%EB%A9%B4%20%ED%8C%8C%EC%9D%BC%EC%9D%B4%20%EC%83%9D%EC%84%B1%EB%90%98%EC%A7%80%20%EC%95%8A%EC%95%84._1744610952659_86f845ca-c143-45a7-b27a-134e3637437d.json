@@ -433,9 +433,62 @@
           "model": "meta-llama/llama-4-maverick:free"
         }
       }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "df093734-7adb-44eb-b742-c3867b8c88a5",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled 5.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "id": "3140f6ec-07cd-4aff-87eb-4f5cacf88813",
+      "metadata": {}
     }
   ],
   "createdAt": 1744165929476,
-  "updatedAt": 1744350924884,
+  "updatedAt": 1744610952659,
   "schemaVersion": 1
 }

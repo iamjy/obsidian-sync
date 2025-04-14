@@ -486,9 +486,81 @@
       "content": "",
       "id": "3140f6ec-07cd-4aff-87eb-4f5cacf88813",
       "metadata": {}
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 안녕?",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n 안녕?\n\n"
+        }
+      ],
+      "id": "1373de33-3886-49ff-899e-eb50effdc6cf",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/Lumino-Imager-Color/GStreamer/TroubleShooting/Untitled 5.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "네, 안녕하세요! 무엇을 도와드릴까요?",
+      "id": "4deb35dd-67fd-4d2d-904b-8ad7db72788a",
+      "metadata": {
+        "usage": {
+          "prompt_tokens": 2575,
+          "completion_tokens": 12,
+          "total_tokens": 2587,
+          "cost": 0,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "model": {
+          "providerType": "openrouter",
+          "providerId": "openrouter",
+          "id": "meta-llama-4-maverick",
+          "model": "meta-llama/llama-4-maverick:free"
+        }
+      }
     }
   ],
   "createdAt": 1744165929476,
-  "updatedAt": 1744610952659,
+  "updatedAt": 1744611004090,
   "schemaVersion": 1
 }

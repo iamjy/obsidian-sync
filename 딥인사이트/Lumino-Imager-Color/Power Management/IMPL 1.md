@@ -1,3 +1,14 @@
+---
+title: 
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
+
 # Request
 PIN_POWER_BUTTON에 edge 가 detected 되는 즉시 후처리가 이루어지도록 수정해줘.
 

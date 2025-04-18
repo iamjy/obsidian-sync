@@ -1,3 +1,14 @@
+---
+title: 
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
+
 # Request
 파이썬 코드로 권한 문제로 시스템 종료 명령 수행이 실패하는 문제를 최대한 간단하게 해결해
 

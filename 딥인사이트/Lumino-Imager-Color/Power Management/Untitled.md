@@ -1,4 +1,8 @@
 
+# Request
+파이썬 코드로 권한 문제로 시스템 종료 명령 수행이 실패하는 문제를 최대한 간단하게 해결해
+
+# AI Solution
 시스템 종료 권한 문제를 해결하는 가장 간단한 방법은 `loginctl` 명령어를 사용하는 것입니다. 이 명령은 일반 사용자도 물리적 콘솔(터미널)에 로그인되어 있으면 사용할 수 있습니다:
 
 ```python:lumino-medison/ICG-Color/apps/apps-camera/main.py
@@ -124,3 +128,4 @@ Read file: lumino-medison/ICG-Color/apps/apps-camera/main.py
 - 다양한 리눅스 환경에서 작동 가능성 높음
 
 이렇게 하면 여러 환경에서 권한 문제 없이 시스템을 종료할 수 있으며, 코드가 간단해지고 유지 관리가 쉬워집니다.
+

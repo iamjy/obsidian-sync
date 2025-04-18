@@ -1,3 +1,14 @@
+---
+title: 
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
+
 # 요청
 현재 녹화 시 1분단위로 파일을 분할하도록 되어 있는데 녹화 중지 후 다시 시작할 때 초기화에서 사용한 값들이 전혀 적용되어 있지 않는거 같아. 왜 그럴까?
 

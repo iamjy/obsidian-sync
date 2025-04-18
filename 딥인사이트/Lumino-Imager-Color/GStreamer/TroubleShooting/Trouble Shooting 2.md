@@ -1,3 +1,14 @@
+---
+title: 
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
+
 `self.segment_count`를 기반으로 2번째 파일만 보정하는 로직은 **일반적인 연속 분할 시에는 올바르게 작동**합니다.
 
 하지만, **녹화 중지/재시작 시 다음과 같은 잠재적 문제**가 존재할 수 있습니다:

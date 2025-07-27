@@ -1,3 +1,14 @@
+---
+title: Time stamp trouble shooting
+source: 
+author: 
+published: 
+created: 
+description: 
+tags:
+---
+---
+
 `self.encoder.set_property("key-int-max", 30)` 설정은 **최대 30프레임마다 꼭 키프레임이 생성**되도록 하여,  
 
 - **키프레임 간격이 짧아져**

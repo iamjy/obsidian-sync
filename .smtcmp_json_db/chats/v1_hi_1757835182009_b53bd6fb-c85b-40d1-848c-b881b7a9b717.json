@@ -1,0 +1,56 @@
+{
+  "id": "b53bd6fb-c85b-40d1-848c-b881b7a9b717",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "what do you see?",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nwhat do you see?\n\n"
+        }
+      ],
+      "id": "e093f96c-7d3c-43ea-b3af-0d63461ecc3d",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "AI Utilization/MCP/Claude Desktop/Linux/Claude Desktop MCP Obsidian 연동 가이드.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1757834670544,
+  "updatedAt": 1757835182009,
+  "schemaVersion": 1
+}

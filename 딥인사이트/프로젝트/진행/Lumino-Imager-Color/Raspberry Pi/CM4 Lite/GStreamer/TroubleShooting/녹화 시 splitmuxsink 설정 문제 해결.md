@@ -1,10 +1,10 @@
 ---
 title: Time stamp trouble shooting
-source: 
-author: 
-published: 
-created: 
-description: 
+source:
+author:
+published:
+created: 2025-09-10
+description: GStreamer 파이프라인에서 splitmuxsink를 사용하여 녹화할 때, 녹화 중지 후 재시작 시 설정 값들이 초기화되지 않는 문제에 대한 분석과 해결 방법을 제시합니다. splitmuxsink 인스턴스를 재생성하여 설정을 초기화하는 방안을 중점적으로 다룬다.
 tags:
 ---
 ---

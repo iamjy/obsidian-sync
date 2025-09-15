@@ -2,8 +2,7 @@
 title: GMP 인증
 source: https://waylonwalker.com/how-to-kill-ollama-server/
 author:
-  - "[[@_louis]]"
-published: 
+published:
 created: 2025-02-25
 description: I recently updated [ollama](https://ollama.com/), and it now installs a systemdservice that I was not expecting.  Seems like a great option, but I hadn&#x27;t
 tags:

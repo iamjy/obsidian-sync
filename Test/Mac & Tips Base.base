@@ -1,0 +1,8 @@
+views:
+  - type: table
+    name: 표
+  - type: cards
+    name: 뷰
+    image: file.file
+    cardSize: 90
+    imageFit: contain

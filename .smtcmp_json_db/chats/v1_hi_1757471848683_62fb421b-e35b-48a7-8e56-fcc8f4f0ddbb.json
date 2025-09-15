@@ -1,0 +1,66 @@
+{
+  "id": "62fb421b-e35b-48a7-8e56-fcc8f4f0ddbb",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": null,
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n 이 노트의  title과 description을 작성해줘 (한국어)\n\n"
+        }
+      ],
+      "id": "6dd044c9-8a44-4fa5-992f-26cfbb08fd49",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/진행/Lumino-Imager-Color/GStreamer/TroubleShooting/타임스탬프 보정 문제 해결.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Here are suggested title and description updates for your note:\n\n```\n---\ntitle: GStreamer 타임스탬프 보정 문제 해결\ndescription: Lumino Imager Color 파이프라인에서 GStreamer를 사용할 때, 녹화 중단 및 재시작 시 발생하는 타임스탬프 보정 오류의 원인과 해결 방법을 설명합니다. `segment_count` 초기화의 중요성을 강조합니다.\n---\n```\n",
+      "id": "cac1f747-b0df-4b42-9185-33dad913edfa",
+      "metadata": {
+        "model": {
+          "providerId": "ollama",
+          "providerType": "ollama",
+          "id": "gemma3:27b",
+          "model": "gemma3:27b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1083,
+          "completion_tokens": 96,
+          "total_tokens": 1179
+        }
+      }
+    }
+  ],
+  "createdAt": 1757468301133,
+  "updatedAt": 1757471848683,
+  "schemaVersion": 1
+}

@@ -1,0 +1,1 @@
+540x960@22.3fps ( setting is 30fps ) = 10분당 78MiB ( TP image )

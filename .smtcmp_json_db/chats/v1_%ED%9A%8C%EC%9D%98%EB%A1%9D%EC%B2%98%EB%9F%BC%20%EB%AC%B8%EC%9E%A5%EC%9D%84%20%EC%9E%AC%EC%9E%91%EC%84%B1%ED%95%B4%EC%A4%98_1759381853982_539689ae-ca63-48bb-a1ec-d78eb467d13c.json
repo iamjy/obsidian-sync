@@ -1,0 +1,277 @@
+{
+  "id": "539689ae-ca63-48bb-a1ec-d78eb467d13c",
+  "title": "회의록처럼 문장을 재작성해줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "회의록처럼 문장을 재작성해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n회의록처럼 문장을 재작성해줘\n\n"
+        }
+      ],
+      "id": "5f6fd8e3-fc95-4e8d-b998-d6a551792c42",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Here's the re-written markdown file, formatted as meeting notes:\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md\" language=\"markdown\">\n---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\n\n## Hardware (Including Mechanical Parts)\n* **Focus Issues:** Focus varies between units.  Poor visibility beyond 10cm.\n* **Heat Testing:** Requires testing with units sealed in plastic bags.\n* **Power Saving Mode:**  Requires adjustment of 3-axis sensor sensitivity.\n* **Power On:**  Inconsistent power button activation time across units.  Short activation times may lead to accidental power-on due to external pressure.\n* **Boot Time:** Needs to be reduced (currently 40 seconds, target < 20 seconds).\n* **Fluorescence Imaging:** Threshold values need adjustment considering use only in operating room settings.\n\n## FPGA & Firmware\n* **Battery Information:** Reported battery capacity does not match actual capacity.\n\n## Software\n* **Update System:** Not yet established. Requires production-level implementation with the next delivery.\n</smtcmp_block>\n\n**Explanation:**\n\nI've re-formatted the content as bullet points, using more concise and action-oriented language, suitable for meeting notes. I've also added headings for each section.",
+      "id": "fec7ddc4-578f-477e-86b4-e4aaa4624fc1",
+      "metadata": {
+        "model": {
+          "providerType": "ollama",
+          "providerId": "ollama",
+          "id": "gemma3:27b",
+          "model": "gemma3:27b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 772,
+          "completion_tokens": 325,
+          "total_tokens": 1097
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "한글로 번역해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n한글로 번역해줘\n\n"
+        }
+      ],
+      "id": "548daaaa-f96c-4a28-baa7-615e181f9227",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "다음은 재작성된 마크다운 파일입니다.\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md\" language=\"markdown\">\n---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\n\n## 하드웨어 (기구물 포함)\n* **초점 문제:** 단말기별 초점 차이 발생. 10cm 이상 거리에서 시야가 흐릿함.\n* **발열 테스트:** 봉투로 밀폐된 상태에서 테스트 필요.\n* **절전 모드:** 3축 센서 감도 조정 필요.\n* **전원 인가:** 단말기별 전원 버튼 동작 시간 불일치. 짧은 시간에 외부 압력에 의해 오작동될 수 있음.\n* **부팅 시간:** 단축 필요 (현재 40초, 목표 20초 이내).\n* **형광 촬영:** 수술실 내 사용 환경을 고려하여 threshold 값 재조정 필요.\n\n## FPGA & 펌웨어\n* **배터리 정보:** 실제 용량과 다른 배터리 용량 정보 표시.\n\n## 소프트웨어\n* **업데이트 시스템:** 아직 구축되지 않음. 다음 납품 시 양산 수준으로 구현 필요.\n</smtcmp_block>\n\n**설명:**\n\n회의록에 적합하도록 내용을 글머리 기호로 바꾸고, 더 간결하고 실행 가능한 언어를 사용했습니다. 또한 각 섹션에 제목을 추가했습니다.",
+      "id": "15ab4a3f-d557-49cd-a569-6edea7ad9e44",
+      "metadata": {
+        "model": {
+          "providerType": "ollama",
+          "providerId": "ollama",
+          "id": "gemma3:27b",
+          "model": "gemma3:27b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1114,
+          "completion_tokens": 363,
+          "total_tokens": 1477
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "보다 전문적인 어조로 작성해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n보다 전문적인 어조로 작성해줘\n\n"
+        }
+      ],
+      "id": "a9bc1fa3-b1f0-4b45-9477-da1769c6297a",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Here's the re-written markdown file with a more professional tone:\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md\" language=\"markdown\">\n---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\n\n## Hardware (Including Mechanical Components)\n* **Focus Discrepancies:**  Variations in focus observed between units.  Image clarity diminishes beyond 10cm.\n* **Thermal Testing Protocol:**  Requires implementation of testing within a sealed enclosure.\n* **Power Saving Mode Calibration:** Requires adjustment of 3-axis sensor sensitivity.\n* **Power-On Consistency:**  Inconsistent power button activation times across units.  Potential for accidental activation under external pressure.\n* **Boot Time Optimization:** Requires reduction of boot time (currently 40 seconds, target < 20 seconds).\n* **Fluorescence Imaging Thresholds:**  Threshold values require recalibration to account for intended use environment (surgical suite).\n\n## FPGA & Firmware\n* **Battery Capacity Reporting:** Discrepancy identified between reported and actual battery capacity.\n\n## Software\n* **Update System Implementation:**  An update system is currently not established; production-level implementation required with the next delivery.\n</smtcmp_block>\n\n**Explanation:**\n\nI've refined the language to be more technical and precise, replacing informal phrasing with more professional terminology. The points are structured for a clear and concise report.",
+      "id": "88e4fd20-0d23-4a64-a171-6808cb48ec98",
+      "metadata": {
+        "model": {
+          "providerType": "ollama",
+          "providerId": "ollama",
+          "id": "gemma3:27b",
+          "model": "gemma3:27b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 344,
+          "total_tokens": 1840
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "한글로 번역해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n한글로 번역해줘\n\n"
+        }
+      ],
+      "id": "8ad47147-ad43-4177-941d-2974c11b4e51",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "다음은 재작성된 마크다운 파일입니다.\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/진행/Lumino-Imager-Color/납품 및 출하/1. 고객사 피드백.md\" language=\"markdown\">\n---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\n\n## 하드웨어 (기구물 포함)\n* **초점 불일치:** 단위별로 초점 차이가 관찰됨. 10cm를 초과하는 거리에서 이미지 선명도가 저하됨.\n* **열 테스트 프로토콜:** 밀폐된 환경에서 테스트를 수행해야 함.\n* **절전 모드 보정:** 3축 센서 감도 조정이 필요함.\n* **전원 인가 일관성:** 단위별 전원 버튼 작동 시간 불일치. 외부 압력에 의해 오작동될 가능성이 있음.\n* **부팅 시간 최적화:** 부팅 시간 단축 필요 (현재 40초, 목표 20초 이내).\n* **형광 영상 임계값:** 의도된 사용 환경 (수술실)을 고려하여 임계값 재보정 필요.\n\n## FPGA & 펌웨어\n* **배터리 용량 보고:** 보고된 배터리 용량과 실제 용량 간의 불일치 확인.\n\n## 소프트웨어\n* **업데이트 시스템 구현:** 현재 업데이트 시스템이 구축되지 않음. 다음 납품 시 양산 수준으로 구현 필요.\n</smtcmp_block>\n\n**설명:**\n\n보다 전문적인 어조로 내용을 수정하고, 기술적 정확성을 높였습니다. 다음 납품 시 문제 해결을 위한 구체적인 액션 아이템으로 사용할 수 있도록 내용을 구성했습니다.",
+      "id": "cad39226-b444-4bd2-8d24-09f4aef30e4f",
+      "metadata": {
+        "model": {
+          "providerType": "ollama",
+          "providerId": "ollama",
+          "id": "gemma3:27b",
+          "model": "gemma3:27b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1857,
+          "completion_tokens": 403,
+          "total_tokens": 2260
+        }
+      }
+    }
+  ],
+  "createdAt": 1759381765955,
+  "updatedAt": 1759381853982,
+  "schemaVersion": 1
+}

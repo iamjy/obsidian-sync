@@ -1,0 +1,1 @@
+Representational State Tranfer의 약자로 웹을 이용할 때 제약 조건들을 정의하는 소프트웨어 아키텍처 스타일

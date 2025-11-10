@@ -12,3 +12,5 @@
 
 # Ignore Smart Environment folder
 .smart-env
+/.smtcmp_vector_db.tar.gz
+/.smtcmp_vector_db.tar.gz

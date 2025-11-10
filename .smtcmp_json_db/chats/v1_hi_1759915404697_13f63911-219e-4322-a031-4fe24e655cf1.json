@@ -1,0 +1,56 @@
+{
+  "id": "13f63911-219e-4322-a031-4fe24e655cf1",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "11ec623f-8e20-47ea-9358-d43ae11e7dd1",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/Untitled.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1759915404697,
+  "updatedAt": 1759915404697,
+  "schemaVersion": 1
+}

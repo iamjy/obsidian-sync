@@ -1,0 +1,180 @@
+{
+  "id": "37f4a6ae-b09b-4102-adb5-1226eecb8a41",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "3eb0c713-0a4e-4bb7-af96-2cf18468771d",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "028e1bf9-3157-4f4b-b7e9-a87ae8def51c",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? If you have any questions about editing or organizing markdown files in Obsidian, feel free to ask. 😊",
+      "id": "f54e296b-7b4f-4c8d-ad91-014b0255d995",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "phi-4",
+          "model": "microsoft/phi-4",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1562,
+          "completion_tokens": 31,
+          "total_tokens": 1593
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "201287f7-9e23-480d-983a-c176ef179b72",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "Hi there! 👋\n\nHow can I help you with your Obsidian setup today?",
+      "id": "1bdfb2ed-6b76-4f20-aad4-312b559af1ba",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "claude-3.7-sonnet-reasoning-gemma3-12b",
+          "model": "claude-3.7-sonnet-reasoning-gemma3-12b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1774,
+          "completion_tokens": 17,
+          "total_tokens": 1791
+        }
+      }
+    }
+  ],
+  "createdAt": 1760081622154,
+  "updatedAt": 1760081737525,
+  "schemaVersion": 1
+}

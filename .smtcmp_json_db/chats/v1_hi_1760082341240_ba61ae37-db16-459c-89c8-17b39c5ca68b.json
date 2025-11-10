@@ -1,0 +1,98 @@
+{
+  "id": "ba61ae37-db16-459c-89c8-17b39c5ca68b",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "be2324f9-9d25-4e53-8943-c9861397af64",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "Hello there! How can I help you with your Obsidian markdown files today?",
+      "id": "52050e27-2ca1-45ba-a9a1-e2b26afebda6",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "claude-3.7-sonnet-reasoning-gemma3-12b",
+          "model": "claude-3.7-sonnet-reasoning-gemma3-12b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1732,
+          "completion_tokens": 16,
+          "total_tokens": 1748
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": null,
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": null,
+      "id": "eda970ff-a71f-4ee4-b371-ffb3ac4a4e46",
+      "mentionables": []
+    }
+  ],
+  "createdAt": 1760082237698,
+  "updatedAt": 1760082341240,
+  "schemaVersion": 1
+}

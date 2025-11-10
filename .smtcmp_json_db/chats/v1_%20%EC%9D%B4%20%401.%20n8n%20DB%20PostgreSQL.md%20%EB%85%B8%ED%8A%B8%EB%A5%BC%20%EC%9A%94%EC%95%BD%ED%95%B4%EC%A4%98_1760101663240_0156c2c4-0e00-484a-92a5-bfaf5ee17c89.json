@@ -1,0 +1,231 @@
+{
+  "id": "0156c2c4-0e00-484a-92a5-bfaf5ee17c89",
+  "title": " 이 @1. n8n DB PostgreSQL.md 노트를 요약해줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 이 ",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@1. n8n DB PostgreSQL.md",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "1. n8n DB PostgreSQL.md",
+                  "mentionable": {
+                    "type": "file",
+                    "file": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 노트를 요약해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "## Potentially Relevant Snippets from the current vault\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n20|- Tags 확인 \n21|    \n22|    - URL :  [https://hub.docker.com/_/postgres/tags](https://hub.docker.com/_/postgres/tags)  \n23|        \n24|    - 13.13 \n25|        \n26|    \n27|    |   |\n28|    |---|\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n31|- 이미지 다운로드 \n32|    \n33|    - $ docker pull postgres:13.13 \n34|        \n35|    \n36|- Volume ( 데이터베이스 디렉토리 ) 생성 \n37|    \n38|    - $ docker volume rm db-postgres-13.13-offl \n39|        \n40|    - $ docker volume create --name db-postgres-13.13-offl \n41|        \n42|    \n43|    or \n44|    \n45|    - $ sudo mkdir -p /var/lib/redmine/db/db-postgres-13.13-offl/data \n46|        \n47|    \n48|- 네트워크 생성 \n49|    \n50|    - $ docker network create devops-network -driver=bridge \n51|        \n52|        - Subnet : 172.xx.0.0/16 \n53|            \n54|        - Gateway : 172.xx.0.1 \n55|            \n56|    - $ docker network ls \n57|        \n58|    - $ docker network inspect devops-network \n59|        \n60|    \n61|- 컨테이너 생성 \n62|    \n63|    - - \n64|        \n65|    \n66|    |   |\n67|    |---|\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n17||![postgres <br>@ Docker Official Image • <br>21B* • 010K* <br>docker pull postgres <br>The PostgreSQL object-relational database system provides reliability and data integrity.\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n69|||\n70|    \n71|- 네트워크 설정 확인 \n72|    \n73|    - $ docker network inspect devops-network \n74|        \n75|    \n76|    |   |\n77|    |---|\n78|    ||\n79|    |- \"IPv4Address\": 172.20.0.3|\n80|    \n81|    - $ docker exec -it db-postgres-13.13-offl bash \n82|        \n83|    - $ root@…:/# apt update; apt install net-tools \n84|        \n85|    - $ ifconfig \n86|        \n87|    \n88|    |   |\n89|    |---|\n90|    ||\n91|    |- inet 172.20.0.2|\n92|    \n93|- 웹 서버  \n94|    \n95|    - [http://localhost:5432](http://localhost:5432/)  \n96|        \n97|    \n98|- Account \n99|    \n100|    - redmine/ redmine!5408# # account for 'db-redmine-offl' DB \n101|        \n102|    \n103|- Commit \n104|    \n105|    - $ docker stop db-postgres-13.13-offl \n106|        \n107|    - $ docker commit -m \"...\" -a [user] db-postgres-13.13-offl db-postgres-13.13-offl:latest \n108|        \n109|    - $ docker image tag db-postgres-13.13-offl:latest db-postgres-13.13-offl:1.0.0 \n110|        \n111|    - $ docker tag db-postgres-13.13-offl:1.0.0 localhost:5000/db-postgres-13.13-offl:1.0.0 \n112|        \n113|    - $ docker push localhost:5000/db-postgres-13.13-offl:1.0.0\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n56|- $ docker network ls \n57|        \n58|    - $ docker network inspect devops-network \n59|        \n60|    \n61|- 컨테이너 생성 \n62|    \n63|    - - \n64|        \n65|    \n66|    |   |\n67|    |---|\n68|    |1. $ docker run -d --network devops-network -p 5432:5432 --ip 172.20.0.3 -v db-postgres-13.13-redmine-offl:/var/lib/postgresql/data -e POSTGRES_PASSWORD='redmine!5408#' -e POSTGRES_USER=redmine -e POSTGRES_DB=db-redmine-offl -e TZ=Asia/Seoul --name db-postgres-13.13-offl postgres:13.13 # for initial setting <br>    <br>2. Commit <br>    <br>3. $ docker run -d --network devops-network -p 5432:5432 --ip 172.20.0.3 -v db-postgres-13.13-redmine-offl:/var/lib/postgresql/data -e POSTGRES_PASSWORD='redmine!5408#' -e POSTGRES_USER=redmine -e POSTGRES_DB=db-redmine-offl -e TZ=Asia/Seoul --name db-postgres-13.13-offl db-postgres-13.13-offl:latest|\n69|    ||\n70|    \n71|- 네트워크 설정 확인 \n72|    \n73|    - $ docker network inspect devops-network \n74|        \n75|    \n76|    |   |\n77|    |---|\n78|    ||\n79|    |- \"IPv4Address\": 172.20.0.3|\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n111|- $ docker tag db-postgres-13.13-offl:1.0.0 localhost:5000/db-postgres-13.13-offl:1.0.0 \n112|        \n113|    - $ docker push localhost:5000/db-postgres-13.13-offl:1.0.0 \n114|        \n115|    - $ docker start db-postgres-13.13-offl\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n1|---\n2|title:\n3|source:\n4|author:\n5|published:\n6|created: 2025-09-07\n7|description:\n8|tags:\n9|---\n10|- Docker Hub \n11|    \n12|    - PostgreSQL : [https://hub.docker.com/_/postgres](https://hub.docker.com/_/postgres) \n13|        \n14|    \n15|    |   |\n16|    |---|\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n29||![TAG <br>13.13 <br>Last pushed 14 days ago by <br>DIGEST <br>81192abceacb <br>6c4345e2194e <br>9513047fe4be <br>+5 more... <br>OS/ARCH <br>linux/386 <br>linux/amd64 <br>linux/arm/v5 <br>VULNERABILITIES <br>13 37 <br>docker pull postgres:13 .13 <br>COMPRESSED SIZE O <br>148.68 MB <br>141.66 MB <br>134.66\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n29|9SxYAvWBUzUTbXROVErW1ZTeoqN9vEaFrWQ2tDFK5fa0HN8fO8xc2NnF71jteD4A+k17Fyq7lf2xEzUaRrGi53s6Pl+trg1rm3noKHDhMnI+y0mNONWTbqatwbvoxY0k7HJeFghhBBCCCGEEOJ3ocJ+BlAIIYQQQgghhBAXr4rtASCEEEIIIYQQQoiLkhQAhBBCCCGEEEKIKkAKAEIIIYQQQgghRBUgBQAhhBBCCCGEEKIKkAKAEEIIIYQQQghRBUgBQAghhBBCCCGEqAKkACCEEEIIIYQQQlQBUgAQQgghhBBCCCGqACkACCGEEEIIIYQQVYAUAIQQQgghhBBCiCpACgBCCCGEEEIIIUQVIAUAIYQQQgghhBCiCpACgBBCCCGEEEIIUQVIAUAIIYQQQgghhKgCpAAghBBCCCGEEEJUAVIAEEIIIYQQQgghqgApAAghhBBCCCGEEFWAFACEEEIIIYQQQojfPfh/jUKUaT7tCtUAAAAASUVORK5CYII=)|\n```\n```DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\n17|Bd96RGwceNGTayfdfeXx5XDAmRcATmmX/b8y3n/N23apMUVuO2227T95Bz/6enpWjoZl0CK/REjRmjj/p999lktr7LXX4r+85HiX3oQpKSkaHmQhgA5VaGcKvB8o8b+YxlMWb6HjNwSnG3NcRPi3MzYgILiCk5lFZBbXEbzUA/u79kMO6uGWAN14jZK8T9z1T5SxT72VmZ4u9hgYmRAdkEJqRn5FJVVasaC3MIyOkX7MrhLJGUVVQyfvoEcsc7cxEDzHvht9MJvfgFyloEIP2deHtruguENCoVCoVAoFAqFQqFQXAvXbAC4EaQhQIp0KbalwL6ccJX7yEVydr+LkVmUi/QQkEEDBwwYcEHQP2kQkI4M0kAgjQy/hzRKyONJTwV5zouRd6SwpFybqz87v5RiIdzLq2owMzZsmBXA0RJPJ2ttBoCLKSmvJDWzgPScYvKKSqmorsXCxBArM2M8RBoHazO2x59k1tqD9GoVRJ9WwaTnFmnHvzjyoHa3Gm+ZzJO5qSHezjYNKxQKhUKhUCgUCoVCobgObqoB4I9GBvobNWqU1mMvhwNI1/7s7GzN00Dy9NNPY2PzxwpkeXtkcH/5Vxow5PSA19IB35CuYUpBuX9DuoaE0pU/JbNACyTobGeurVMoFAqFQqFQKBQKheJm8o8yAEhvgj179rBy5Uot8r/0FpDBAKUxoEePHjg5OZ0T2X93zhoGFAqFQqFQKBQKhUKh+DP4RxkAznK5LKtx8QqFQqFQKBQKhUKhUFyZf6QBQKFQKBQKhUKhUCgUCsX1cWkEPIVCoVAoFAqFQqFQKBT/OpQBQKFQKBQKhUKhUCgUiv8AygCgUCgUCoVCoVAoFArFfwBlAFAoFAqFQqFQKBQKheI/gDIAKBQKhUKhUCgUCoVC8R9AGQAUCoVCoVAoFAqFQqH4D6AMAAqFQqFQKBQKhUKhUPzrgf8BjS7bDg2aqkoAAAAASUVORK5CYII=)|\n```\n\n\n\n 이 @1. n8n DB PostgreSQL.md 노트를 요약해줘\n\n"
+        }
+      ],
+      "id": "f1d030ca-e8ac-4b0c-891a-a45ac2cfb853",
+      "mentionables": [
+        {
+          "type": "file",
+          "file": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md"
+        }
+      ],
+      "similaritySearchResults": [
+        {
+          "id": 4913,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "- Tags 확인 \n    \n    - URL :  [https://hub.docker.com/_/postgres/tags](https://hub.docker.com/_/postgres/tags)  \n        \n    - 13.13 \n        \n    \n    |   |\n    |---|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 28,
+            "startLine": 20
+          },
+          "similarity": 0.7337002535552444
+        },
+        {
+          "id": 4985,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "- 이미지 다운로드 \n    \n    - $ docker pull postgres:13.13 \n        \n    \n- Volume ( 데이터베이스 디렉토리 ) 생성 \n    \n    - $ docker volume rm db-postgres-13.13-offl \n        \n    - $ docker volume create --name db-postgres-13.13-offl \n        \n    \n    or \n    \n    - $ sudo mkdir -p /var/lib/redmine/db/db-postgres-13.13-offl/data \n        \n    \n- 네트워크 생성 \n    \n    - $ docker network create devops-network -driver=bridge \n        \n        - Subnet : 172.xx.0.0/16 \n            \n        - Gateway : 172.xx.0.1 \n            \n    - $ docker network ls \n        \n    - $ docker network inspect devops-network \n        \n    \n- 컨테이너 생성 \n    \n    - - \n        \n    \n    |   |\n    |---|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 67,
+            "startLine": 31
+          },
+          "similarity": 0.7275578542019849
+        },
+        {
+          "id": 4853,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "|![postgres <br>@ Docker Official Image • <br>21B* • 010K* <br>docker pull postgres <br>The PostgreSQL object-relational database system provides reliability and data integrity.",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 17,
+            "startLine": 17
+          },
+          "similarity": 0.7097155470842833
+        },
+        {
+          "id": 4987,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "||\n    \n- 네트워크 설정 확인 \n    \n    - $ docker network inspect devops-network \n        \n    \n    |   |\n    |---|\n    ||\n    |- \"IPv4Address\": 172.20.0.3|\n    \n    - $ docker exec -it db-postgres-13.13-offl bash \n        \n    - $ root@…:/# apt update; apt install net-tools \n        \n    - $ ifconfig \n        \n    \n    |   |\n    |---|\n    ||\n    |- inet 172.20.0.2|\n    \n- 웹 서버  \n    \n    - [http://localhost:5432](http://localhost:5432/)  \n        \n    \n- Account \n    \n    - redmine/ redmine!5408# # account for 'db-redmine-offl' DB \n        \n    \n- Commit \n    \n    - $ docker stop db-postgres-13.13-offl \n        \n    - $ docker commit -m \"...\" -a [user] db-postgres-13.13-offl db-postgres-13.13-offl:latest \n        \n    - $ docker image tag db-postgres-13.13-offl:latest db-postgres-13.13-offl:1.0.0 \n        \n    - $ docker tag db-postgres-13.13-offl:1.0.0 localhost:5000/db-postgres-13.13-offl:1.0.0 \n        \n    - $ docker push localhost:5000/db-postgres-13.13-offl:1.0.0",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 113,
+            "startLine": 69
+          },
+          "similarity": 0.6693984053503108
+        },
+        {
+          "id": 4986,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "- $ docker network ls \n        \n    - $ docker network inspect devops-network \n        \n    \n- 컨테이너 생성 \n    \n    - - \n        \n    \n    |   |\n    |---|\n    |1. $ docker run -d --network devops-network -p 5432:5432 --ip 172.20.0.3 -v db-postgres-13.13-redmine-offl:/var/lib/postgresql/data -e POSTGRES_PASSWORD='redmine!5408#' -e POSTGRES_USER=redmine -e POSTGRES_DB=db-redmine-offl -e TZ=Asia/Seoul --name db-postgres-13.13-offl postgres:13.13 # for initial setting <br>    <br>2. Commit <br>    <br>3. $ docker run -d --network devops-network -p 5432:5432 --ip 172.20.0.3 -v db-postgres-13.13-redmine-offl:/var/lib/postgresql/data -e POSTGRES_PASSWORD='redmine!5408#' -e POSTGRES_USER=redmine -e POSTGRES_DB=db-redmine-offl -e TZ=Asia/Seoul --name db-postgres-13.13-offl db-postgres-13.13-offl:latest|\n    ||\n    \n- 네트워크 설정 확인 \n    \n    - $ docker network inspect devops-network \n        \n    \n    |   |\n    |---|\n    ||\n    |- \"IPv4Address\": 172.20.0.3|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 79,
+            "startLine": 56
+          },
+          "similarity": 0.669314005702016
+        },
+        {
+          "id": 4988,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "- $ docker tag db-postgres-13.13-offl:1.0.0 localhost:5000/db-postgres-13.13-offl:1.0.0 \n        \n    - $ docker push localhost:5000/db-postgres-13.13-offl:1.0.0 \n        \n    - $ docker start db-postgres-13.13-offl",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 115,
+            "startLine": 111
+          },
+          "similarity": 0.6498945862746075
+        },
+        {
+          "id": 4852,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\n- Docker Hub \n    \n    - PostgreSQL : [https://hub.docker.com/_/postgres](https://hub.docker.com/_/postgres) \n        \n    \n    |   |\n    |---|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 16,
+            "startLine": 1
+          },
+          "similarity": 0.5773833369205391
+        },
+        {
+          "id": 4914,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "|![TAG <br>13.13 <br>Last pushed 14 days ago by <br>DIGEST <br>81192abceacb <br>6c4345e2194e <br>9513047fe4be <br>+5 more... <br>OS/ARCH <br>linux/386 <br>linux/amd64 <br>linux/arm/v5 <br>VULNERABILITIES <br>13 37 <br>docker pull postgres:13 .13 <br>COMPRESSED SIZE O <br>148.68 MB <br>141.66 MB <br>134.66",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 29,
+            "startLine": 29
+          },
+          "similarity": 0.5572284498667419
+        },
+        {
+          "id": 4984,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "9SxYAvWBUzUTbXROVErW1ZTeoqN9vEaFrWQ2tDFK5fa0HN8fO8xc2NnF71jteD4A+k17Fyq7lf2xEzUaRrGi53s6Pl+trg1rm3noKHDhMnI+y0mNONWTbqatwbvoxY0k7HJeFghhBBCCCGEEOJ3ocJ+BlAIIYQQQgghhBAXr4rtASCEEEIIIYQQQoiLkhQAhBBCCCGEEEKIKkAKAEIIIYQQQgghRBUgBQAhhBBCCCGEEKIKkAKAEEIIIYQQQghRBUgBQAghhBBCCCGEqAKkACCEEEIIIYQQQlQBUgAQQgghhBBCCCGqACkACCGEEEIIIYQQVYAUAIQQQgghhBBCiCpACgBCCCGEEEIIIUQVIAUAIYQQQgghhBCiCpACgBBCCCGEEEIIUQVIAUAIIYQQQgghhKgCpAAghBBCCCGEEEJUAVIAEEIIIYQQQgghqgApAAghhBBCCCGEEFWAFACEEEIIIYQQQojfPfh/jUKUaT7tCtUAAAAASUVORK5CYII=)|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 29,
+            "startLine": 29
+          },
+          "similarity": 0.46129671431244623
+        },
+        {
+          "id": 4912,
+          "path": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md",
+          "mtime": 1760044103464,
+          "content": "Bd96RGwceNGTayfdfeXx5XDAmRcATmmX/b8y3n/N23apMUVuO2227T95Bz/6enpWjoZl0CK/REjRmjj/p999lktr7LXX4r+85HiX3oQpKSkaHmQhgA5VaGcKvB8o8b+YxlMWb6HjNwSnG3NcRPi3MzYgILiCk5lFZBbXEbzUA/u79kMO6uGWAN14jZK8T9z1T5SxT72VmZ4u9hgYmRAdkEJqRn5FJVVasaC3MIyOkX7MrhLJGUVVQyfvoEcsc7cxEDzHvht9MJvfgFyloEIP2deHtruguENCoVCoVAoFAqFQqFQXAvXbAC4EaQhQIp0KbalwL6ccJX7yEVydr+LkVmUi/QQkEEDBwwYcEHQP2kQkI4M0kAgjQy/hzRKyONJTwV5zouRd6SwpFybqz87v5RiIdzLq2owMzZsmBXA0RJPJ2ttBoCLKSmvJDWzgPScYvKKSqmorsXCxBArM2M8RBoHazO2x59k1tqD9GoVRJ9WwaTnFmnHvzjyoHa3Gm+ZzJO5qSHezjYNKxQKhUKhUCgUCoVCobgObqoB4I9GBvobNWqU1mMvhwNI1/7s7GzN00Dy9NNPY2PzxwpkeXtkcH/5Vxow5PSA19IB35CuYUpBuX9DuoaE0pU/JbNACyTobGeurVMoFAqFQqFQKBQKheJm8o8yAEhvgj179rBy5Uot8r/0FpDBAKUxoEePHjg5OZ0T2X93zhoGFAqFQqFQKBQKhUKh+DP4RxkAznK5LKtx8QqFQqFQKBQKhUKhUFyZf6QBQKFQKBQKhUKhUCgUCsX1cWkEPIVCoVAoFAqFQqFQKBT/OpQBQKFQKBQKhUKhUCgUiv8AygCgUCgUCoVCoVAoFArFfwBlAFAoFAqFQqFQKBQKheI/gDIAKBQKhUKhUCgUCoVC8R9AGQAUCoVCoVAoFAqFQqH4D6AMAAqFQqFQKBQKhUKhUPzrgf8BjS7bDg2aqkoAAAAASUVORK5CYII=)|",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "metadata": {
+            "endLine": 17,
+            "startLine": 17
+          },
+          "similarity": 0.398866147140823
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "**요약 – “1. n8n DB PostgreSQL.md”**\n\n- **메타데이터**  \n  파일 상단에 작성일(`2025‑09‑07`)과 아직 채워지지 않은 `title`, `source`, `author`, `description`, `tags` 등이 정의돼 있습니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"1\" endLine=\"10\"></smtcmp_block>\n\n- **Docker Hub & 이미지 정보**  \n  PostgreSQL 공식 이미지 URL과 현재 사용 중인 **13.13** 태그가 소개됩니다. 이미지 상세 정보(압축 크기, OS/ARCH 등)도 포함됩니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"10\" endLine=\"15\"></smtcmp_block>  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"20\" endLine=\"30\"></smtcmp_block>\n\n- **이미지 다운로드**  \n  ```bash\n  docker pull postgres:13.13\n  ```  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"31\" endLine=\"35\"></smtcmp_block>\n\n- **볼륨 생성 (데이터베이스 디렉터리)**  \n  기존 볼륨 삭제 후 새 볼륨 생성(또는 직접 디렉터리 생성) 예시가 제공됩니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"36\" endLine=\"47\"></smtcmp_block>\n\n- **네트워크 생성**  \n  `devops-network` 라는 브리지 네트워크를 만들고 서브넷·게이트웨이(예: `172.xx.0.0/16`, `172.xx.0.1`)를 지정합니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"48\" endLine=\"56\"></smtcmp_block>\n\n- **컨테이너 생성 (PostgreSQL 실행)**  \n  `docker run` 명령으로 네트워크‑연결, 포트 매핑(`5432:5432`), 고정 IP(`172.20.0.3`), 볼륨 마운트, 환경 변수(`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `TZ`) 등을 지정해 컨테이너를 실행합니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"61\" endLine=\"68\"></smtcmp_block>\n\n- **네트워크 설정 확인**  \n  `docker network inspect devops-network` 로 컨테이너의 `IPv4Address`(`172.20.0.3`)를 확인하고, 컨테이너 내부에서 `ifconfig` 로 IP(`172.20.0.2`)를 검증합니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"71\" endLine=\"92\"></smtcmp_block>\n\n- **웹 서버 접근**  \n  로컬호스트와 포트(`5432`)를 통해 PostgreSQL에 접속할 수 있음을 안내합니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"93\" endLine=\"97\"></smtcmp_block>\n\n- **계정 정보**  \n  데이터베이스(`db-redmine-offl`)에 대한 기본 계정(`redmine` / 비밀번호 `redmine!5408#`)가 명시돼 있습니다.  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"98\" endLine=\"102\"></smtcmp_block>\n\n- **컨테이너 커밋·이미지 태깅·레지스트리 푸시**  \n  1️⃣ `docker stop` → `docker commit` 로 새로운 이미지 생성  \n  2️⃣ `docker image tag` 로 버전(`1.0.0`) 지정  \n  3️⃣ 로컬 레지스트리(`localhost:5000`)에 `docker push`  \n  4️⃣ 필요 시 `docker start` 로 컨테이너 재시작  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"104\" endLine=\"113\"></smtcmp_block>  \n  <smtcmp_block filename=\"DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/n8n Using with PostgreSQL/1. n8n DB PostgreSQL.md\" language=\"markdown\" startLine=\"111\" endLine=\"115\"></smtcmp_block>\n\n---\n\n### 핵심 흐름\n1. **PostgreSQL 이미지(13.13) 확보** →  \n2. **볼륨·네트워크 준비** →  \n3. **컨테이너 실행(고정 IP, 환경 변수 포함)** →  \n4. **네트워크·IP 확인** →  \n5. **DB 접속(웹/클라이언트) 및 기본 계정 확인** →  \n6. **필요 시 컨테이너 커밋·이미지 태깅·레지스트리 푸시**  \n\n이렇게 하면 n8n을 PostgreSQL 백엔드와 연동하기 위한 Docker 기반 환경을 손쉽게 구축·관리할 수 있습니다.",
+      "id": "dbfe076f-61b0-416b-a79d-b55710acbb1e",
+      "metadata": {
+        "model": {
+          "providerId": "ollama",
+          "providerType": "ollama",
+          "id": "gpt-oss:120b-cloud",
+          "model": "gpt-oss:120b-cloud",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 4322,
+          "completion_tokens": 1747,
+          "total_tokens": 6069
+        }
+      }
+    }
+  ],
+  "createdAt": 1760082915350,
+  "updatedAt": 1760101663240,
+  "schemaVersion": 1
+}

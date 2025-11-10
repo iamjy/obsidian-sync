@@ -1,0 +1,71 @@
+{
+  "id": "239ee663-e94c-4055-89f7-2746c45836cb",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "38b28e3e-9003-45f8-9d0c-15dd012b214c",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "DevOps/n8n/n8n Installation/n8n Install on Linux/n8n Docker/Untitled.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I’m ready to help edit",
+      "id": "53dbfa45-f939-43a5-8fa5-d657cf5a562e",
+      "metadata": {
+        "model": {
+          "providerType": "ollama",
+          "providerId": "ollama",
+          "id": "gpt-oss:20b",
+          "model": "gpt-oss:20b",
+          "promptLevel": 1,
+          "enable": true
+        }
+      }
+    }
+  ],
+  "createdAt": 1759914392520,
+  "updatedAt": 1759914507068,
+  "schemaVersion": 1
+}

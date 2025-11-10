@@ -1,0 +1,96 @@
+{
+  "id": "9f03503e-8fbe-47d5-84c1-28c059a685bb",
+  "title": "@https://lmstudio.ai/docs/cli/server-start 이 웹페이지의",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@https://github.com/kestra-io/kestra/tree/v1.0.5",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "https://github.com/kestra-io/kestra/tree/v1.0.5",
+                  "mentionable": {
+                    "type": "url",
+                    "url": "https://github.com/kestra-io/kestra/tree/v1.0.5"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 와 ",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@https://kestra.io/docs/getting-started/quickstart",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "https://kestra.io/docs/getting-started/quickstart",
+                  "mentionable": {
+                    "type": "url",
+                    "url": "https://kestra.io/docs/getting-started/quickstart"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 의 내용을 종합하여 이 웹페이지들의 내용을 보고 너가 이해한 내용을 바탕으로 한글로  자세한 guild를 시각적으로 가독성이 높게 구조적으로 작성해줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": null,
+      "id": "be6720dc-bcc9-4cec-89c9-bdd490f374dd",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "DevOps/Workflow/Kestra/Untitled.md"
+        },
+        {
+          "type": "url",
+          "url": "https://github.com/kestra-io/kestra/tree/v1.0.5"
+        },
+        {
+          "type": "url",
+          "url": "https://kestra.io/docs/getting-started/quickstart"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1760335231583,
+  "updatedAt": 1760368097817,
+  "schemaVersion": 1
+}

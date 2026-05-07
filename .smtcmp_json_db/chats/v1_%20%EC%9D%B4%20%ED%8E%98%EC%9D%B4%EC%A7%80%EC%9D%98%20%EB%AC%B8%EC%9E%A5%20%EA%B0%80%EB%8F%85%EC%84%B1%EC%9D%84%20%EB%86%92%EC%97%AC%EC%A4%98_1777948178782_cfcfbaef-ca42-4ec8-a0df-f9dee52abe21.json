@@ -1,0 +1,51 @@
+{
+  "id": "cfcfbaef-ca42-4ec8-a0df-f9dee52abe21",
+  "title": " 이 페이지의 문장 가독성을 높여줘",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 이 페이지의 문장 가독성을 높여줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": null,
+      "id": "8fee9615-0a2a-4044-8940-8bdfbe9589ec",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/2. 검토/제이시스메디칼/AI 문답/플랫폼 기반 보안.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1777947697583,
+  "updatedAt": 1777948178782,
+  "schemaVersion": 1
+}

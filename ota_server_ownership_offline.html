@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>OTA Server Ownership (offline)</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; }
+    .wrap { width: 100%; overflow-x: auto; padding: 16px; box-sizing: border-box; }
+    svg { display: block; height: auto; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 820" width="1520">
+  <defs>
+    <marker id="arw_82b366" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" fill="#82b366"/></marker>
+    <marker id="arw_9673a6" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" fill="#9673a6"/></marker>
+    <marker id="arw_d79b00" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" fill="#d79b00"/></marker>
+  </defs>
+  <rect x="770.0" y="140.0" width="700.0" height="660.0" fill="#ffffff" stroke="#000000" stroke-width="1.0" rx="6" ry="6"/>
+  <rect x="30.0" y="140.0" width="700.0" height="660.0" fill="#ffffff" stroke="#000000" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="34.0" y="27.6" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#000000" text-anchor="start"><tspan x="34.0" dy="0.0">OTA 업데이트 서버 소유·운영 주체 — 역할 관점 2가지 시나리오 ( 큰 그림 )</tspan></text>
+  <text x="34.0" y="50.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#555555" text-anchor="start"><tspan x="34.0" dy="0.0">발주사=제이시스 메디컬 ( iPad 앱 개발 ) / 수탁사=딥인사이트 ( ACS Camera + Beam 장비·펌웨어 개발 ). 미결정 쟁점은 &#x27;OTA 서버를 누가 구축·운영하는가&#x27; 뿐임.</tspan></text>
+  <rect x="30.0" y="66.0" width="1440.0" height="60.0" fill="#f5f5f5" stroke="#666666" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="44.0" y="99.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="start"><tspan x="44.0" dy="0.0">공통 ( 두 시나리오 동일 ) :  ① iPad App = 제이시스 개발 · 배포    ② ACS 장비 · SW ( Jetson / DLPC / ITE ) · Device-side OTA Agent = 딥인사이트 개발    ③ 바이너리 빌드 · 서명 = 딥인사이트 Self-hosted DevOps 파이프라인 산출물   →   달라지는 것은 &#x27;서버 소유 / 운영&#x27; 뿐</tspan></text>
+  <rect x="50.0" y="185.0" width="660.0" height="150.0" fill="#fff3e6" stroke="#d79b00" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="380.0" y="209.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="380.0" dy="0.0">제이시스 메디컬 ( 발주사 · 제조사 )</tspan></text>
+  <rect x="62.0" y="222.0" width="200.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="162.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="162.0" dy="0.0">iPad App 개발 · 배포</tspan></text>
+  <rect x="274.0" y="222.0" width="196.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="372.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="372.0" dy="0.0">제품 · 규제 책임 ( 제조사 )</tspan></text>
+  <rect x="482.0" y="222.0" width="216.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="590.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="590.0" dy="0.0">배포 승인 · 스케줄</tspan></text>
+  <rect x="62.0" y="278.0" width="636.0" height="46.0" fill="#e1d5e7" stroke="#9673a6" stroke-width="3.0"/>
+  <text x="380.0" y="304.5" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="380.0" dy="0.0">★ OTA 서버 구축 · 운영 · 인프라 / 보안 ( Case A : 발주사 소유 )</tspan></text>
+  <rect x="50.0" y="350.0" width="660.0" height="185.0" fill="#eef3fb" stroke="#6c8ebf" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="380.0" y="374.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="380.0" dy="0.0">딥인사이트 ( 수탁사 · 개발 )</tspan></text>
+  <rect x="62.0" y="388.0" width="300.0" height="40.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="212.0" y="411.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="212.0" dy="0.0">ACS ( Camera + Beam ) 장비 개발</tspan></text>
+  <rect x="374.0" y="388.0" width="324.0" height="40.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="536.0" y="411.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="536.0" dy="0.0">ACS SW ( Applicaton · Driver · Firmware 개발 )</tspan></text>
+  <rect x="62.0" y="436.0" width="300.0" height="40.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="212.0" y="459.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="212.0" dy="0.0">바이너리 빌드 · 서명 ( Self-hosted DevOps 파이프라인 )</tspan></text>
+  <rect x="374.0" y="436.0" width="324.0" height="40.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="536.0" y="459.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="536.0" dy="0.0">Device-side OTA Agent 개발</tspan></text>
+  <rect x="62.0" y="484.0" width="636.0" height="40.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.0"/>
+  <text x="72.0" y="506.9" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="10" font-weight="400" fill="#000000" text-anchor="start"><tspan x="72.0" dy="0.0">→ 서명된 릴리스 번들 전달 ( 발주사 서버로 업로드 / 패키지 규격 · 서명키 소유 합의 필요 )</tspan></text>
+  <rect x="50.0" y="660.0" width="660.0" height="92.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="62.0" y="683.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="start"><tspan x="62.0" dy="0.0">판단 포인트 ( Case A )</tspan><tspan x="62.0" dy="14.5">+ 배포 통제 · 책임이 제조사 ( 제이시스 ) 에 집중 → 의료기기 규제 / 추적성 관점 명확</tspan><tspan x="62.0" dy="14.5">+ 서버 인프라 · 보안 · 운영 비용을 발주사가 부담</tspan><tspan x="62.0" dy="14.5">− 우리 → 제이시스 릴리스 전달 인터페이스 ( 패키지 규격 · 서명키 소유 ) 합의 필요</tspan><tspan x="62.0" dy="14.5">− 발주사에 서버 운영 역량 필요 / 계약 종료 후 이관 부담은 작음</tspan></text>
+  <path d="M 125.6 484.0 L 125.6 324.0" fill="none" stroke="#82b366" stroke-width="2" marker-end="url(#arw_82b366)"/>
+  <rect x="85.3" y="395.0" width="80.6" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="125.6" y="407.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">서명 번들 전달</text>
+  <path d="M 369.0 324.0 L 369.0 540.0 L 361.5 597.0" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#arw_9673a6)"/>
+  <rect x="327.5" y="451.7" width="83.0" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="369.0" y="463.7" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">배포 ( HTTPS )</text>
+  <path d="M 72.0 262.0 L 72.0 540.0 L 104.2 597.0" fill="none" stroke="#d79b00" stroke-width="1" stroke-dasharray="6 5" marker-end="url(#arw_d79b00)"/>
+  <rect x="-14.7" y="424.7" width="173.4" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="72.0" y="436.7" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">영상 / 제어 + 업데이트 트리거 UI</text>
+  <rect x="790.0" y="185.0" width="660.0" height="150.0" fill="#fff3e6" stroke="#d79b00" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="1120.0" y="209.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="1120.0" dy="0.0">제이시스 메디컬 ( 발주사 · 제조사 )</tspan></text>
+  <rect x="802.0" y="222.0" width="200.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="902.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="902.0" dy="0.0">iPad App 개발 · 배포</tspan></text>
+  <rect x="1014.0" y="222.0" width="196.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="1112.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1112.0" dy="0.0">제품 · 규제 책임 ( 제조사 )</tspan></text>
+  <rect x="1222.0" y="222.0" width="216.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="1330.0" y="245.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1330.0" dy="0.0">배포 승인 · 요청</tspan></text>
+  <rect x="802.0" y="278.0" width="636.0" height="40.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0"/>
+  <text x="1120.0" y="301.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1120.0" dy="0.0">모니터링 · 현장 CS 접근 ( 서버 조회 권한 )</tspan></text>
+  <rect x="790.0" y="350.0" width="660.0" height="185.0" fill="#eef3fb" stroke="#6c8ebf" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="1120.0" y="374.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="1120.0" dy="0.0">딥인사이트 ( 수탁사 · 개발 + 운영 )</tspan></text>
+  <rect x="802.0" y="384.0" width="300.0" height="38.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="952.0" y="406.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="952.0" dy="0.0">ACS (Camera+Beam) 장비 개발</tspan></text>
+  <rect x="1114.0" y="384.0" width="324.0" height="38.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="1276.0" y="406.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1276.0" dy="0.0">ACS SW 개발 + 바이너리 빌드 · 서명 ( 파이프라인 )</tspan></text>
+  <rect x="802.0" y="430.0" width="300.0" height="38.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="952.0" y="452.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="952.0" dy="0.0">Device-side OTA Agent 개발</tspan></text>
+  <rect x="1114.0" y="430.0" width="324.0" height="38.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.0"/>
+  <text x="1276.0" y="452.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1276.0" dy="0.0">번들 조립 · Release · Publish</tspan></text>
+  <rect x="802.0" y="478.0" width="636.0" height="46.0" fill="#e1d5e7" stroke="#9673a6" stroke-width="3.0"/>
+  <text x="1120.0" y="504.5" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="12" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="1120.0" dy="0.0">★ OTA 서버 구축 · 운영 ( Case B : 수탁사 소유, Self-hosted DevOps 인프라 확장 )</tspan></text>
+  <rect x="790.0" y="590.0" width="660.0" height="48.0" fill="#fbe6e5" stroke="#b85450" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="1120.0" y="617.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="1120.0" dy="0.0">ACS 장비 ( 현장 / 병원 ) :  업데이트 수신 · 검증 · 적용 ( Phase A / B · 롤백 )</tspan></text>
+  <rect x="790.0" y="650.0" width="660.0" height="102.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="802.0" y="673.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="start"><tspan x="802.0" dy="0.0">판단 포인트 ( Case B )</tspan><tspan x="802.0" dy="14.5">+ 파이프라인 ~ 서버 end-to-end 일관성, 빠른 배포 · 핫픽스</tspan><tspan x="802.0" dy="14.5">+ 발주사는 서버 운영 부담 없이 배포 승인 · 모니터링만</tspan><tspan x="802.0" dy="14.5">− 서버 운영 · SLA · 유지보수를 수탁사가 지속 부담 → 별도 운영 계약 ( 비용 / 기간 ) 필요</tspan><tspan x="802.0" dy="14.5">− 서버가 우리 인프라 경계 내 → 제이시스 데이터 · 접근권한 · 보안 합의 필요</tspan><tspan x="802.0" dy="14.5">− 계약 종료 시 서버 · 키 · 데이터 이관 계획 필요 / 배포 최종 승인은 제조사 ( 제이시스 ) 권장</tspan></text>
+  <path d="M 1412.2 262.0 L 1411.6 477.8" fill="none" stroke="#d79b00" stroke-width="2" marker-end="url(#arw_d79b00)"/>
+  <rect x="1367.2" y="360.9" width="89.4" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="1411.9" y="372.9" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">배포 승인 · 요청</text>
+  <path d="M 1108.0 524.0 L 1108.1 590.0" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#arw_9673a6)"/>
+  <rect x="1069.8" y="548.0" width="76.4" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="1108.0" y="560.0" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">배포 (HTTPS)</text>
+  <path d="M 812.0 262.0 L 812.0 540.0 L 823.0 590.0" fill="none" stroke="#d79b00" stroke-width="1" stroke-dasharray="6 5" marker-end="url(#arw_d79b00)"/>
+  <rect x="725.3" y="417.6" width="173.4" height="18" fill="#ffffff" opacity="0.88"/>
+  <text x="812.0" y="429.6" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" fill="#000000" text-anchor="middle">영상 / 제어 + 업데이트 트리거 UI</text>
+  <rect x="50.0" y="597.0" width="430.0" height="48.0" fill="#fbe6e5" stroke="#b85450" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="265.0" y="624.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="265.0" dy="0.0">ACS 장비 ( 현장 / 병원 ) :  펌웨어 업데이트 수신·검증·적용 ( Phase A / B · 롤백 )</tspan></text>
+  <rect x="490.0" y="597.0" width="220.0" height="48.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.0" rx="6" ry="6"/>
+  <text x="600.0" y="624.2" font-family="'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif" font-size="11" font-weight="700" fill="#000000" text-anchor="middle"><tspan x="600.0" dy="0.0">iPad ( 현장 ) : App으로 장비 제어·영상</tspan></text>
+    </svg>
+  </div>
+</body>
+</html>

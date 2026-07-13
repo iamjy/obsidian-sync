@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" agent="claude" version="24.0.0">
+  <diagram name="OTA-Layered" id="ota-layered">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="OTA 소프트웨어 업데이트 - 계층 구조 (Layered Architecture)" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 1 : Cloud -->
+        <mxCell id="L1" value="① Cloud / Backend Layer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="1180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="L1a" value="OTA Update Server&#10;(배포/버전 정책)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="70" y="100" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="L1b" value="Package Repository&#10;(펌웨어 번들 + 매니페스트)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="240" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="L1c" value="Code Signing / Key Mgmt&#10;(무결성·진위 서명)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="610" y="100" width="240" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 2 : Application (iPad) -->
+        <mxCell id="L2" value="② Application Layer (iPad App)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="195" width="1180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L2a" value="Update UI&#10;(트리거/승인/진행표시)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L2b" value="Control / Status Client&#10;(영상수신·제어요청 채널 재사용)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="330" y="230" width="270" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 3 : Jetson Orchestration -->
+        <mxCell id="L3" value="③ Jetson - Orchestration Layer (Linux User Space)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="1180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="L3a" value="OTA Agent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L3b" value="Download &amp; Verifier&#10;(서명/체크섬)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L3c" value="Update Orchestrator&#10;(순서·의존성 제어)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L3d" value="Rollback Manager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L3e" value="Version DB&#10;(조합 정합성 관리)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="360" width="170" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 4 : Jetson System/Boot -->
+        <mxCell id="L4" value="④ Jetson - System / Boot Layer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="465" width="1180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L4a" value="A/B Bootloader&#10;(Redundant Boot)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="70" y="500" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L4b" value="Partition Manager&#10;(뱅크 전환/커밋)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="500" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L4c" value="Health Check / Watchdog" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="530" y="500" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 5 : Driver / Interface -->
+        <mxCell id="L5" value="⑤ Jetson - Driver / Interface Layer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="1180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L5a" value="Network Stack&#10;(HTTPS/TLS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="625" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L5b" value="SPI Driver + DLPC AP Driver&#10;(DLPC Flasher)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="625" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L5c" value="I2C / FW Update Driver&#10;(ITE6810FN Updater)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="610" y="625" width="270" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 6 : Target HW / FW -->
+        <mxCell id="L6" value="⑥ Target HW / Firmware Layer (업데이트 대상 3종)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;align=left;fontStyle=1;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="715" width="1180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="L6a" value="① NVIDIA Jetson&#10;OS / App (A/B 뱅크)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="750" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L6b" value="② DLPC 컨트롤러&#10;SPI Flash 펌웨어 (+ AP 드라이버)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="750" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L6c" value="③ ITE6810FN&#10;HDMI Converter 펌웨어" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="750" width="270" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Vertical propagation arrows -->
+        <mxCell id="a12" style="html=1;endArrow=block;endFill=1;strokeColor=#555555;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1120" y="170" as="sourcePoint" /><mxPoint x="1120" y="195" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="a23" style="html=1;endArrow=block;endFill=1;strokeColor=#555555;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1120" y="295" as="sourcePoint" /><mxPoint x="1120" y="320" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="a34" style="html=1;endArrow=block;endFill=1;strokeColor=#555555;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1120" y="440" as="sourcePoint" /><mxPoint x="1120" y="465" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="a45" style="html=1;endArrow=block;endFill=1;strokeColor=#555555;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1120" y="565" as="sourcePoint" /><mxPoint x="1120" y="590" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="a56" style="html=1;endArrow=block;endFill=1;strokeColor=#555555;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1120" y="690" as="sourcePoint" /><mxPoint x="1120" y="715" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="aLbl" value="업데이트 전달 방향" style="text;html=1;fontSize=11;fontColor=#555555;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="420" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- interface note -->
+        <mxCell id="note1" value="※ 인터페이스 매핑 :&#10; ⑤SPI Driver → ②DLPC SPI Flash&#10; ⑤I2C Driver → ③ITE6810FN&#10; ④Partition Mgr → ①Jetson A/B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=6;verticalAlign=top;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="500" width="190" height="90" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

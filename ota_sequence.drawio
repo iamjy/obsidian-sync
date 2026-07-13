@@ -1,0 +1,147 @@
+<mxfile host="app.diagrams.net" agent="claude" version="24.0.0">
+  <diagram name="OTA-Sequence" id="ota-sequence">
+    <mxGraphModel dx="1400" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="OTA 소프트웨어 업데이트 - 시퀀스 다이어그램 (제안 시나리오)" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Participant heads -->
+        <mxCell id="pA" value="iPad App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pS" value="OTA Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pG" value="Jetson OTA Agent&#10;(Orchestrator)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="56" width="140" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="pV" value="Verifier" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="60" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pB" value="A/B Boot Mgr" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="60" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pD" value="DLPC (SPI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="60" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pI" value="ITE6810FN (I2C)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="60" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="lA" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="100" y="100" as="sourcePoint" /><mxPoint x="100" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lS" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="320" y="100" as="sourcePoint" /><mxPoint x="320" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lG" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="104" as="sourcePoint" /><mxPoint x="540" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lV" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="760" y="100" as="sourcePoint" /><mxPoint x="760" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lB" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="975" y="100" as="sourcePoint" /><mxPoint x="975" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lD" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1190" y="100" as="sourcePoint" /><mxPoint x="1190" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lI" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1410" y="100" as="sourcePoint" /><mxPoint x="1410" y="1140" as="targetPoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Phase group frames -->
+        <mxCell id="ph0" value="Phase 0 : 확인 / 다운로드 / 검증" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;verticalAlign=top;align=left;fontStyle=2;fontColor=#3b5b9c;spacingLeft=6;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="1420" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="phA" value="Phase A : Jetson 코어 업데이트 (A/B, 안전 롤백 우선)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#9673a6;dashed=1;verticalAlign=top;align=left;fontStyle=2;fontColor=#6a4a86;spacingLeft=6;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="515" width="1420" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="phB" value="Phase B : 주변장치 펌웨어 업데이트 (백업 후 기록 / 개별 롤백)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;dashed=1;verticalAlign=top;align=left;fontStyle=2;fontColor=#8f3d38;spacingLeft=6;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="800" width="1420" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- Messages : Phase 0 -->
+        <mxCell id="m1" value="1. 업데이트 확인 요청" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="100" y="150" as="sourcePoint" /><mxPoint x="540" y="150" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2. 매니페스트 요청 (GET)" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="185" as="sourcePoint" /><mxPoint x="320" y="185" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3. 버전/매니페스트 응답" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="320" y="220" as="sourcePoint" /><mxPoint x="540" y="220" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4. 업데이트 알림 (버전, 크기, 변경점)" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="255" as="sourcePoint" /><mxPoint x="100" y="255" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5. 다운로드 승인" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="100" y="290" as="sourcePoint" /><mxPoint x="540" y="290" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6. 번들 다운로드 요청" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="325" as="sourcePoint" /><mxPoint x="320" y="325" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7. 업데이트 번들 전송 (HTTPS)" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="320" y="360" as="sourcePoint" /><mxPoint x="540" y="360" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8. 서명/체크섬 검증 요청" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="395" as="sourcePoint" /><mxPoint x="760" y="395" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9. 검증 성공 (무결성 OK)" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="760" y="430" as="sourcePoint" /><mxPoint x="540" y="430" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10. 설치 준비 완료 / 설치 확인 요청" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="465" as="sourcePoint" /><mxPoint x="100" y="465" as="targetPoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Phase A -->
+        <mxCell id="m11" value="11. 설치 확인 (사용자 동의)" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="100" y="545" as="sourcePoint" /><mxPoint x="540" y="545" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12. 비활성 뱅크에 Jetson 이미지 기록" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="580" as="sourcePoint" /><mxPoint x="975" y="580" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13. 기록/검증 완료 + 부트 플래그 설정" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="975" y="615" as="sourcePoint" /><mxPoint x="540" y="615" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14. 재부팅 안내" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="650" as="sourcePoint" /><mxPoint x="100" y="650" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="noteReboot" value="재부팅 → 신규 뱅크 부팅 → Health Check&#10;(부팅/서비스/드라이버 정상 여부 자가진단)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="672" width="330" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="m16" value="15. Health OK → commit  /  실패 시 이전 뱅크로 자동 rollback" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="745" as="sourcePoint" /><mxPoint x="975" y="745" as="targetPoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Phase B -->
+        <mxCell id="m17" value="16. 기존 펌웨어 백업 후 SPI Flash 기록" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="835" as="sourcePoint" /><mxPoint x="1190" y="835" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m18" value="17. write/verify 완료 + DLPC 재시작" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1190" y="875" as="sourcePoint" /><mxPoint x="540" y="875" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="noteDlpc" value="검증 실패 시 백업본으로 DLPC 롤백" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="860" y="895" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="m19" value="18. ITE6810FN 펌웨어 업데이트 (I2C)" style="html=1;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="945" as="sourcePoint" /><mxPoint x="1410" y="945" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="19. write/verify 완료" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="1410" y="985" as="sourcePoint" /><mxPoint x="540" y="985" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="20. 전체 업데이트 완료 / 최종 버전 보고" style="html=1;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="540" y="1040" as="sourcePoint" /><mxPoint x="100" y="1040" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="noteVer" value="버전 정합성 확인 : Jetson SW ↔ DLPC ↔ ITE 조합이&#10;매니페스트의 승인 조합과 일치하는지 최종 확인 후 서버에 보고" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1058" width="470" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

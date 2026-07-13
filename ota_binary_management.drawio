@@ -1,0 +1,154 @@
+<mxfile host="app.diagrams.net" agent="claude" version="24.0.0">
+  <diagram name="OTA-BinaryMgmt" id="ota-binmgmt">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1520" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="OTA 바이너리 관리 · 릴리스 파이프라인 (자사 self-hosted DevOps 인프라 활용)" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="12" width="900" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="lg1" value="자사 기존 인프라(재사용)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="44" width="170" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" value="OTA 신규 구성(외주)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="210" y="44" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" value="기준 · 주석" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="44" width="110" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg4" value="Device 연결" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="490" y="44" width="110" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Stage 1 : SCM ===== -->
+        <mxCell id="c1" value="① 형상관리 · SCM (Git Repository)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="30" y="90" width="250" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="Jetson App / OS 소스" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="45" y="130" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="DLPC 펌웨어 (SPI 이미지)&#10;벤더 툴 산출물 → 바이너리 형상등록" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="45" y="186" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="ITE6810FN 펌웨어&#10;바이너리 형상등록" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="45" y="248" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="매니페스트 / 버전셋 정의&#10;(OTA 신규)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="45" y="304" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="snote" value="릴리스 기준 = Git Tag&#10;(component별 태그 + 승인 version set 태그)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="45" y="360" width="220" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Stage 2 : CI/CD ===== -->
+        <mxCell id="c2" value="② CI/CD 파이프라인 (Jenkins Master + Build Agents)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="90" width="330" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="p0" value="Trigger (commit / tag)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="320" y="130" width="290" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="COVERAGE / 코드품질 (Sonarqube 정적분석)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="178" width="290" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="BUILD&#10;· C/C++/CLI Agent → Jetson 이미지&#10;· Zip/Bin Agent → DLPC·ITE 펌웨어 검증·패키징" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=6;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="290" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="TEST (자동시험 + 체크섬/무결성 검증)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="312" width="290" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="이슈 연동 (Redmine) : 커밋 ↔ 이슈 ↔ 릴리스 추적" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="364" width="290" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="pnote" value="Jenkins Master가 self-hosted Agent에 빌드 작업 분배" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="320" y="416" width="290" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ep01" style="html=1;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="p0" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ep12" style="html=1;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="p1" target="p2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ep23" style="html=1;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="p2" target="p3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Stage 3 : Artifact ===== -->
+        <mxCell id="c3" value="③ Artifact 저장 · 버전관리" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="290" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="Artifact &amp; Log DB&#10;(빌드 산출물 + 로그, 버전/체크섬)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="130" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="Docker Registry&#10;(OTA서버 컨테이너 · 빌드환경 이미지 · 패키지 OCI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="196" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="서명 &amp; 키관리 (Release Gate)&#10;(OTA 신규)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="268" width="260" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="승인된 version set 태깅&#10;(3종 조합 정합성 고정, OTA 신규)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="328" width="260" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="rnote" value="여기 저장된 체크섬/서명이&#10;Device측 Verifier 검증과 1:1 대응" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="665" y="388" width="260" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Stage 4 : Release ===== -->
+        <mxCell id="c4" value="④ OTA Release / Publish" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="960" y="90" width="250" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="OTA 번들 조립&#10;(Jetson + DLPC + ITE + 매니페스트)&#10;(OTA 신규)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="975" y="130" width="220" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="서명된 번들 Release" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="975" y="206" width="220" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="Publish (NGINX Reverse Proxy 경유)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="975" y="260" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="lnote" value="릴리스/서명 실행 권한 = OpenLDAP 통제" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="975" y="318" width="220" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="el12" style="html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="l1" target="l2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="el23" style="html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="l2" target="l3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Stage 5 : Distribution ===== -->
+        <mxCell id="c5" value="⑤ OTA 배포 → Device" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="90" width="250" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="OTA Update Server /&#10;Package Repository&#10;(OTA 신규)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="130" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Jetson OTA Agent (Device)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="210" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="dnote" value="이후 상세 흐름 =&#10;ota_dataflow · ota_sequence 다이어그램&#10;(다운로드→검증→Phase A/B 적용→롤백)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="272" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="HTTPS pull" style="html=1;endArrow=block;strokeColor=#b85450;" edge="1" parent="1" source="d1" target="d2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Stage connector arrows -->
+        <mxCell id="e12" value="소스/바이너리" style="html=1;endArrow=block;strokeWidth=2;fontStyle=1;" edge="1" parent="1" source="c1" target="c2"><mxGeometry relative="1" as="geometry"><mxPoint x="280" y="330" as="sourcePoint" /><mxPoint x="300" y="330" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="e23" value="산출물" style="html=1;endArrow=block;strokeWidth=2;fontStyle=1;" edge="1" parent="1" source="c2" target="c3"><mxGeometry relative="1" as="geometry"><mxPoint x="630" y="330" as="sourcePoint" /><mxPoint x="650" y="330" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="e34" value="서명 번들" style="html=1;endArrow=block;strokeWidth=2;fontStyle=1;" edge="1" parent="1" source="c3" target="c4"><mxGeometry relative="1" as="geometry"><mxPoint x="940" y="330" as="sourcePoint" /><mxPoint x="960" y="330" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="e45" value="배포" style="html=1;endArrow=block;strokeWidth=2;fontStyle=1;" edge="1" parent="1" source="c4" target="c5"><mxGeometry relative="1" as="geometry"><mxPoint x="1210" y="330" as="sourcePoint" /><mxPoint x="1240" y="330" as="targetPoint" /></mxGeometry></mxCell>
+
+        <!-- ===== Bottom : Access + Backup ===== -->
+        <mxCell id="ldap" value="계정관리 · OpenLDAP&#10;(릴리스/서명/배포 권한 통제)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="590" width="250" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bk" value="Data Sync (Backup)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eaf3ea;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="300" y="580" width="640" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="bk1" value="RAID Array&#10;(Hot Spare 1 · 복구 Parity · Hot Spare 2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="618" width="360" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="bk2" value="Cronjob&#10;(Crontab &amp; Rsync)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="710" y="618" width="210" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="bknote" value="Git Repository · Artifact/Log DB · Docker Registry 정기 백업 → 릴리스 바이너리 유실 방지 (재현성 보장)" style="text;html=1;fontSize=10;fontColor=#4a7a4a;align=left;" vertex="1" parent="1">
+          <mxGeometry x="945" y="618" width="230" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="ebk" value="정기 백업" style="html=1;endArrow=block;dashed=1;strokeColor=#82b366;" edge="1" parent="1" source="c3" target="bk"><mxGeometry relative="1" as="geometry"><mxPoint x="795" y="560" as="sourcePoint" /><mxPoint x="620" y="580" as="targetPoint" /></mxGeometry></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

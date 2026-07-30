@@ -1,0 +1,79 @@
+{
+  "id": "0f551c5b-e151-4b8a-bd88-b48efb56259a",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "58e6566e-3a92-4007-b7e0-bb1999f95eda",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": null
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "- 사용자 입력 내용: 인사 (\"hi\")\n- GPT의 응답 요약 : 반갑게 인사를 나누고 도움이 필요한지 확인합니다.\n\n응답 : Hello! How can I help you today? If you have any questions about Obsidian or markdown, feel free to ask!",
+      "id": "d1679c59-65e7-4419-82d4-6e4d603275ad",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "google/gemma-4-31b",
+          "model": "gemma-4-31b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 732,
+          "completion_tokens": 60,
+          "total_tokens": 792,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      }
+    }
+  ],
+  "createdAt": 1785378962211,
+  "updatedAt": 1785378968995,
+  "schemaVersion": 1
+}

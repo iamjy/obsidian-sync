@@ -1,0 +1,23 @@
+{
+  "id": "conv-1786615828302-4q5243zi0",
+  "providerId": "claude",
+  "title": "Explain UEFI firmware and legacy BIOS",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786615828311,
+  "lastActivityAt": 1786615887398,
+  "sessionId": "d7df2da4-dd94-4141-ac27-1c8d09cc4e83",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "d7df2da4-dd94-4141-ac27-1c8d09cc4e83"
+  },
+  "currentNote": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Booting Process/Bootloader.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 3125,
+    "cacheReadInputTokens": 63446,
+    "contextWindow": 1000000,
+    "contextTokens": 66573,
+    "percentage": 7
+  }
+}

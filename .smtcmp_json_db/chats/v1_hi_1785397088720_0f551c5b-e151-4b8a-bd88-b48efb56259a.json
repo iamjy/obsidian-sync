@@ -1,0 +1,97 @@
+{
+  "id": "0f551c5b-e151-4b8a-bd88-b48efb56259a",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@스펙 분석.md",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "스펙 분석.md",
+                  "mentionable": {
+                    "type": "file",
+                    "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/스펙 분석.md"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 가독성을 높여줘",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "```딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/스펙 분석.md\nDLPC347x 컨트롤러의 \"3가지 모드\"에 대해 자세히 설명드리겠습니다1.\n\n---\n\n### 1. **External Pattern Streaming Mode**\n\n- **설명**: 외부 비디오 포트를 통해 패턴 데이터를 실시간으로 받아서 표시하는 모드입니다.\n- **특징**:\n    - 외부 장치(예: PC, FPGA 등)에서 패턴 데이터를 전송.\n    - 실시간 패턴 표시가 가능하여 동적 제어에 적합.\n    - 시스템 구성 예시는 Figure 1-1에 나와 있습니다.\n- **활용 예시**: 3D 광학 검사, 로봇 비전 등에서 외부에서 생성된 패턴을 빠르게 표시할 때 사용.\n\n---\n\n### 2. **Internal Pattern Streaming Mode**\n\n- **설명**: 플래시에 저장된 1D 패턴 데이터를 순차적으로 표시하는 모드입니다.\n- **특징**:\n    - 패턴 데이터가 컨트롤러 내부 플래시에 저장되어 있음.\n    - 외부 입력 없이 내부 데이터만으로 패턴 표시.\n    - 시스템 구성 예시는 Figure 1-2에 나와 있습니다.\n- **활용 예시**: 반복적으로 동일한 패턴을 표시하거나, 외부 연결 없이 자동화된 패턴 표시가 필요한 3D 측정, 인식 등.\n\n---\n\n### 3. **Splash Pattern Mode**\n\n- **설명**: 플래시에 저장된 2D 이미지를 패턴으로 표시하는 모드입니다.\n- **특징**:\n    - 이미지 파일 형태로 플래시에 저장된 2D 패턴을 표시.\n    - TRIG_IN 및 PAT_RDY 신호를 지원하지 않음(즉, 외부 트리거 없이 내부적으로 패턴 표시).\n    - 시스템 구성 예시는 Internal Pattern Streaming Mode와 동일하게 Figure 1-2에 나와 있습니다.\n- **활용 예시**: 고정된 이미지 패턴을 표시할 때, 예를 들어 3D 프린팅, 얼굴/지문 인식 등에서 사용.\n\n---\n\n#### 요약 표\n\n|모드|데이터 소스|특징|활용 예시|\n|---|---|---|---|\n|External Pattern Streaming|외부 비디오 포트|실시간 패턴 표시, 동적 제어|3D 검사, 로봇 비전 등|\n|Internal Pattern Streaming|내부 플래시(1D)|반복 패턴, 자동화|3D 측정, 인식|\n|Splash Pattern|내부 플래시(2D 이미지)|고정 이미지, 트리거 없음|3D 프린팅, 인식|\n```\n\n\n@스펙 분석.md 가독성을 높여줘\n\n"
+        }
+      ],
+      "id": "58e6566e-3a92-4007-b7e0-bb1999f95eda",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/스펙 분석.md"
+        },
+        {
+          "type": "file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/스펙 분석.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "- DLPC347x 컨트롤러의 3가지 모드 설명이 포함된 `스펙 분석.md` 파일의 가독성 개선 요청\n- GPT의 응답 요약 : 구조화된 서식과 강조 기법을 사용하여 문서의 시각적 가독성을 높인 수정본을 제공합니다.\n\n응답 : \n기존의 단순 나열 방식에서 벗어나, 각 모드의 핵심 내용을 빠르게 파악할 수 있도록 콜아웃 스타일(또는 강조 박스)과 일관된 아이콘을 사용하고, 표의 형식을 정돈하였습니다. 특히 도입부의 불필요한 문구를 제거하여 문서의 전문성을 높였습니다.\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/스펙 분석.md\" language=\"markdown\">\n# DLPC347x 컨트롤러 동작 모드 분석\n\nDLPC347x 컨트롤러는 데이터 소스와 표시 방식에 따라 다음과 같은 3가지 운영 모드를 제공합니다.\n\n---\n\n### 1. External Pattern Streaming Mode\n> **외부 실시간 데이터 스트리밍 모드**\n\n- **개요**: 외부 비디오 포트를 통해 패턴 데이터를 실시간으로 수신하여 표시합니다.\n- **주요 특징**:\n    - **데이터 소스**: 외부 장치 (PC, FPGA 등) $\\rightarrow$ 컨트롤러\n    - **장점**: 실시간 패턴 전송이 가능하여 동적 제어 및 빠른 응답성이 필요한 환경에 적합\n    - **참조**: 시스템 구성도 `Figure 1-1` 참조\n- **활용 사례**: 3D 광학 검사, 로봇 비전 등\n\n---\n\n### 2. Internal Pattern Streaming Mode\n> **내부 플래시 기반 순차 스트리밍 모드**\n\n- **개요**: 컨트롤러 내부 플래시에 저장된 **1D 패턴 데이터**를 순차적으로 표시합니다.\n- **주요 특징**:\n    - **데이터 소스**: 내부 Flash Memory $\\rightarrow$ 디스플레이\n    - **장점**: 외부 입력 장치 없이 독립적인 패턴 표시 가능, 시스템 단순화\n    - **참조**: 시스템 구성도 `Figure 1-2` 참조\n- **활용 사례**: 반복적 동일 패턴 표시, 자동화된 3D 측정 및 인식\n\n---\n\n### 3. Splash Pattern Mode\n> **내부 플래시 기반 정지 이미지 모드**\n\n- **개요**: 내부 플래시에 저장된 **2D 이미지 파일**을 고정 패턴으로 표시합니다.\n- **주요 특징**:\n    - **데이터 소스**: 내부 Flash Memory (2D Image) $\\rightarrow$ 디스플레이\n    - **특이사항**: `TRIG_IN` 및 `PAT_RDY` 신호를 지원하지 않음 (외부 트리거 없이 동작)\n    - **참조**: 시스템 구성도 `Figure 1-2` 참조\n- **활용 사례**: 고정 이미지 패턴 표시, 3D 프린팅, 얼굴/지문 인식\n\n---\n\n### 📋 모드별 비교 요약\n\n| 구분 | External Pattern Streaming | Internal Pattern Streaming | Splash Pattern |\n| :--- | :---: | :---: | :---: |\n| **데이터 소스** | 외부 비디오 포트 | 내부 플래시 (1D) | 내부 플래시 (2D 이미지) |\n| **주요 특징** | 실시간/동적 제어 | 반복 패턴/자동화 | 고정 이미지/트리거 없음 |\n| **핵심 장점** | 유연한 데이터 변경 | 외부 입력 불필요 | 단순 이미지 출력 |\n| **활용 예시** | 3D 검사, 로봇 비전 | 3D 측정 및 인식 | 3D 프린팅, 생체 인식 |\n</smtcmp_block>",
+      "id": "2b553196-f54e-4b2b-897c-76c6222d510c",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "google/gemma-4-31b",
+          "model": "gemma-4-31b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1951,
+          "completion_tokens": 856,
+          "total_tokens": 2807,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      }
+    }
+  ],
+  "createdAt": 1785378962211,
+  "updatedAt": 1785397088720,
+  "schemaVersion": 1
+}

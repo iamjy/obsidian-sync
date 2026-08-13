@@ -1,0 +1,299 @@
+{
+  "id": "conv-1786613939038-46j2d1gqj",
+  "providerId": "claude",
+  "title": "Research Orin NX carrier board specs",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786613939043,
+  "lastActivityAt": 1786615152788,
+  "sessionId": "4e43219a-f8ad-466c-9dff-6ad8725bda33",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "4e43219a-f8ad-466c-9dff-6ad8725bda33",
+    "subagentData": {
+      "toolu_012vytdgBzJx5xQfHZKm8eNN": {
+        "id": "toolu_012vytdgBzJx5xQfHZKm8eNN",
+        "description": "Research AVerMedia D133 series specs",
+        "prompt": "Research AVerMedia's NVIDIA Jetson Orin NX carrier boards in the D133 series: models D133, D133-1, and D133S. \n\nFor each model, find the product detail page on professional.avermedia.com (e.g. https://professional.avermedia.com/products or search \"AVerMedia D133 carrier board Orin NX spec\") and extract:\n1. Storage support: what storage interfaces/slots are supported (NVMe SSD, M.2 Key M, eMMC, SATA, etc.) and any capacity notes\n2. SD card / microSD card support: whether a microSD/SD card slot is present (yes/no)\n\nUse WebFetch and WebSearch. Report a concise structured summary per model (D133, D133-1, D133S) with Storage and SD Card fields, plus the source URL for each. If a spec cannot be found, say so explicitly.",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "toolu_01E8NSWFqiBVkjb1tPLsJRJd",
+            "name": "ToolSearch",
+            "input": {
+              "query": "select:WebSearch,WebFetch",
+              "max_results": 5
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "[\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebSearch\"\n  },\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebFetch\"\n  }\n]"
+          },
+          {
+            "id": "toolu_01EBqRWQbFEM7gVWhhLkwkJF",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D133 carrier board Orin NX specifications storage"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D133 carrier board Orin NX specifications storage\"\n\nLinks: [{\"title\":\"Revolutionizing Edge Computing: AVerMedia's D133 Carrier Board for NVIDIA® Jetson Orin™ NX/Orin™ Nano Modules\",\"url\":\"https://www.linkedin.com/pulse/revolutionizing-edge-computing-avermedias-d133-carrier-board-evy1f?trk=article-ssr-frontend-pulse_more-articles_related-content-card\"},{\"title\":\"AVerMedia D133 CarrierBoard (für NVIDIA Jetson Orin NX/Nano) [ AVerMedia Nvidia Jetson Carrierboards ]\",\"url\":\"https://www.cartft.com/en/catalog/il/3493\"},{\"title\":\"D133S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133S\"},{\"title\":\"D133 Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133\"},{\"title\":\"AVerMedia MB D133 Carrier Board NVIDIAR Jetson Orin NX Orin Nano&#xFFFD;Brown box | Overview, Specs, Details | SHI\",\"url\":\"https://www.publicsector.shidirect.com/Product/47007650/AVerMedia-MB-D133-Carrier-Board-NVIDIAR-Jetson-Orin-NX-Orin-Nano%EF%BF%BDBrown-box\"},{\"title\":\"D133 (5G) Carrier Board [Preliminary]\",\"url\":\"https://robu-prod-media.s3.ap-south-1.amazonaws.com/uploads/2024/09/Datasheet_AVerMedia_D1335GCB_EN_v0.1_20240908.pdf\"},{\"title\":\"D133 Carrier Board Applies to NVIDIA® Jetson Orin NX/Orin Nano module\",\"url\":\"https://openzeka.com/wp-content/uploads/2025/02/Datasheet_AVerMedia_D133_Datasheet.pdf\"},{\"title\":\"PROVANTAGE: AVer Information D133 AverMedia MB D133 Carrier Board Nvidiar Jetson Orin NX Orin NanoÿBrown Box\",\"url\":\"https://www.provantage.com/aver-information-d133~7AVE90A4.htm\"},{\"title\":\"AverMedia - D133 Carrier board for NVIDIA Jetson ORIN NX, ORIN Nano modules\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d1330001ab.htm\"},{\"title\":\"AVerMedia D133S Carrier Board for Jetson Orin NX / Orin Nano\",\"url\":\"https://aetherix.com/product/avermedia-d133s-carrier-board-for-jetson-orin-nx-orin-nano/\"}]\n\nBased on the search results, here are the specifications for the AVerMedia D133 Carrier Board for the NVIDIA Jetson Orin NX:\n\n**Storage:**\nThe D133 includes 1x M.2 key M 2280 for NVMe storage, along with 1x M.2 key E 2230 for wifi.\n\n**Other Key Specifications:**\n\n- **Networking:** 1 x GbE RJ-45\n- **Display Output:** 1 x HDMI output 3840 x 2160 at 60Hz for Orin NX\n- **USB Connectivity:** 1 x USB 2.0 type C for recovery, 2 x USB 3.2 Type-A\n- **Camera Inputs:** 2 x 4 lane MIPI CSI-2, 22 pin FPC 0.5mm Pitch\n- **Expansion:** 20 pins: 2x I2C, 1x UART, 9x GPIOs\n- **Power:** 3.5mm Screw Terminal; 12V/5A, 9V~24V recommended\n- **Temperature Range:** Operating temperature -40°C~85°C, Storage temperature -40°C ~ 85°C\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_01YFiVUZhH9UTvzsmpmiLCrT",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D133-1 NVIDIA Jetson Orin NX carrier board spec"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D133-1 NVIDIA Jetson Orin NX carrier board spec\"\n\nLinks: [{\"title\":\"D133S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133S\"},{\"title\":\"D133-1 Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133-1\"},{\"title\":\"D133 5G | Official AVerMedia Distributor and Integrator\",\"url\":\"https://www.assured-systems.com/avermedia-d133-5g-nvidia-jetson-orin-nx-orin-nano-carrier-board/\"},{\"title\":\"AverMedia D133S Carrier NVIDIA Jetson Orin NX, Orin Nano - OpenZeka | NVIDIA Embedded Distributor\",\"url\":\"https://openzeka.com/en/product/avermedia-d133s-carrier-nvidia-jetson-orin-nx-orin-nano/\"},{\"title\":\"D133 Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133\"},{\"title\":\"Avermedia D133 (5G) Carrier Board for Orin NX/Orin Nano buy online at Low Price in India - ElectronicsComp.com\",\"url\":\"https://www.electronicscomp.com/avermedia-d133-5g-carrier-board-for-orin-nx-orin-nano\"},{\"title\":\"D133 Carrier Board Applies to NVIDIA® Jetson Orin NX/Orin Nano module\",\"url\":\"https://openzeka.com/wp-content/uploads/2025/02/Datasheet_AVerMedia_D133_Datasheet.pdf\"},{\"title\":\"AverMedia - D133 Carrier board for NVIDIA Jetson ORIN NX, ORIN Nano modules\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d1330001ab.htm\"},{\"title\":\"AVerMedia D133S Carrier Board for Jetson Orin NX / Orin Nano\",\"url\":\"https://aetherix.com/product/avermedia-d133s-carrier-board-for-jetson-orin-nx-orin-nano/\"},{\"title\":\"Radxa Carrier Board For NVIDIA Jetson Orin Series Carrier board\",\"url\":\"https://kr.rs-online.com/web/p/processor-development-tools/0484165\"}]\n\nBased on the search results, here's what I found about the AVerMedia D133-1 NVIDIA Jetson Orin NX carrier board:\n\n## Overview\nAVerMedia's D133-1 Carrier Board supports powerful NVIDIA Jetson Orin NX/Orin Nano modules. The D133-1 Carrier Board is designed for industry applications with spatial concern and is compact yet efficient for rapid AI-based solution development and seamless deployment as required by demanding business applications.\n\n## Support\nAVerMedia offers customizable BSP services, flexible MoQ, in addition to NVIDIA's JetPack SDK.\n\nThe search results confirm the D133-1 is an industrial-grade carrier board designed to support NVIDIA Jetson Orin NX and Orin Nano modules for embedded AI and IoT applications. However, the search results don't contain detailed technical specifications (such as exact dimensions, power requirements, connectors, or interface specifications) for the D133-1 model specifically. For more detailed technical specifications, you may want to consult the official AVerMedia datasheet or contact AVerMedia directly.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_01GsPsQ4army4LVAQLieNimh",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D133S Orin NX carrier board specifications professional.avermedia.com"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D133S Orin NX carrier board specifications professional.avermedia.com\"\n\nLinks: [{\"title\":\"D133 Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133\"},{\"title\":\"D133S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D133S\"},{\"title\":\"D133 Carrier Board Applies to NVIDIA® Jetson Orin NX/Orin Nano module\",\"url\":\"https://openzeka.com/wp-content/uploads/2025/02/Datasheet_AVerMedia_D133_Datasheet.pdf\"},{\"title\":\"PROVANTAGE: AVer Information D133 AverMedia MB D133 Carrier Board Nvidiar Jetson Orin NX Orin NanoÿBrown Box\",\"url\":\"https://www.provantage.com/aver-information-d133~7AVE90A4.htm\"},{\"title\":\"Products | Embedded Systems | Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/Products/embedded-systems/carrier-board\"},{\"title\":\"Products | AVerMedia\",\"url\":\"https://www.avermedia.com/AV/professional/products?category=Carrier-Board\"},{\"title\":\"Product Detail | D133 (5g) | AVerMedia\",\"url\":\"https://www.avermedia.com/professional/product-detail/D133%20(5G)\"},{\"title\":\"Products | AVerMedia\",\"url\":\"https://professional.avermedia.com/Products\"},{\"title\":\"AVerMedia D133S Carrier Board for Jetson Orin NX / Orin Nano\",\"url\":\"https://aetherix.com/product/avermedia-d133s-carrier-board-for-jetson-orin-nx-orin-nano/\"},{\"title\":\"AverMedia - D133 Carrier board for NVIDIA Jetson ORIN NX, ORIN Nano modules\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d1330001ab.htm\"}]\n\nBased on the search results, here's information about the AVerMedia D133S Orin NX carrier board:\n\n## Overview\nThe D133S Carrier Board supports powerful NVIDIA® Jetson Orin NX/Orin Nano modules and supports super mode with 1 x HDMI output and 1 x GbE.\n\n## Design and Purpose\nThe AVerMedia D133S is a compact and industrial-grade carrier board built for NVIDIA® Jetson™ Orin NX and Orin Nano modules. The D133S Carrier Board is designed for industry applications with spatial concern and is compact yet efficient for rapid AI-based solution development and seamless deployment.\n\n## Applications\nIt's the ideal choice for developing edge AI solutions across industries like smart retail, surveillance, and smart cities.\n\n## Support and Services\nAVerMedia supports businesses of all sizes and offers customizable BSP services, flexible MOQ, in addition to NVIDIA's JetPackTM SDK.\n\nFor detailed technical specifications, you can visit the official product page at professional.avermedia.com/product-detail/D133S.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_01U9cB7jnZY2GpFs22JPZBJb",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D133",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, M.2 slots, eMMC, SATA, capacity), and whether there is a microSD or SD card slot. List all storage-related interfaces and SD/microSD card slot presence explicitly."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D133 Carrier Board - Storage Specifications\n\n## Storage Support\n\n**NVMe SSD:**\n- \"1x M.2. key M 2280 for NVMe\" storage slot\n\n**WiFi/Secondary M.2 Slot:**\n- \"1 x M.2. key E 2230 for wifi\" expansion capability\n\n## Storage-Related Interfaces\n\nThe board provides two M.2 connectors with different key types:\n- M.2 Key M (2280 form factor) dedicated for NVMe drives\n- M.2 Key E (2230 form factor) for wireless modules\n\n## SD/MicroSD Card Support\n\n**No SD or microSD card slots are present** on this carrier board. The specifications make no mention of SD, microSD, eMMC, or SATA storage options.\n\n## Summary\n\nThe D133 supports only NVMe SSD storage via M.2 Key M connector. There are no alternative storage interfaces (eMMC, SATA, SD card) or removable storage slots documented in the specifications."
+          },
+          {
+            "id": "toolu_01UXDeqwsnSRFWYnWDjw7v9S",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D133-1",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, M.2 slots, eMMC, SATA, capacity), and whether there is a microSD or SD card slot. List all storage-related interfaces and SD/microSD card slot presence explicitly."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D133-1 Carrier Board: Storage Specifications\n\n## Storage Support\n\n**NVMe SSD:**\nThe board includes \"1x M.2. key M 2280 for NVMe\" storage capability.\n\n**Additional M.2 Slots:**\nBeyond NVMe, there is \"1 x M.2. key E 2230 for wifi\" available for wireless connectivity.\n\n**SD/MicroSD Card Slots:**\nThe specifications provided contain no mention of microSD or SD card slot support on this carrier board.\n\n**Other Storage Options:**\nThe documentation does not reference eMMC or SATA interfaces for this particular model.\n\n## Summary\n\nThe D133-1 Carrier Board supports one primary M.2 NVMe slot (2280 form factor) and one additional M.2 slot for WiFi expansion. No removable card storage options (microSD/SD) are documented in the available specifications."
+          },
+          {
+            "id": "toolu_0158egrgYpMMNF4qBgPysYs4",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D133S",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, M.2 slots, eMMC, SATA, capacity), and whether there is a microSD or SD card slot. List all storage-related interfaces and SD/microSD card slot presence explicitly."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D133S Carrier Board - Storage Specifications\n\n## Storage Support\n\n**NVMe SSD:**\n- \"1x M.2. key M 2280 for NVMe\" storage slot\n\n**WiFi/Expansion:**\n- \"1 x M.2. key E 2230 for wifi\"\n\n## SD/microSD Card Slot\n\n**Not present.** The specifications make no mention of SD or microSD card slot support.\n\n## Summary\n\nThe D133S carrier board provides one M.2 NVMe slot (2280 form factor) for primary storage and one M.2 slot (2230 form factor) designated for wireless expansion. There is no integrated microSD or SD card reader. No eMMC or SATA storage options are listed in the available specifications."
+          }
+        ],
+        "isExpanded": false,
+        "result": "All three official product pages return consistent specs. Here is the structured summary.\n\n## AVerMedia D133 Series - Storage & SD Card Support\n\n### D133\n- **Storage:** 1x M.2 Key M 2280 for NVMe SSD (primary storage). Also 1x M.2 Key E 2230, but that is for WiFi, not storage. No eMMC or SATA interfaces listed.\n- **SD Card:** No. No microSD/SD card slot present on the carrier board.\n- **Source:** https://professional.avermedia.com/product-detail/D133\n\n### D133-1\n- **Storage:** 1x M.2 Key M 2280 for NVMe SSD (primary storage). Also 1x M.2 Key E 2230 for WiFi (not storage). No eMMC or SATA listed.\n- **SD Card:** No. No microSD/SD card slot documented.\n- **Source:** https://professional.avermedia.com/product-detail/D133-1\n\n### D133S\n- **Storage:** 1x M.2 Key M 2280 for NVMe SSD (primary storage). Also 1x M.2 Key E 2230 for WiFi (not storage). No eMMC or SATA listed.\n- **SD Card:** No. No microSD/SD card reader present.\n- **Source:** https://professional.avermedia.com/product-detail/D133S\n\n## Key findings\n- All three variants share the same storage architecture: a single M.2 Key M (2280) slot for NVMe SSD as the primary/onboard storage path, plus an M.2 Key E (2230) slot reserved for WiFi/wireless modules (not usable as storage).\n- None of the three carrier boards expose a microSD or SD card slot per their official spec pages. (Note: eMMC availability depends on the installed Jetson module itself — e.g., certain Orin NX/Nano modules include onboard eMMC — but that is a module attribute, not a carrier-board interface, and the carrier pages do not list eMMC/SATA.)\n- No explicit NVMe capacity limits are stated on the product pages; capacity is determined by the M.2 2280 NVMe drive you install.\n\nCaveats: The official pages list high-level specs; for exact validated NVMe capacity ceilings or connector electrical details, the full datasheet PDFs (e.g., openzeka.com hosts the D133 datasheet) would be the authoritative supplement. The D133-1 and D133S did not have standalone downloadable datasheets surface in search, but their official product pages confirmed the storage and no-SD-card details above."
+      },
+      "toolu_016nbKGCGUGYydGxAQqMK11c": {
+        "id": "toolu_016nbKGCGUGYydGxAQqMK11c",
+        "description": "Research AVerMedia D115 series specs",
+        "prompt": "Research AVerMedia's NVIDIA Jetson Orin NX carrier boards in the D115 series: models D115S, D115W, and D115W-1.\n\nFor each model, find the product detail page on professional.avermedia.com (search \"AVerMedia D115 carrier board Orin NX spec\") and extract:\n1. Storage support: what storage interfaces/slots are supported (NVMe SSD, M.2 Key M, eMMC, SATA, etc.) and any capacity notes\n2. SD card / microSD card support: whether a microSD/SD card slot is present (yes/no)\n\nUse WebFetch and WebSearch. Report a concise structured summary per model (D115S, D115W, D115W-1) with Storage and SD Card fields, plus the source URL for each. If a spec cannot be found, say so explicitly.",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "toolu_01LkBTppmZ7iiDX568QWzgRf",
+            "name": "ToolSearch",
+            "input": {
+              "query": "select:WebSearch,WebFetch",
+              "max_results": 5
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "[\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebSearch\"\n  },\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebFetch\"\n  }\n]"
+          },
+          {
+            "id": "toolu_01GQtU7A79VjVg76gJRuZnHM",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D115 carrier board Orin NX spec"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D115 carrier board Orin NX spec\"\n\nLinks: [{\"title\":\"D115S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115S\"},{\"title\":\"AVerMedia D115S Carrier Board (Jetson Orin Nano, Orin NX) - OpenZeka | NVIDIA Embedded Distributor\",\"url\":\"https://openzeka.com/en/product/avermedia-d115s-carrier-board-jetson-orin-nano-orin-nx/\"},{\"title\":\"Standard Carrier Board D115W for NVIDIA® Jetson Orin NX/ Orin Nano Module D115W | AVerMedia\",\"url\":\"https://shop-us.avermedia.com/products/avermedia-standard-carrier-board-d315-for-nvidia-jetson-orin-nx-orin-nano-module-d115w\"},{\"title\":\"D115W Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115W\"},{\"title\":\"AVerMedia NX215 Carrier board and NO115B/ TN115B/ NX215B\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115OXB/UM/AVerMedia_UM_NX215B_D115+series+V2.4+20230920.pdf\"},{\"title\":\"D115W-1 Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115W-1\"},{\"title\":\"D115W | Official AVerMedia Distributor and Integrator\",\"url\":\"https://www.assured-systems.com/avermedia-d115w-nvidia-jetson-orin-nx-orin-nano-standard-carrier-board/\"},{\"title\":\"AVerMedia NX215 Carrier board and NO115B/ TN115B\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/NX215/User+Manual/AVerMedia_UM_NX215B_D115OXB+series+V2.0+20230704.pdf\"},{\"title\":\"AverMedia - D115W Carrier board for NVIDIA Jetson ORIN NX/ORIN Nano\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d115w001br.htm\"},{\"title\":\"D115OXB/D115ONB | AVerMedia\",\"url\":\"https://www.avermedia.com/professional/product-detail/D115OXB_D115ONB\"}]\n\nBased on the search results, here's information about the AVerMedia D115 carrier board for Orin NX:\n\n## Overview\n\nThe D115S is a Standard Carrier Board for NVIDIA Jetson Orin NX/Orin Nano Module. The AVerMedia D115S Carrier Board is a compact, industrial-grade carrier board designed for NVIDIA Jetson Orin NX and Orin Nano modules.\n\n## Key Features\n\nD115S is designed for industry applications with spatial concern and features a rich assortment of I/O ports for rapid AI-based solution development and seamless deployment. AVerMedia supports the devices with AVerCooler technology, achieving 5°C lower operation under regular workload for enhanced NVIDIA Jetson efficiency.\n\n## Variants\n\nThe search results show multiple D115 variants available:\n- D115S\n- D115W\n- D115W-1\n\nAVerMedia offers customizable BSP services, flexible MoQ, in addition to NVIDIA's JetPack SDK.\n\nFor detailed specifications, you may want to consult the official AVerMedia product pages or user manuals referenced in the search results.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_01EAHTtL947KYKFwRA5roHcB",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D115S D115W D115W-1 Jetson Orin NX carrier board storage microSD"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D115S D115W D115W-1 Jetson Orin NX carrier board storage microSD\"\n\nLinks: [{\"title\":\"D115W-1 Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115W-1\"},{\"title\":\"Standard Carrier Board D115W for NVIDIA® Jetson Orin NX/ Orin Nano Module D115W | AVerMedia\",\"url\":\"https://shop-us.avermedia.com/products/avermedia-standard-carrier-board-d315-for-nvidia-jetson-orin-nx-orin-nano-module-d115w\"},{\"title\":\"D115S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115S\"},{\"title\":\"D115W Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D115W\"},{\"title\":\"Amazon.com: AVerMedia Standard Carrier Board for NVIDIA Jetson Orin NX/Orin Nano Module D115W : Electronics\",\"url\":\"https://www.amazon.com/AVerMedia-Standard-Carrier-NVIDIA-D115W/dp/B0D9Q9G2WS\"},{\"title\":\"D115W | Official AVerMedia Distributor and Integrator\",\"url\":\"https://www.assured-systems.com/avermedia-d115w-nvidia-jetson-orin-nx-orin-nano-standard-carrier-board/\"},{\"title\":\"AVerMedia D115S Carrier Board (Jetson Orin Nano, Orin NX) - OpenZeka | NVIDIA Embedded Distributor\",\"url\":\"https://openzeka.com/en/product/avermedia-d115s-carrier-board-jetson-orin-nano-orin-nx/\"},{\"title\":\"AVerMedia D115W-1 Carrier board and D115WOXB- ...\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115W-1/AVerMedia_UM_D115W-1+series+V1.5+20250915.pdf\"},{\"title\":\"AverMedia - D115W Carrier board for NVIDIA Jetson ORIN NX/ORIN Nano\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d115w001br.htm\"},{\"title\":\"The AVerMedia Advantage • Embedded NVIDIA® Jetson Orin NX /Orin Nano •\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115S/Datasheet_AVerMedia_D115SOXB_D115SONB+_Box+PC_EN_v0.1_20250307.pdf\"}]\n\nI've completed the web search for information about AVerMedia D115S, D115W, and D115W-1 Jetson Orin NX carrier boards with storage and microSD capabilities.\n\nHere are the key findings:\n\n**Product Overview:**\nThe D115W-1 is an AI Carrier board that applies to NVIDIA Jetson Orin NX/Orin Nano modules, and the D115W also applies to NVIDIA Jetson Orin NX/Orin Nano modules. Additionally, the D115S is a Standard Carrier Board designed for NVIDIA Jetson Orin NX/Orin Nano.\n\n**Design and Features:**\nThe D115W-1 is designed for industry applications with spatial concerns and features a rich assortment of I/O ports for rapid AI-based solution development. Similarly, the D115S is a compact, industrial-grade carrier board developed with high performance and durability in mind, offering a robust solution for demanding connectivity requirements and modular expansion capabilities.\n\nThe search results found product pages and documentation references for these carrier boards, though specific microSD storage specifications were not detailed in the excerpts returned. For detailed specifications about microSD storage capabilities, you may want to consult the full user manuals or datasheets available on AVerMedia's professional website.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_01QwcUynSZZgo8RMo4GmypRn",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D115S",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, eMMC, SATA slots and capacity), and whether there is a microSD or SD card slot present. List exact spec text."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D115S Carrier Board - Storage Specifications\n\n## Storage Support\n\nThe D115S carrier board includes the following storage options:\n\n**NVMe SSD:**\n- \"1x M.2. key M 2280 for NVMe\"\n\n**WiFi/Expansion:**\n- \"1xM.2. key E 2230 for wifi\"\n\n## Notable Absences\n\nThe device specifications do **not** include:\n- microSD or SD card slots\n- eMMC storage\n- SATA connections\n\nThe board relies entirely on M.2 form-factor storage for both system drives (NVMe) and wireless expansion, without offering any alternative storage interfaces for additional capacity beyond these two M.2 slots."
+          },
+          {
+            "id": "toolu_01TPLshYRxRitaskxLMjjKQz",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D115W",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, eMMC, SATA slots and capacity), and whether there is a microSD or SD card slot present. List exact spec text."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D115W Storage Specifications\n\n## Storage Support\n\n**NVMe SSD:**\nThe device includes \"1x M.2. key M 2280 for NVMe\" according to the specifications table.\n\n**M.2 Expansion:**\nAdditionally, there is \"1x M.2. key E 2230 for wifi\" listed for wireless connectivity.\n\n**microSD/SD Card Slots:**\nThe documentation does not mention any microSD or SD card slots.\n\n**eMMC or SATA:**\nNo eMMC or SATA storage options are listed in the specifications.\n\n## Summary\n\nThe D115W carrier board supports one M.2 NVMe slot (2280 form factor) for primary storage. There are no microSD, SD card, eMMC, or SATA options documented for this model."
+          },
+          {
+            "id": "toolu_01Gg6oVD3v8Q9ykRBi9oU9ui",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D115W-1",
+              "prompt": "Extract the full specifications, especially: storage support (NVMe SSD, M.2 Key M, eMMC, SATA slots and capacity), and whether there is a microSD or SD card slot present. List exact spec text."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D115W-1 Storage Specifications\n\nBased on the product documentation, here are the storage specifications:\n\n**Storage Support:**\n- \"1x M.2. key M 2280 for NVMe\" (primary storage)\n- \"1xM.2. key E 2230 for wifi\" (secondary M.2 slot)\n\n**Key Findings:**\nThe D115W-1 does **not** include:\n- microSD or SD card slots\n- eMMC storage\n- SATA connections\n\nThe board provides a single NVMe M.2 slot (2280 form factor) for the main storage drive. The second M.2 slot is dedicated to WiFi expansion rather than additional storage capacity."
+          },
+          {
+            "id": "toolu_01G4q9FRpgNxG6ftNEBLumFj",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115S/Datasheet_AVerMedia_D115SOXB_D115SONB+_Box+PC_EN_v0.1_20250307.pdf",
+              "prompt": "List all storage-related specifications: NVMe, M.2 Key M, M.2 Key E, eMMC, SATA. Also state explicitly whether a microSD or SD card slot is mentioned anywhere."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "I cannot extract the requested storage-related specifications from the provided content. The text appears to be raw PDF binary data (encoded stream objects) rather than readable document content. The payload consists primarily of compressed/encoded image and font data, making it impossible to identify any mentions of NVMe, M.2 Key M, M.2 Key E, eMMC, SATA, microSD, or SD card specifications.\n\nTo properly analyze storage specifications, I would need the document content in a readable format (plain text, HTML, or properly decoded PDF text).\n\n[Binary content (application/pdf, 336.5KB) also saved to /home/louis/.claude/projects/-home-louis-Documents-obsidian-sync/4e43219a-f8ad-466c-9dff-6ad8725bda33/tool-results/webfetch-1786614006302-yu66tq.pdf]"
+          },
+          {
+            "id": "toolu_01NEw2DHmmwb9Kupjk7JVPoo",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115W-1/AVerMedia_UM_D115W-1+series+V1.5+20250915.pdf",
+              "prompt": "List all storage-related specifications: NVMe, M.2 Key M, M.2 Key E, eMMC, SATA. Also state explicitly whether a microSD or SD card slot is mentioned anywhere."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "I cannot extract the specific storage specifications you requested from this PDF content. The provided text appears to be raw PDF code rather than readable document content, making it impossible to identify specifications for NVMe, M.2 Key M, M.2 Key E, eMMC, SATA, or any card slot information.\n\nTo answer your question accurately, I would need access to the actual rendered document content or a text-only version of the specification sheet. If you could provide the document in a more accessible format or share the relevant specification section directly, I'd be happy to help identify the storage-related details you're looking for.\n\n[Binary content (application/pdf, 2.9MB) also saved to /home/louis/.claude/projects/-home-louis-Documents-obsidian-sync/4e43219a-f8ad-466c-9dff-6ad8725bda33/tool-results/webfetch-1786614007785-48770y.pdf]"
+          },
+          {
+            "id": "toolu_019o5Qksw4QP4Zsm6eLndnvs",
+            "name": "Read",
+            "input": {
+              "file_path": "/home/louis/.claude/projects/-home-louis-Documents-obsidian-sync/4e43219a-f8ad-466c-9dff-6ad8725bda33/tool-results/webfetch-1786614006302-yu66tq.pdf",
+              "pages": "1-4"
+            },
+            "status": "running",
+            "isExpanded": false
+          }
+        ],
+        "isExpanded": false,
+        "result": "Error: pdftoppm is not installed. Install poppler-utils (e.g. `brew install poppler` or `apt-get install poppler-utils`) to enable PDF page rendering."
+      },
+      "toolu_01JEj22WgjhNYxVgk41rLrbk": {
+        "id": "toolu_01JEj22WgjhNYxVgk41rLrbk",
+        "description": "Research AVerMedia D131 and NX215 specs",
+        "prompt": "Research AVerMedia's NVIDIA Jetson Orin NX carrier boards: models D131, D131L, D131S (D131 series) and NX215.\n\nFor each model, find the product detail page on professional.avermedia.com (search \"AVerMedia D131 carrier board Orin NX spec\" and \"AVerMedia NX215 carrier board spec\") and extract:\n1. Storage support: what storage interfaces/slots are supported (NVMe SSD, M.2 Key M, eMMC, SATA, etc.) and any capacity notes\n2. SD card / microSD card support: whether a microSD/SD card slot is present (yes/no)\n\nUse WebFetch and WebSearch. Report a concise structured summary per model (D131, D131L, D131S, NX215) with Storage and SD Card fields, plus the source URL for each. If a spec cannot be found, say so explicitly.",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "toolu_016mTLSwRhxZR6YsML8DMkdx",
+            "name": "ToolSearch",
+            "input": {
+              "query": "select:WebSearch,WebFetch",
+              "max_results": 5
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "[\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebSearch\"\n  },\n  {\n    \"type\": \"tool_reference\",\n    \"tool_name\": \"WebFetch\"\n  }\n]"
+          },
+          {
+            "id": "toolu_01Qeiq7xaPtAZqjepqBAtQny",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia D131 carrier board Orin NX spec professional.avermedia.com"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia D131 carrier board Orin NX spec professional.avermedia.com\"\n\nLinks: [{\"title\":\"D131 | Official AVerMedia Distributor and Integrator\",\"url\":\"https://www.assured-systems.com/avermedia-d131-standard-carrier-board-nvidia-jetson-orin-nx-orin-nano-module-1x-hdmi-3840-x-2160-60hz-30hz-w-2x-2-lane-mipi-csi-2-1x-4-lane-mipi-csi-2/\"},{\"title\":\"Carrier Board - D131 | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D131\"},{\"title\":\"D131S Carrier Board | AVerMedia\",\"url\":\"https://www.avermedia.com/professional/product-detail/D131S\"},{\"title\":\"Carrier Board - D131L | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D131L\"},{\"title\":\"D131S Carrier Board | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/D131S\"},{\"title\":\"Standard Carrier Board D131L for NVIDIA® Jetson Orin NX/ Orin Nano Module with NVIDIA BSP - D131L | AVerMedia\",\"url\":\"https://shop-us.avermedia.com/products/avermedia-standard-carrier-board-d131\"},{\"title\":\"Product Detail | D131oxb D131nxb D131nob | AVerMedia\",\"url\":\"https://www.avermedia.com/professional/product-detail/D131OXB_D131NXB_D131NOB\"},{\"title\":\"0 D131 User Manual AVerMedia Technologies, Inc www.avermedia.com\",\"url\":\"https://openzeka.com/wp-content/uploads/2023/09/AVerMedia_UM_D131V0.520230731.pdf\"},{\"title\":\"Product Detail | D131oxb | AVerMedia\",\"url\":\"https://www.avermedia.com/professional/product-detail/D131OXB\"},{\"title\":\"AverMedia - D131 Carrier board for NVIDIA Jetson ORIN NX, Xavier NX, Nano modules\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61d1310001ap.htm\"}]\n\nBased on the search results, here's what I found about the AVerMedia D131 carrier board:\n\n## Overview\nAVerMedia's D131 Carrier board equips powerful NVIDIA® Jetson Orin NX/ Xavier™ NX/ Nano modules. This efficient system-on-module (SoM) opens new worlds of embedded IoT applications with full analytic capabilities.\n\n## Purpose and Design\nAVerMedia D131 is designed for the industry applications with spatial concern and feature a rich assortment of I/O ports for rapid AI-based solution development and seamless deployment as required by demanding business applications.\n\n## Key Specifications\nD131 provides one HDMI video output, four USB 3.1 ports, one GbE RJ-45 port (Option POE), 40-pin expansion header, and one Micro-B USB 2.0 port for recovery.\n\n## Support and Customization\nAVerMedia supports businesses of all sizes and offers customizable BSP services, flexible MoQ, in addition to NVIDIA's JetPackTM SDK.\n\n**Note:** D131 have one mSD slot, but NVIDIA Orin NX/Orin Nano doesn't support mSD function. All specifications are subject to change without prior notice.\n\nThe official product page is available at professional.avermedia.com, which you can visit for the complete and most up-to-date specifications.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_013EU12BAonSmzbZNfi7AoSg",
+            "name": "WebSearch",
+            "input": {
+              "query": "AVerMedia NX215 carrier board Orin NX spec storage microSD"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "Web search results for query: \"AVerMedia NX215 carrier board Orin NX spec storage microSD\"\n\nLinks: [{\"title\":\"AVerMedia NX215 Carrier board and NO115B/ TN115B/ NX215B\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/D115OXB/UM/AVerMedia_UM_NX215B_D115+series+V2.4+20230920.pdf\"},{\"title\":\"NX215 Carrier Board - AVerMedia - AI-based solutions | AVerMedia\",\"url\":\"https://professional.avermedia.com/product-detail/NX215\"},{\"title\":\"professional.avermedia.com Datasheet NX215 Carrier board\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/NX215/Datasheet/Datasheet_AVerMedia_NX215_Carrier+board+EN_v2.2_20230725.pdf\"},{\"title\":\"professional.avermedia.com Datasheet NX215 Carrier board\",\"url\":\"https://www.assured-systems.com/_legacy/uploads/media/AverMedia/NVIDIA_Embedded_Carrier_Boards/AverMedia-NX215-Datasheet.pdf\"},{\"title\":\"AVerMedia NX215 Carrier board and NO115B/ TN115B\",\"url\":\"https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/NX215/User+Manual/AVerMedia_UM_NX215B_D115OXB+series+V2.0+20230704.pdf\"},{\"title\":\"Avermedia NX215 Manuals | ManualsLib\",\"url\":\"https://www.manualslib.com/products/Avermedia-Nx215-12331987.html\"},{\"title\":\"Support | Download | AVerMedia\",\"url\":\"https://professional.avermedia.com/support/download?model_number=NX215\"},{\"title\":\"AverMedia - NX215 Carrier board for NVIDIA Jetson ORIN NX, Xavier NX, Nano modules\",\"url\":\"https://www.siliconhighwaydirect.com/product-p/61nx215b01aw.htm\"}]\n\nBased on the search results, here's what I found about the AVerMedia NX215 carrier board and its storage specifications:\n\n## Storage and microSD Support\n\nThe NX215 Carrier board includes 1x micro-SD card slot (only for NX/TX2 NX/Nano). This means that while the board supports a microSD card slot, it's important to note that this feature is not available for the Orin Nano or Orin NX modules specifically—the microSD slot is only functional with the Xavier NX, TX2 NX, and Nano modules.\n\n## General Specifications\n\nThe NX215 supports NVIDIA® Jetson Orin NX/Orin Nano/Xavier™ NX/TX2 NX/Nano modules and features 2x 2 Lane MIPI CSI-2 Camera Input, 1x 4 Lane MIPI CSI-2 Camera Input (only for NX/TX2 NX/Nano), 2x GbE RJ-45 with 20-pins expansion header, 3x USB 3.0, 2x 4Kp60 HDMI outputs (Nano/Orin NX/Orin Nano support 1x HDMI), and 2x M.2 for WIFI and SSD.\n\nThe board also has an operating temperature range of 0°C ~ 70°C with dimensions of W: 120mm x L: 90mm x H:26.5mm.\n\n\nREMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks."
+          },
+          {
+            "id": "toolu_017ABvcy42h1dmDiHRdhC55b",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D131",
+              "prompt": "Extract storage specifications: NVMe SSD, M.2 Key M, eMMC, SATA slots and any capacity. Also whether there is a microSD/SD card slot (yes/no and any notes about Orin NX/Nano support)."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D131 Carrier Board Storage Specifications\n\n**NVMe SSD:**\n- 1x M.2 Key M 2280 slot for SSD storage\n\n**Wi-Fi Storage:**\n- 1x M.2 Key E 2230 for Wi-Fi module\n\n**microSD Card:**\nThe D131 includes \"one mSD slot, but NVIDIA Orin NX/Orin Nano doesn't support mSD function. It's SOM limitation.\" This means the physical slot exists, but the Jetson modules themselves do not support microSD card functionality—a hardware constraint of the System-on-Module rather than the carrier board.\n\n**Summary:**\nThe board provides one NVMe SSD slot (M.2 2280) for primary storage and one M.2 slot for wireless connectivity, but microSD cards cannot be used due to the Orin NX/Nano module limitations. No eMMC or SATA options are listed in the specifications."
+          },
+          {
+            "id": "toolu_01JsCX5rBwgkPxH6qEVhxinW",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D131L",
+              "prompt": "Extract storage specifications: NVMe SSD, M.2 Key M, eMMC, SATA slots and any capacity. Also whether there is a microSD/SD card slot (yes/no and any notes about Orin NX/Nano support)."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# Storage Specifications for D131L Carrier Board\n\n**NVMe SSD Storage:**\nThe device includes \"1x M.2. key M 2280 for SSD\" according to the specifications table.\n\n**Wi-Fi Storage:**\nAn additional M.2 slot is available: \"1x M.2. key E 2230 for wifi (AC9260).\"\n\n**Other Storage Options:**\nNo eMMC, SATA slots, or microSD/SD card slots are mentioned in the documentation.\n\n**Orin NX/Nano Compatibility:**\nThe D131L is specifically designed as a \"Standard Carrier Board D131L for NVIDIA® Jetson Orin NX/ Orin Nano Module,\" so both storage slots are compatible with both module variants."
+          },
+          {
+            "id": "toolu_013N4jEys6HAjRzZp1DcmUwL",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/D131S",
+              "prompt": "Extract storage specifications: NVMe SSD, M.2 Key M, eMMC, SATA slots and any capacity. Also whether there is a microSD/SD card slot (yes/no and any notes about Orin NX/Nano support)."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# D131S Carrier Board Storage Specifications\n\n**NVMe SSD:**\n- \"1x M.2. key M 2280 for SSD\"\n\n**M.2 Slots:**\n- One additional M.2 Key E 2230 slot available for \"Wi-Fi\" or capture cards\n\n**microSD/SD Card:**\n- The device includes one microSD slot; however, there is a noted limitation: \"NVIDIA Orin NX/Orin Nano doesn't support mSD function. It's SOM limitation\"\n\n**No eMMC or SATA:** These storage types are not listed in the specifications.\n\nThe D131S prioritizes NVMe storage for primary data, while the microSD slot cannot be utilized with the supported Orin modules due to hardware constraints inherent to those system-on-modules."
+          },
+          {
+            "id": "toolu_01CgpkcedGjoYVDYBAMCMELr",
+            "name": "WebFetch",
+            "input": {
+              "url": "https://professional.avermedia.com/product-detail/NX215",
+              "prompt": "Extract storage specifications: NVMe SSD, M.2 Key M/Key E, eMMC, SATA slots and any capacity. Also whether there is a microSD/SD card slot (yes/no and any notes about which modules support it)."
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "# NX215 Carrier Board Storage Specifications\n\n## NVMe SSD\n- **1x M.2 Key M 2280** for NVMe storage\n\n## WiFi/Expansion\n- **1x M.2 Key E 2230** for WiFi module (Note: Nano modules do not support WiFi)\n\n## MicroSD Card Slot\n- **1x microSD card slot** - **NOT supported on Orin NX or Orin Nano** modules\n- Available for Xavier NX, TX2 NX, and Nano modules\n\n## Summary\nThe NX215 provides dual M.2 slots for expandable storage and wireless connectivity, with microSD support limited to older module variants. The specifications note that \"1x micro-SD card slot (not for Orin NX/ Orin Nano)\" indicates AVerMedia's design prioritizes newer Orin-series modules without this legacy interface."
+          }
+        ],
+        "isExpanded": false,
+        "result": "Research complete. Here is the structured summary per model.\n\n## AVerMedia Jetson Orin NX Carrier Boards — Storage & SD Card\n\n### D131\n- **Storage:** 1x M.2 Key M 2280 slot for NVMe SSD; 1x M.2 Key E 2230 slot for Wi-Fi module. No eMMC or SATA.\n- **SD Card:** Yes — one microSD (mSD) slot is physically present, BUT non-functional with Orin NX/Orin Nano modules (\"NVIDIA Orin NX/Orin Nano doesn't support mSD function. It's SOM limitation\").\n- **Source:** https://professional.avermedia.com/product-detail/D131\n\n### D131L\n- **Storage:** 1x M.2 Key M 2280 slot for NVMe SSD; 1x M.2 Key E 2230 slot for Wi-Fi (AC9260). No eMMC or SATA.\n- **SD Card:** No microSD/SD card slot is listed on the product page for the D131L. (Note: the D131 series shares a chassis, but the L variant's spec table does not enumerate a microSD slot — treat as not documented/absent.)\n- **Source:** https://professional.avermedia.com/product-detail/D131L\n\n### D131S\n- **Storage:** 1x M.2 Key M 2280 slot for NVMe SSD; 1x M.2 Key E 2230 slot (Wi-Fi/capture). No eMMC or SATA.\n- **SD Card:** Yes — one microSD slot present, but non-functional with Orin NX/Orin Nano (\"SOM limitation\").\n- **Source:** https://professional.avermedia.com/product-detail/D131S\n\n### NX215\n- **Storage:** 1x M.2 Key M 2280 slot for NVMe SSD; 1x M.2 Key E 2230 slot for Wi-Fi module. No eMMC or SATA.\n- **SD Card:** Yes — one microSD card slot present, but \"not for Orin NX/Orin Nano\" (only functional with Xavier NX, TX2 NX, and Nano modules).\n- **Source:** https://professional.avermedia.com/product-detail/NX215\n\n### Key cross-model finding\nAll four boards use the same storage architecture: a single **M.2 Key M 2280 NVMe SSD** slot as primary storage plus an M.2 Key E 2230 Wi-Fi slot; none support eMMC or SATA. Every board that exposes a microSD slot (D131, D131S, NX215) explicitly notes it is **non-functional on Orin NX/Orin Nano** modules due to the module (SOM) itself, not the carrier board. The D131L product page does not list a microSD slot at all.\n\nSources:\n- [D131 — professional.avermedia.com](https://professional.avermedia.com/product-detail/D131)\n- [D131L — professional.avermedia.com](https://professional.avermedia.com/product-detail/D131L)\n- [D131S — professional.avermedia.com](https://professional.avermedia.com/product-detail/D131S)\n- [NX215 — professional.avermedia.com](https://professional.avermedia.com/product-detail/NX215)"
+      }
+    }
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 1048,
+    "cacheReadInputTokens": 83850,
+    "contextWindow": 1000000,
+    "contextTokens": 84900,
+    "percentage": 8
+  }
+}

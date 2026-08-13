@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1785741615086-8e83oth1r",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785741615224-chmo2xe",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1785741615080-n19y271",
+      "timestamp": 1785741615080,
+      "rawDisplayText": "hi",
+      "canonicalText": "hi",
+      "context": {
+        "currentNote": {
+          "path": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Beam Projection/TI/Chip/Controller/DLPC3478/스펙 분석.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "88de65a2615a366404fdfd86bc354f32929270ce50be0af4a2bb771e29bf83ef",
+      "providerUserMessageId": "f5ec305d-8a3f-46ec-afc8-7e69dd51961e",
+      "providerAssistantMessageId": "5cb9d2a1-edaf-4f8d-9955-8d7a9f48057a"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785741639683-r7k1wov",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1785741639677-dtafn68",
+      "timestamp": 1785741639677,
+      "rawDisplayText": "hi",
+      "canonicalText": "hi",
+      "images": [],
+      "contentDigest": "88de65a2615a366404fdfd86bc354f32929270ce50be0af4a2bb771e29bf83ef",
+      "providerUserMessageId": "8a71a5fd-0c22-495c-ab1c-1fa153bc3a09",
+      "providerAssistantMessageId": "9bb189aa-6013-4e53-8b76-5d6f173ca79b"
+    }
+  ]
+}

@@ -96,7 +96,14 @@
     }
   },
   "settingsProvider": "claude",
+<<<<<<< HEAD
   "lastSelectedChatModel": null,
+=======
+  "lastSelectedChatModel": {
+    "providerId": "claude",
+    "model": "opus"
+  },
+>>>>>>> origin/main
   "savedProviderModel": {
     "claude": "opus"
   },
@@ -121,5 +128,10 @@
   "sessionManagerOrganization": "list",
   "sessionManagerSort": "last-updated",
   "pinnedLinkedNotePaths": [],
+<<<<<<< HEAD
   "hiddenProviderCommands": {}
+=======
+  "hiddenProviderCommands": {},
+  "maxTabs": 3
+>>>>>>> origin/main
 }

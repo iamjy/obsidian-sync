@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1786613939038-46j2d1gqj",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786613939168-tznkzsx",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1786613939029-phamrko",
+      "timestamp": 1786613939029,
+      "rawDisplayText": "https://professional.avermedia.com/Products/embedded-systems/orin-nx 이 페이지에서 Orin NX의 캐리어 보드 중에 시리즈 별로 Stroage 지원 범위와 SD Card 지원 여부도 확인해서 정리해줘. 현재 노트에 작성해줘.",
+      "canonicalText": "https://professional.avermedia.com/Products/embedded-systems/orin-nx 이 페이지에서 Orin NX의 캐리어 보드 중에 시리즈 별로 Stroage 지원 범위와 SD Card 지원 여부도 확인해서 정리해줘. 현재 노트에 작성해줘.",
+      "context": {
+        "currentNote": {
+          "path": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Booting Process/Boot /Boot & Storage 구성.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "47a3b740aa3d12c9d9d45960e375382d5e98e5de254e63f93ce48d6bfde7b6b0",
+      "providerUserMessageId": "d2439e9b-37a7-43f0-8b90-17b5c27adfc6",
+      "providerAssistantMessageId": "4c972553-1b0f-4aff-b6da-560276f365ee"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786614662401-fmjzbc7",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1786614662390-m60w1fo",
+      "timestamp": 1786614662390,
+      "rawDisplayText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html?utm_source=chatgpt.com 이 페이지에서 Jetson Modules and Configurations 이 항목의 내용을 현재 노트에 정리해서 추가해줘.",
+      "canonicalText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html?utm_source=chatgpt.com 이 페이지에서 Jetson Modules and Configurations 이 항목의 내용을 현재 노트에 정리해서 추가해줘.",
+      "images": [],
+      "contentDigest": "1f4a77405b0c7ef77036813d7b2a38e09542fec09ae0c5a26babd63ecb81fdf6",
+      "providerUserMessageId": "5c23abff-c692-44e0-a630-1f68647d1895",
+      "providerAssistantMessageId": "01cdaa64-9d7c-4b9d-bda5-e20a0bcadef5"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786614827019-gpqg9zd",
+      "userTurnOrdinal": 3,
+      "state": "accepted",
+      "localMessageId": "msg-1786614827011-4ya01aq",
+      "timestamp": 1786614827011,
+      "rawDisplayText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/AR/BootArchitecture/PartitionConfiguration.html 이 웹 페이지에서 **Partition Configuration Files** 이 항목의 내용을 정리해서 현재 노트에 추가해줘.",
+      "canonicalText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/AR/BootArchitecture/PartitionConfiguration.html 이 웹 페이지에서 **Partition Configuration Files** 이 항목의 내용을 정리해서 현재 노트에 추가해줘.",
+      "images": [],
+      "contentDigest": "e3c761f373befd8cc63bd3e36d2dae462ffcd808b09b7e8cd5de3409e1b88921",
+      "providerUserMessageId": "308cb68a-c094-469a-8cd6-3f1bf1692a78",
+      "providerAssistantMessageId": "3c1a7569-2620-4575-9efe-31dcc6f61742"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786615115030-pcl55vo",
+      "userTurnOrdinal": 4,
+      "state": "accepted",
+      "localMessageId": "msg-1786615115022-cm1cth4",
+      "timestamp": 1786615115022,
+      "rawDisplayText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/AR/BootArchitecture/PartitionConfiguration.html 이 웹 페이지에서 **Partition Configuration Files** 항목에 보이는 표의 내용을 정리해서 현재 노트에 추가해줘.",
+      "canonicalText": "https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/AR/BootArchitecture/PartitionConfiguration.html 이 웹 페이지에서 **Partition Configuration Files** 항목에 보이는 표의 내용을 정리해서 현재 노트에 추가해줘.",
+      "images": [],
+      "contentDigest": "000c3cf5050d503231916e93eb34f940303d213de7befe08ed12760e730a85e8",
+      "providerUserMessageId": "0cfad8da-f4e7-4103-a753-c1b1f9821366",
+      "providerAssistantMessageId": "16ec98a8-b7f2-4c1a-9512-ca424ed48c36"
+    }
+  ]
+}

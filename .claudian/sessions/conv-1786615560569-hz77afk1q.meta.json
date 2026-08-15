@@ -1,0 +1,23 @@
+{
+  "id": "conv-1786615560569-hz77afk1q",
+  "providerId": "claude",
+  "title": "Extract Jetson Orin power efficiency section",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786615560569,
+  "lastActivityAt": 1786615823246,
+  "sessionId": "358e3d6d-7c6e-4be1-91bb-c1ea305e8396",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "358e3d6d-7c6e-4be1-91bb-c1ea305e8396"
+  },
+  "currentNote": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/전력 관리/Super Mode.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 2439,
+    "cacheReadInputTokens": 64036,
+    "contextWindow": 1000000,
+    "contextTokens": 66477,
+    "percentage": 7
+  }
+}

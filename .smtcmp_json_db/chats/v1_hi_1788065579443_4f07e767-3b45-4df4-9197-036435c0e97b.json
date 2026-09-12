@@ -1,0 +1,149 @@
+{
+  "id": "4f07e767-3b45-4df4-9197-036435c0e97b",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "0a88b845-e0ef-44ce-99ca-26e160743eeb",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/소프트웨어 설계/아키텍처와 설계의 차이점.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I help you today? If you have any questions about your Obsidian notes or need help editing your markdown files, feel free to ask!",
+      "id": "287899db-a4ce-486f-bcc8-3178d4b3de2c",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "gemma-4-31b",
+          "model": "google/ge mma-4-31b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1401,
+          "completion_tokens": 102,
+          "total_tokens": 1503,
+          "completion_tokens_details": {
+            "reasoning_tokens": 66
+          }
+        }
+      }
+    },
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "  현재 노트의 내용을 기억하기 좋도록 구조적으로 가독성을 높이되 문맥과 의미는 유지해.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\n  현재 노트의 내용을 기억하기 좋도록 구조적으로 가독성을 높이되 문맥과 의미는 유지해.\n\n"
+        }
+      ],
+      "id": "33e9f664-c3cb-4f1e-abce-fb827023ea69",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/소프트웨어 설계/아키텍처와 설계의 차이점.md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "내용의 핵심 의미는 유지하면서, 계층 구조(Heading)와 리스트를 활용해 가독성과 기억 효율을 높였습니다.\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/3. 진행/제이시스메디칼/소프트웨어 설계/아키텍처와 설계의 차이점.md\" language=\"markdown\">\n<!-- ... existing content ... -->\n# 소프트웨어 아키텍처 vs 상세 설계\n\n## 1. 관계 및 정의\n- **관계**: 소프트웨어 아키텍처는 설계(Design)의 한 부분이며, 별개의 개념이 아닙니다.\n- **구분 목적**: \"누가 어떤 결정을 내려야 하는지\"에 대한 **역할과 책임**을 명확히 하기 위함입니다.\n\n## 2. 결정 범위와 특성\n| 구분 | 소프트웨어 아키텍처 | 상세 설계 |\n| :--- | :--- | :--- |\n| **영향도** | 시스템 전체에 영향 | 국소적인 기능 구현에 영향 |\n| **관리 방식** | 명시적으로 다루고 기록해야 함 | 아키텍트의 개입 없이 자율적 진행 가능 |\n| **핵심 요건** | 아키텍처 원칙 준수 여부 확인 필요 | 세부 구현의 효율성과 정확성 |\n\n## 3. 구분하지 않았을 때 발생하는 문제\n- **아키텍트가 모든 설계에 개입할 경우**: 개발자의 자율성이 침해되며, 아키텍트가 프로젝트의 **병목(Bottleneck)**이 됩니다.\n- **구분이 전혀 없을 경우**: 중요 결정이 임의로 내려져, 나중에 되돌리기 어려운 치명적인 결함들이 '조용히' 쌓여 시스템을 망가뜨릴 수 있습니다.\n</smtcmp_block>",
+      "id": "91dab120-cb92-4377-b383-7549316c8cf3",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "gemma-4-31b",
+          "model": "google/ge mma-4-31b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 1629,
+          "completion_tokens": 783,
+          "total_tokens": 2412,
+          "completion_tokens_details": {
+            "reasoning_tokens": 385
+          }
+        }
+      }
+    }
+  ],
+  "createdAt": 1788064909171,
+  "updatedAt": 1788065579443,
+  "schemaVersion": 1
+}

@@ -1,0 +1,97 @@
+{
+  "id": "b1a32d99-33cc-4f3a-ad01-7a2ec46bc815",
+  "title": "@CCPLEX ( CPU Cluster Complex ).md 페이지의 문장의 원문 손실없",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 1,
+                  "format": 0,
+                  "mode": "token",
+                  "style": "",
+                  "text": "@CCPLEX ( CPU Cluster Complex ).md",
+                  "type": "mention",
+                  "version": 1,
+                  "mentionName": "CCPLEX ( CPU Cluster Complex ).md",
+                  "mentionable": {
+                    "type": "file",
+                    "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md"
+                  }
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " 페이지의 문장의 원문 손실없이 가독성을 향상시켜줘.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "```딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md\n---\ntitle:\nsource:\nauthor:\npublished:\ncreated: 2025-09-07\ndescription:\ntags:\n---\nCCPLEX(CPU Cluster Complex)는 ==NVIDIA의 테그라(Tegra) 및 오린(Orin) SoC(시스템 온 칩)에서 메인 CPU 코어들이 모여 있는 핵심 클러스터 집합==을 의미합니다.\n\n앞서 설명해 드린 BPMP가 부팅과 전력을 관리하는 '보조 프로세서'라면, CCPLEX는 실제 운영체제(리눅스, 안드로이드 등)와 무거운 연산 앱이 실행되는 '주인공 CPU'입니다.\n\n## 💡 핵심 특징\n\n- 기능: 리눅스, QNX, 안드로이드 같은 주 운영체제(OS)가 이 위에서 돌아갑니다.\n- 구성: 플랫폼에 따라 NVIDIA가 자체 개발한 ARM 기반 코어(예: Carmel 코어)나 ARM Cortex-A 시리즈(예: Cortex-A78AE) 코어 여러 개가 묶여 있습니다.\n- 상호 연결: 각 코어는 고속의 내부 버스(인터커넥트)와 L3 캐시를 공유하며 하나의 거대한 CPU 복합체를 이룹니다.\n\n혹시 Jetson Xavier나 Orin 등 특정 엔비디아 보드를 사용 중이신가요? 개발 중이신 하드웨어 모델을 알려주시면 관련 CCPLEX 구조를 더 정확히 설명해 드릴 수 있습니다.\n\n==NVIDIA DRIVE Orin 및 Jetson Orin== SoC에서 CCPLEX는 ARM Cortex-A78AE 코어로 구성된 강력한 메인 CPU 클러스터입니다. 차량용 안전 표준(ISO 26262)을 충족하도록 설계된 'AE(Automotive Enhanced)' 코어를 사용하여 자율주행과 로봇 공학의 메인 연산을 처리합니다.\n\nOrin 라인업의 핵심인 Jetson Orin 시리즈별 CCPLEX 구성은 다음과 같이 차이가 있습니다.\n\n## 📊 Orin 라인업별 CPU(CCPLEX) 비교\n\n|제품명|CPU 코어 수|아키텍처|L3 캐시 용량|\n|---|---|---|---|\n|AGX Orin (64GB)|12코어|ARM Cortex-A78AE|6 MB|\n|AGX Orin (32GB)|8코어|ARM Cortex-A78AE|4 MB|\n|Orin NX (16GB)|8코어|ARM Cortex-A78AE|4 MB|\n|Orin NX (8GB)|6코어|ARM Cortex-A78AE|3 MB|\n|Orin Nano (8GB/4GB)|6코어|ARM Cortex-A78AE|1.5 MB|\n\n## ⚙️ Orin에서 BPMP와 CCPLEX의 협업 흐름\n\n1. 부팅 단계: 전원이 켜지면 BPMP가 먼저 깨어나 클록과 전원을 초기화한 뒤, 펌웨어를 로드하고 CCPLEX(Cortex-A78AE)를 깨웁니다.\n2. 런타임 단계: CCPLEX에서 Ubuntu 같은 OS가 구동되는 동안, 메인 CPU가 특정 주파수로 변경을 요청(DVFS)하면 BPMP가 백그라운드에서 하드웨어 전압을 안전하게 조절해 줍니다.\n\n현재 보유하고 계시거나 개발 검토 중이신 Orin 모듈의 정확한 모델명(예: AGX Orin 64GB, Orin Nano 등)을 알려주시면, 해당 모델의 정밀한 클록 속도나 전력 모드별 CPU 코어 활성화 정보를 추가로 정리해 드릴 수 있습니다. 어떤 모델을 보고 계시나요?\n```\n\n\n@CCPLEX ( CPU Cluster Complex ).md 페이지의 문장의 원문 손실없이 가독성을 향상시켜줘.\n\n"
+        }
+      ],
+      "id": "348c8b9f-d570-444d-a89b-117df020983b",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md"
+        },
+        {
+          "type": "file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "- [제공된 `CCPLEX ( CPU Cluster Complex ).md` 파일의 내용을 원문 손실 없이 가독성 있게 개선 요청]\n- GPT의 응답 요약 : 문장 구조와 서식을 정돈하여 가독성을 높인 마크다운 수정안을 제공합니다.\n\n응답 : 텍스트의 의미는 그대로 유지하되, 불필요한 구어체 질문을 제거하고 정보를 체계적으로 구조화하여 기술 문서로서의 전문성을 높였습니다.\n\n<smtcmp_block filename=\"딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md\" language=\"markdown\">\n<!-- ... existing content ... -->\nCCPLEX(CPU Cluster Complex)는 ==NVIDIA의 테그라(Tegra) 및 오린(Orin) SoC(시스템 온 칩)에서 메인 CPU 코어들이 모여 있는 핵심 클러스터 집합==을 의미합니다.\n\nBPMP가 부팅과 전력을 관리하는 '보조 프로세서' 역할을 수행한다면, CCPLEX는 실제 운영체제(리눅스, 안드로이드 등)와 고부하 연산 애플리케이션이 실행되는 '메인 CPU'입니다.\n\n## 💡 핵심 특징\n\n- **기능**: 리눅스, QNX, 안드로이드 등의 주 운영체제(OS)가 구동됩니다.\n- **구성**: 플랫폼에 따라 NVIDIA 자체 개발 ARM 기반 코어(예: Carmel) 또는 ARM Cortex-A 시리즈(예: Cortex-A78AE) 코어 여러 개가 클러스터로 묶여 있습니다.\n- **상호 연결**: 각 코어는 고속 내부 버스(Interconnect)와 L3 캐시를 공유하며 하나의 거대한 CPU 복합체를 형성합니다.\n\n==NVIDIA DRIVE Orin 및 Jetson Orin== SoC의 CCPLEX는 ARM Cortex-A78AE 코어로 구성된 강력한 메인 CPU 클러스터입니다. 특히 차량용 안전 표준(ISO 26262)을 충족하는 'AE(Automotive Enhanced)' 코어를 사용하여 자율주행 및 로봇 공학의 핵심 연산을 처리합니다.\n\n## 📊 Orin 라인업별 CPU(CCPLEX) 비교\n\n| 제품명 | CPU 코어 수 | 아키텍처 | L3 캐시 용량 |\n| :--- | :---: | :---: | :---: |\n| AGX Orin (64GB) | 12코어 | ARM Cortex-A78AE | 6 MB |\n| AGX Orin (32GB) | 8코어 | ARM Cortex-A78AE | 4 MB |\n| Orin NX (16GB) | 8코어 | ARM Cortex-A78AE | 4 MB |\n| Orin NX (8GB) | 6코어 | ARM Cortex-A78AE | 3 MB |\n| Orin Nano (8GB/4GB) | 6코어 | ARM Cortex-A78AE | 1.5 MB |\n\n## ⚙️ Orin에서 BPMP와 CCPLEX의 협업 흐름\n\n1. **부팅 단계**: 전원 인가 시 BPMP가 우선 기동하여 클록 및 전원을 초기화하고, 펌웨어 로드 후 CCPLEX(Cortex-A78AE)를 깨웁니다.\n2. **런타임 단계**: CCPLEX에서 OS가 구동되는 동안 메인 CPU가 주파수 변경을 요청(DVFS)하면, BPMP가 백그라운드에서 하드웨어 전압을 안전하게 조절합니다.\n<!-- ... existing content ... -->\n</smtcmp_block>",
+      "id": "9078f86c-31d9-43e5-a025-0db70de360fa",
+      "metadata": {
+        "model": {
+          "providerType": "lm-studio",
+          "providerId": "lm-studio",
+          "id": "google/gemma-4-31b",
+          "model": "gemma-4-31b",
+          "promptLevel": 1,
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 2521,
+          "completion_tokens": 827,
+          "total_tokens": 3348,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      }
+    }
+  ],
+  "createdAt": 1790041716221,
+  "updatedAt": 1790041787850,
+  "schemaVersion": 1
+}

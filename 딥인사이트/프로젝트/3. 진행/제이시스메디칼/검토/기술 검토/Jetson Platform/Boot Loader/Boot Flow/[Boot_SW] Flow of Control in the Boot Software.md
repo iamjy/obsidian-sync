@@ -7,6 +7,9 @@ created: 2025-09-07
 description:
 tags:
 ---
+Initial Boot Flow
+![[Pasted image 20260928145755.png]]
+
 The following diagram shows the flow of control in the boot software.
 ![[Pasted image 20260922134739.png]]
 

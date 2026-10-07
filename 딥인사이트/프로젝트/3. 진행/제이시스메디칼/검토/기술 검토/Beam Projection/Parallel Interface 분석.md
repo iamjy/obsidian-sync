@@ -7,12 +7,10 @@ created: 2025-09-07
 description: Parallel Interface Frame Timing Requirements 검토
 tags: #TI #DLPC347x #TimingAnalysis
 ---
-![[Pasted image 20261007131012.png]]
-![[Pasted image 20261007131041.png]]
-![[Pasted image 20261007131104.png]]
+![[Pasted image 20261007131012.png]]![[Pasted image 20261007131041.png]]![[Pasted image 20261007131104.png]]
+
 
 ![[Pasted image 20261007135637.png]]
-
 ## 1. $t_{p\_tvb}$ 정의 및 최소값 계산 공식
 TI DLPC347x 데이터시트 Section 5.12 (Parallel Interface Frame Timing Requirements) 기준입니다.
 - **정의**: $t_{p\_tvb} = t_{p\_vbp} + t_{p\_vfp}$ (Vertical Back Porch와 Vertical Front Porch의 합, 단위: lines)

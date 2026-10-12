@@ -40,4 +40,4 @@ DMD
 ## Device Startup
 ![[Pasted image 20261002184604.png]]
 ![[Pasted image 20261002184619.png]]
-
+![[Pasted image 20261007163555.png]]

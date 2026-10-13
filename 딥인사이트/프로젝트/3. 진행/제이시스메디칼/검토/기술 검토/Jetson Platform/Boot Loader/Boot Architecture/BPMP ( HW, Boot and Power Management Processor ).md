@@ -43,7 +43,7 @@ NVIDIA의 **BPMP(Boot and Power Management Processor)**는 ==테그라(Tegra) �
 
 ## 1. 물리적 연산의 주체는 항상 'BPMP R5'
 
-앞서 설명해 드린 대로 BPMP는 하드웨어 영역(IP)의 이름이고, 그 안에서 부팅 코드를 1줄씩 읽어와 연산하고 하드웨어를 제어하는 실제 CPU 코어는 ARM Cortex-R5(BPMP R5)입니다. 따라서 칩에 전원이 들어오는 순간부터 부팅 가이드 상에 적히는 모든 'BPMP의 동작'은 물리적으로 BPMP R5 코어가 연산 장치로서 수행하는 것입니다.
+앞서 설명해 드린 대로 BPMP는 하드웨어 영역(IP)의 이름이고, 그 안에서 부팅 코드를 1줄씩 읽어와 연산하고 하드웨어를 제어하는 실제 CPU 코어는 ARM Cortex-R5(BPMP R5)입니다. 따라서 칩에 전원이 들어오는 순간부터 부팅 가이드 상에 적히는 모든 <font color="#de7802">'BPMP의 동작'은 물리적으로 BPMP R5 코어가 연산 장치로서 수행하는 것</font>입니다.
 
 ## 2. 하드웨어 소스 코드가 동작하는 원리 (BootROM 단계)
 
@@ -58,7 +58,7 @@ NVIDIA의 **BPMP(Boot and Power Management Processor)**는 ==테그라(Tegra) �
 
 NVIDIA Orin 및 최신 아키텍처에서는 보안성 강화를 위해 PSC(Platform Security Controller)라는 별도의 독립된 보안 가속기 프로세서가 함께 동작합니다. [3]
 
-- BPMP R5가 저장소에서 바이너리(MB1 등)를 읽어와 AOTZRAM에 배치하는 동안, PSC는 이 바이너리들이 위변조되지 않았는지 검증(Authentication)하고 암호화를 푸는(Decryption) 보안 처리를 나란히 수행합니다. [3, 4]
+- <font color="#de7802">BPMP R5가 저장소에서 바이너리(MB1 등)를 읽어와 AOTZRAM에 배치하는 동안, PSC는 이 바이너리들이 위변조되지 않았는지 검증(Authentication)하고 암호화를 푸는(Decryption) 보안 처리를 나란히 수행</font>합니다. [3, 4]
 
 ## 요약
 

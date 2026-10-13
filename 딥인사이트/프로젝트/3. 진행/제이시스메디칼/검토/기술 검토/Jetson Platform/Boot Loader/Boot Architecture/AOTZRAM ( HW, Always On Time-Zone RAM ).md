@@ -26,7 +26,7 @@ AOTZRAM은 ==엔비디아(NVIDIA)의 임베디드 시스템인 Jetson Orin 시�
 ## 💡 주요 역할 및 부팅 흐름
 
 1. BootROM 단계: 칩에 전원이 켜지면 하드웨어에 내장된 고정 코드인 BootROM(BR)이 가장 먼저 실행됩니다. [1, 2]
-2. MB1 로드: BootROM은 첫 번째 소프트웨어 부팅 컴포넌트인 Microboot1(MB1)을 바로 이 AOTZRAM 영역에 로드하여 실행합니다. [1, 3]
+2. MB1 로드: BootROM은 첫 번째 소프트웨어 부팅 컴포넌트인 Microboot1(MB1)을 바로 이 AOTZRAM ( SRAM ) 영역에 로드하여 실행합니다. [1, 3]
 3. 초기화 및 보안 설정: AOTZRAM 내에서 실행되는 MB1은 SoC의 내부 핀 매핑(Pinmux), GPIO, 외부 메모리 컨트롤러(SDRAM) 등을 초기화하고, 시스템 전반의 보안 방화벽을 설정하는 고도로 보안된 작업을 수행합니다. [2, 4]
 
 상기 정보는 [NVIDIA Jetson Linux Developer Guide](https://docs.nvidia.com/jetson/archives/r35.6.5/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html) 부팅 아키텍처 공식 문서에서 기술적인 세부 사항을 확인할 수 있습니다. [2]

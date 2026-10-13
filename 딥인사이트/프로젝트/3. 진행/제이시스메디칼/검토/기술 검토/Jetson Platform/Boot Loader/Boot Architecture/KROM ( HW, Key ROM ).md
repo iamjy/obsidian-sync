@@ -7,7 +7,7 @@ created: 2025-09-07
 description:
 tags:
 ---
-엔비디아(NVIDIA) 시스템 아키텍처 및 보안 부팅(Secure Boot) 프로세스에서 **PSCROM**과 **KROM**은 ==칩(SoC) 내부의 보안을 담당하는 핵심 하드웨어 컴포넌트이자 메모리 영역==입니다. 이 둘은 시스템이 켜질 때 최초로 실행되는 신뢰점(Root of Trust) 역할을 수행합니다. [[1](https://docs.nvidia.com/jetson/archives/r35.6.5/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html), [2](https://developer.nvidia.com/docs/drive/drive-os/6.0.5/public/drive-os-linux-sdk/common/topics/security_concepts/SecureBoot16.html), [3](https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/Security/FirmwareTPM/Provisioning.html)]
+r엔비디아(NVIDIA) 시스템 아키텍처 및 보안 부팅(Secure Boot) 프로세스에서 **PSCROM**과 **KROM**은 ==칩(SoC) 내부의 보안을 담당하는 핵심 하드웨어 컴포넌트이자 메모리 영역==입니다. 이 둘은 시스템이 켜질 때 최초로 실행되는 신뢰점(Root of Trust) 역할을 수행합니다. [[1](https://docs.nvidia.com/jetson/archives/r35.6.5/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html), [2](https://developer.nvidia.com/docs/drive/drive-os/6.0.5/public/drive-os-linux-sdk/common/topics/security_concepts/SecureBoot16.html), [3](https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/Security/FirmwareTPM/Provisioning.html)]
 
 두 개념의 주요 역할과 차이점은 다음과 같습니다.
 

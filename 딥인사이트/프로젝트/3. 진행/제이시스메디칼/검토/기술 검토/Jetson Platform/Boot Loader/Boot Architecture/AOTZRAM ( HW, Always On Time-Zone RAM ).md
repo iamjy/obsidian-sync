@@ -45,7 +45,7 @@ AOTZRAM은 ==엔비디아(NVIDIA)의 임베디드 시스템인 Jetson Orin 시�
 
 ---
 
-AOTZRAM은 SRAM의 한 종류가 맞습니다. 정확히는 SoC(칩) 내부에 결합된 내부 SRAM(On-chip SRAM) 공간 중 일부를 보안 전용 영역으로 지정해 둔 것입니다.
+AOTZRAM은 SRAM의 한 종류가 맞습니다. <font color="#de7802">정확히는 SoC(칩) 내부에 결합된 내부 SRAM(On-chip SRAM) 공간 중 일부를 보안 전용 영역으로 지정해 둔 것</font>입니다.
 
 두 개념의 차이와 관계를 명확하게 이해하실 수 있도록 핵심만 정리해 드립니다.
 

@@ -33,8 +33,3 @@ NVIDIA Jetson의 **RCM boot**란 ==호스트 PC에서 USB를 통해 부팅 바�
 | **저장소 영향** | 저장소의 데이터를 기반으로 작동 | 저장소 쓰기 없이 메모리에서 일시 실행 |
 
 *근거: [[1](https://docs.nvidia.com/jetson/archives/r36.5.2/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html), [2](https://docs.nvidia.com/jetson/archives/r35.6.2/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html), [3](https://blog.csdn.net/m0_50136807/article/details/140484479)]*
-
----
-> [!QUESTION] **추가 확인 사항**
-> - RCM 모드에 진입하시려는 **특정 Jetson 모델명**이 있으신가요?
-> - 현재 **플래싱이나 복구 작업 중** 발생한 구체적인 문제가 있으신가요?

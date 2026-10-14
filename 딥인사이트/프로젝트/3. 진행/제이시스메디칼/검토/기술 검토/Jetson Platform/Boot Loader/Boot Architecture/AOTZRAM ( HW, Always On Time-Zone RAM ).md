@@ -26,7 +26,7 @@ AOTZRAM은 ==엔비디아(NVIDIA)의 임베디드 시스템인 Jetson Orin 시�
 ## 💡 주요 역할 및 부팅 흐름
 
 1. BootROM 단계: 칩에 전원이 켜지면 하드웨어에 내장된 고정 코드인 BootROM(BR)이 가장 먼저 실행됩니다. [1, 2]
-2. MB1 로드: BootROM은 첫 번째 소프트웨어 부팅 컴포넌트인 Microboot1(MB1)을 바로 이 AOTZRAM 영역에 로드하여 실행합니다. [1, 3]
+2. MB1 로드: BootROM은 첫 번째 소프트웨어 부팅 컴포넌트인 Microboot1(MB1)을 바로 이 AOTZRAM ( SRAM ) 영역에 로드하여 실행합니다. [1, 3]
 3. 초기화 및 보안 설정: AOTZRAM 내에서 실행되는 MB1은 SoC의 내부 핀 매핑(Pinmux), GPIO, 외부 메모리 컨트롤러(SDRAM) 등을 초기화하고, 시스템 전반의 보안 방화벽을 설정하는 고도로 보안된 작업을 수행합니다. [2, 4]
 
 상기 정보는 [NVIDIA Jetson Linux Developer Guide](https://docs.nvidia.com/jetson/archives/r35.6.5/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html) 부팅 아키텍처 공식 문서에서 기술적인 세부 사항을 확인할 수 있습니다. [2]
@@ -45,7 +45,7 @@ AOTZRAM은 ==엔비디아(NVIDIA)의 임베디드 시스템인 Jetson Orin 시�
 
 ---
 
-AOTZRAM은 SRAM의 한 종류가 맞습니다. 정확히는 SoC(칩) 내부에 결합된 내부 SRAM(On-chip SRAM) 공간 중 일부를 보안 전용 영역으로 지정해 둔 것입니다.
+AOTZRAM은 SRAM의 한 종류가 맞습니다. <font color="#de7802">정확히는 SoC(칩) 내부에 결합된 내부 SRAM(On-chip SRAM) 공간 중 일부를 보안 전용 영역으로 지정해 둔 것</font>입니다.
 
 두 개념의 차이와 관계를 명확하게 이해하실 수 있도록 핵심만 정리해 드립니다.
 
@@ -58,8 +58,8 @@ AOTZRAM은 SRAM의 한 종류가 맞습니다. 정확히는 SoC(칩) 내부에 �
 
 일반적인 SRAM과 달리, 앞에 붙은 글자들은 이 메모리의 특수한 기능과 목적을 나타냅니다.
 
-- AO (Always-On): 칩이 초절전 모드(Deep Sleep 등)에 들어가 다른 물리 장치들의 전원이 꺼져도, 이 영역은 항상 전원이 공급(Always-On)되어 데이터와 보안 상태를 유지합니다.
-- TZ (TrustZone): Arm 아키텍처의 하드웨어 보안 기술인 TrustZone(트러스트존)에 의해 보호받는 영역입니다. 일반 애플리케이션이나 OS(리눅스 등)는 하드웨어 방화벽에 막혀 이 메모리 영역에 절대 접근할 수 없고, 오직 허가된 보안 프로세스(예: MB1 부트로더)만 접근할 수 있습니다.
+- AO (Always-On): <font color="#de7802">칩이 초절전 모드(Deep Sleep 등)에 들어가 다른 물리 장치들의 전원이 꺼져도, 이 영역은 항상 전원이 공급(Always-On)되어 데이터와 보안 상태를 유지</font>합니다.
+- TZ (TrustZone): <font color="#de7802">Arm 아키텍처의 하드웨어 보안 기술인 TrustZone(트러스트존)에 의해 보호받는 영역입니다. 일반 애플리케이션이나 OS(리눅스 등)는 하드웨어 방화벽에 막혀 이 메모리 영역에 절대 접근할 수 없고, 오직 허가된 보안 프로세스(예: MB1 부트로더)만 접근</font>할 수 있습니다.
 
 ## 💡 한눈에 보는 비교
 
@@ -76,3 +76,21 @@ AOTZRAM은 SRAM의 한 종류가 맞습니다. 정확히는 SoC(칩) 내부에 �
 현재 작업 중이신 환경에서 메모리 맵(Memory Map) 할당이나 부팅 단계의 하드웨어 초기화와 관련해 구체적으로 확인하고 싶으신 부분이 있으신가요?
 
 필요하시다면 Jetson Orin의 전체 메모리 구조(SRAM vs DRAM)나 부팅 프로세스에서의 역할을 더 상세히 설명해 드릴 수 있습니다.
+
+---
+
+**AOTZRAM**은 ==NVIDIA Jetson 플랫폼의 부팅 과정에서 **BootROM(BR)**이 첫 번째 부드 소프트웨어 컴포넌트인 **Microboot1(MB1)**을 로드하는 **전용 온칩(on-chip) SRAM 영역**==입니다. [[1](https://docs.nvidia.com/jetson/archives/r35.5.0/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html)]
+
+핵심 특징
+
+- **위치 및 역할**: SoC(System on Chip) 내부의 빠른 임시 메모리 공간(TBR/SRAM 계열)으로, 외부 SDRAM이 아직 초기화되기 전 단계에서 첫 코드(MB1)가 실행되는 곳입니다. [[1](https://docs.nvidia.com/jetson/archives/r35.1/DeveloperGuide/text/AR/BootArchitecture/JetsonAgxOrinBootFlow.html), [2](https://docs.nvidia.com/jetson/archives/r35.5.0/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html)]
+- **실행 프로세스**:
+    1. **BootROM (BR)**이 하드웨어 리셋 후 활성화됩니다.
+    2. BootROM은 **AOTZRAM**에 첫 번째 부트 소프트웨어인 **MB1**을 로드합니다.
+    3. MB1은 BPMP(Boot and Power Management Processor) 위에서 실행되며, 이 시점에 핀목스(Pinmux), GPIO, 보안 설정 및 **외부 SDRAM을 초기화**합니다.
+    4. SDRAM이 준비되면 이후 단계의 부트loader(MB2 등)가 메인 메모리로 넘어와 실행됩니다. [[1](https://docs.nvidia.com/jetson/archives/r35.1/DeveloperGuide/text/AR/BootArchitecture/JetsonAgxOrinBootFlow.html), [2](https://docs.nvidia.com/jetson/archives/r35.5.0/DeveloperGuide/AR/BootArchitecture/JetsonOrinSeriesBootFlow.html)]
+
+더 자세한 내용이 필요하시면 알려주세요:
+
+- **구체적으로 어떤 Jetson 모델**(AGX Orin, Orin NX, Xavier 등)의 부팅 구조를 분석 중이신가요?
+- **부팅 실패(Boot-stuck)나 커널/펌웨어 로딩**과 같은 특정 이슈를 해결하고 계신가요?

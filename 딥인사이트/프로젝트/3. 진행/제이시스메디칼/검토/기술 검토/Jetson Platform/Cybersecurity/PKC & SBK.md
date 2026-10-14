@@ -34,11 +34,11 @@ tags: #Cybersecurity #SecureBoot #Encryption
 ## 2. PKC vs SBK 비교 분석
 
 ### 📊 요약 비교표
-| 용어 | 전체 명칭 | 주요 역할 | 특징 |
-| :--- | :--- | :--- | :--- |
-| **보안 부트** | Secure Boot | 정품 SW 검증 및 보호 | 시스템 보안의 기초 단계 |
-| **PKC** | Public Key Cryptography | 위·변조 방지 (서명 검증) | 비대칭 키 방식 (공개키/개인키) |
-| **SBK** | Secure Boot Key | 데이터 유출 방지 (암호화) | 대칭 키 방식 (단일 키) |
+| 용어        | 전체 명칭                   | 주요 역할           | 특징                 |
+| :-------- | :---------------------- | :-------------- | :----------------- |
+| **보안 부트** | Secure Boot             | 정품 SW 검증 및 보호   | 시스템 보안의 기초 단계      |
+| **PKC**   | Public Key Cryptography | 위·변조 방지 (서명 검증) | 비대칭 키 방식 (공개키/개인키) |
+| **SBK**   | Secure Boot Key         | 데이터 유출 방지 (암호화) | 대칭 키 방식 (단일 키)     |
 
 ### 🔍 핵심 차이점 상세
 | 구분 | PKC (Public Key Cryptography) | SBK (Secure Boot Key) |

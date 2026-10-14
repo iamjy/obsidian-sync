@@ -59,11 +59,7 @@
       "mentionables": [
         {
           "type": "current-file",
-          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md"
-        },
-        {
-          "type": "file",
-          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/검토/기술 검토/Jetson Platform/Boot Loader/Boot Architecture/CCPLEX ( CPU Cluster Complex ).md"
+          "file": null
         }
       ]
     },
@@ -92,6 +88,6 @@
     }
   ],
   "createdAt": 1790041716221,
-  "updatedAt": 1790041787850,
+  "updatedAt": 1791971606688,
   "schemaVersion": 1
 }

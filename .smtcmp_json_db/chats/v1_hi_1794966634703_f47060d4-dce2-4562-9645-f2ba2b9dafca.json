@@ -1,0 +1,56 @@
+{
+  "id": "f47060d4-dce2-4562-9645-f2ba2b9dafca",
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "hi",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": [
+        {
+          "type": "text",
+          "text": "\n\nhi\n\n"
+        }
+      ],
+      "id": "0d3ee68a-f7cc-45c5-a8bf-ce2ed4a97a55",
+      "mentionables": [
+        {
+          "type": "current-file",
+          "file": "딥인사이트/프로젝트/3. 진행/제이시스메디칼/부품 선정/SSD/SSD 평가.md"
+        }
+      ]
+    }
+  ],
+  "createdAt": 1794966634703,
+  "updatedAt": 1794966634703,
+  "schemaVersion": 1
+}
